@@ -18,8 +18,8 @@ export const Overlay = styled.div`
     height: 100vh; 
     // border: 5px solid green;
 
-    background: ${props => props.theme.bgBlur};
+    /* background: ${props => props.theme.bgBlur}; */
     // background: blue;
-    opacity: 0.4;
-    backdrop-filter: blur(13px);
+    /* opacity: 0.4; */
+    /* backdrop-filter: blur(13px); */
 `

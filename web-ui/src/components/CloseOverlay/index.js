@@ -12,7 +12,7 @@ const CloseOverlay = ({isOpen, aboutToggle, toggleAbout, mobileToggle}) => {
                 transition={{
                 type: "tween",
                 ease: [0.28, 1.35, 1.5, .91],
-                duration: 0.35
+                duration: 0.0
                 }}
                 onClick={mobileToggle}
             />
@@ -30,7 +30,7 @@ const CloseOverlay = ({isOpen, aboutToggle, toggleAbout, mobileToggle}) => {
                 transition={{
                 type: "tween",
                 ease: [0.28, 1.35, 1.5, .91],
-                duration: 0.35
+                duration: 0.0
                 }}
                 onClick={toggleAbout}
             />

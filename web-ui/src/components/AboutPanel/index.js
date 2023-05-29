@@ -1,22 +1,21 @@
 import React from 'react';
 import { Container, Content, Logo, Name, ProfileContainer, Resume, ImageSide, ResumeDownload, Bottom, Social, Side, Loader, Desc, Styled1, Styled2, Close } from './AboutPanelElements';
 import { ListContainer } from '../Works/WorkElements';
-import { AboutContainer } from '../Navigation/NavigationElements';
 import { motion } from "framer-motion";
 
 const About = ({ toggle, aboutToggle }) => {
  
   return (
-    // <AboutContainer>
       <Container showInfo={aboutToggle}
-        as={motion.div} initial={{ x: '-100vw', y: '0' }} 
-        animate={aboutToggle ? {  x: '0', y: 0 } : { x: '-100vw', y: '0' }}
+        as={motion.div} initial={{ opacity: 0, zIndex: -1 }} 
+        animate={aboutToggle ? {  opacity: 1, zIndex: 1000 } : { opacity: 0, zIndex: -1 }}
         transition={{
           type: "tween",
           ease: [0.28, 1.35, 1.5, .91],
-          duration: 0.4
+          duration: 0.0
         }}
       > 
+        <Close onClick={toggle}>close</Close>
         {/* <Loader /> */}
         {/* <Side>INFO</Side> */}
         {/* <ProfileContainer>
@@ -24,24 +23,21 @@ const About = ({ toggle, aboutToggle }) => {
         </ProfileContainer> */}
         {/* <Close onClick={toggle}>close</Close> */}
         <Content>
-          <Logo />
-          <Name>Austin Kim <br />(호연)</Name>
-          <Styled1>Currently based in <br /> Brooklyn, NY</Styled1>
-          <Styled2>I’m a multi-disciplinary designer, developer, artist with a passion for building meaningful, impactful, and engaging experiences.</Styled2>
-          <Styled2>I graduated from Northeastern University in May of 2021 with a bachelors of Computer Science and Design, and since then, have been working on multiple web and graphic design projects in many fields.</Styled2>
+          <Name>INFO</Name>
+          <Styled1>Currently based in Brooklyn, NY</Styled1>
+          <Styled2>I am a multi-disciplinary designer, developer, and artist with a passion for building meaningful experiences.</Styled2>
+          <Styled2>I graduated from Northeastern University in May of 2021 with a bachelors of Computer Science and Design, and have been working on various web and graphic design projects accross many fields.</Styled2>
           <Styled2>I love experimenting with new technologies, techniques, patterns, styles, and sounds.</Styled2>
+          <Styled1 style={{ paddingBottom: 0, paddingTop: '12px' }}>Last Updated: May 4, 2023</Styled1>
+          <Styled1>Built by me in React (framer, styled-components) + Elixir.</Styled1>
+          <Styled1 style={{ color: '#6C9EFF', paddingTop: '10px' }}>Open for work and collaboration</Styled1>
         </Content>
         <Bottom>
-          <Styled1 style={{ color: '#6C9EFF', paddingTop: '10px' }}>Open for work and collaboration</Styled1>
-          <Social onClick={() => window.open("/imgs/Resume_Spring23.pdf")} target="_blank">Resume ↗</Social>
-          <Social href="https://www.instagram.com/nektine/" target="_blank">Instagram ↗</Social>
-          <Social href="mailto:nektinemedia@gmail.com" target="_blank">Email ↗</Social>
-          <Styled1 style={{paddingTop: '30px' }}>Last Updated: May 4, 2023</Styled1>
-          <Styled1 style={{paddingTop: '6px', paddingBottom: '40px'}}>Built by me in React (framer, styled-components) + Elixir.</Styled1>
-          <Close onClick={toggle}>Close</Close>
+          <Social onClick={() => window.open("/imgs/Resume_Spring23.pdf")} target="_blank">Resume</Social>
+          <Social href="https://www.instagram.com/nektine/" target="_blank">Instagram</Social>
+          <Social href="mailto:nektinemedia@gmail.com" target="_blank">Email</Social>
         </Bottom>
       </Container>
-    // </AboutContainer>
   );
 }
 

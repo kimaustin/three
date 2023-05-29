@@ -7,14 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ThemeProvider } from 'styled-components';
 
 import Main from "./components/Main";
-import Navigation from "./components/Navigation";
-import Status from "./components/Status";
 import Works from "./components/Works";
 import WorkExpanded from "./components/Works/WorkExpanded";
 import Images from "./components/ImageZoom";
 import AboutPanel from "./components/AboutPanel";
 import NavBar from "./components/Navbar";
-import Lab from "./components/Lab";
 import { Provider } from "react-redux";
 import SideProjects from "./components/SideProjects";
 import Blog from "./components/Blog";
@@ -23,6 +20,9 @@ import Wipe from "./components/Wipe";
 import Background from "./components/Background";
 import Photography from "./components/Photography";
 import Versions from "./components/Versions";
+import Switcher from "./components/Switcher";
+import Marks from "./components/Marks";
+import Navigation from "./components/Navigation";
 
 //Our App Components
 function App() {
@@ -64,10 +64,10 @@ function App() {
   //----- ON dark/mode press, change state to other theme. Pass in state to each component.
 
   const lightTheme = {
-    bg: "rgba(245, 251, 255, 1)",
-    bgBlur: "rgba(230, 228, 234, 0.8)",
-    bgSide: "rgba(242, 240, 244, 0.8)",
-    bgNav: "rgba(247, 246, 251, 0.65)",
+    bg: "rgba(255, 255, 255, 1)",
+    bgBlur: "rgba(255, 255, 255, 1)",
+    bgSide: "rgba(255, 255, 255, 1)",
+    bgNav: "rgba(255, 255, 255, 1)",
     bgPreview: "rgba(255, 255, 255, 0.7)",
     primary: "#000000",
     secondary: "#7D7D7D",
@@ -87,41 +87,27 @@ function App() {
     cs: "#5685FF",
   }
 
-  const [colorTheme, setColorTheme] = useState(lightTheme);
-  const [isLightTheme, setIsLightTheme] = useState(true);
+  const [light, setLight] = useState(true);
 
-  const delay = ms => new Promise(
-    resolve => setTimeout(resolve, ms)
-  );
-
-  const toggleLight = async event => {
-    if (!isLightTheme) {
-      setIsLightTheme(true);
-      await delay(150);
-      setColorTheme(lightTheme);
-    }
-  }
-
-  const toggleDark = async event => {
-    if (isLightTheme) {
-      setIsLightTheme(false);
-      await delay(150);
-      setColorTheme(darkTheme);
-    }
-  }
+  const switcher1 = () => {
+    console.log("switched");
+    console.log(light);
+    setLight(!light);
+  };
 
   return (
     <Router>
-      <ThemeProvider theme={colorTheme}>
+      <ThemeProvider theme={light ? lightTheme : darkTheme}>
         <GlobalFonts />
+        <Switcher toggle={switcher1} status={light}/>
+        <Navigation toggle={toggleAbout} aboutToggle={aboutToggle}/>
         {/* <Versions drawerToggle={versionDrawer} toggle={toggleDrawer} /> */}
         <NavBar mobileToggle={toggle} isOpen={isOpen}/>
-        <Navigation drawerStatus={versionDrawer} toggleDrawer={toggleDrawer} toggle={toggleAbout} aboutToggle={aboutToggle} mobileToggle={toggle} toggleLight={toggleLight} toggleDark={toggleDark} themeToggleStatus={isLightTheme}/>
         <AboutPanel aboutToggle={aboutToggle} toggle={toggleAbout}></AboutPanel>
-        <SideProjects sideProjectsToggle={sideProjectsToggle} />
-        <Wipe isLightTheme={isLightTheme}/>
+        <Marks />
+        {/* <SideProjects sideProjectsToggle={sideProjectsToggle} /> */}
+        {/* <Wipe isLightTheme={isLightTheme}/> */}
         <CloseOverlay isOpen={isOpen} aboutToggle={aboutToggle} toggleAbout={toggleAbout} mobileToggle={toggle}/>
-        {/* <ThemeToggle themeToggle={toggleTheme}/> */}
         <Route
           render={({ location }) => (
             <AnimatePresence exitBeforeEnter>
@@ -129,7 +115,6 @@ function App() {
                 <Route exact path="/" component={Main} />
                 <Route exact path="/works" component={Works} />
                 {/* <Route exact path="/works" render={(props) => <Works theme={colorTheme} {...props} />}/> */}
-                <Route exact path="/test" component={Lab} />
                 {/* <Route exact path="/blog" component={Blog} />  */}
                 <Route exact path="/photo" component={Photography} />
                 <Route path="/:workId?/works" component={WorkExpanded} exact />
@@ -138,7 +123,6 @@ function App() {
             </AnimatePresence>
           )}
         />
-        {/* <Status /> */}
         {/* <WIP /> */}
         <Background />
       </ThemeProvider>

@@ -5,13 +5,10 @@ import { motion } from "framer-motion";
 
 export const Container = styled(motion.div)`
   position: fixed;
-  /* left: 0; */
-  left: 46px;
-  // top: 103px;
+  left: 0;
   top: 0;
   z-index: 998;
-  /* width: 100vw; */
-  width: calc(100vw - 46px);
+  width: calc(100vw);
   height: calc(100vh);
 
   ::-webkit-scrollbar {
@@ -60,17 +57,13 @@ export const Marker = styled.div`
 `;
 
 export const MarkerL = styled.div`
-  position: absolute;
-  left: 14px;
-  top: calc(48vh - 21px);
-  width: 12px;
-  /* border-bottom: 4px solid ${props => props.theme.primary}; */
-  /* display: none; */
-
-  color: ${props => props.theme.primary};
-  font-family: 'SS3';
-  font-size: 32px;
-  /* font-weight: 500; */
+  position: fixed;
+  left: calc(5vw - 22px);
+  top: calc(12vh + 3px);
+  width: 100px;
+  height: 7px;
+  border-radius: 12px;
+  background: black; 
 
   @media screen and (max-width: 767px) {
     display: grid;
@@ -165,15 +158,17 @@ export const ClickableArea = styled.div`
 export const WorkListContainer = styled.div`
   position: fixed;
   top: 0;
-  left: 46px;
-  width: calc(100vw - 46px);
-  height: calc(100vh - 103px + 103px);
+
+  left: 0;
+  width: calc(100vw);
+  height: calc(100vh);
   overflow-y: scroll;
-  padding-bottom: calc(51vh - 62px + 0.8rem);
-  // padding-top: calc(44vh - 94px);
-  padding-top: calc(48vh - 128px - 1.8rem + 103px);
-  padding-left: 14px;
-  padding-right: calc(67vw - 48px);
+  /* padding-bottom: calc(51vh - 62px + 0.8rem); */
+  padding-bottom: calc(86vh - 13px);
+  /* padding-top: calc(48vh - 128px - 1.8rem + 103px); */
+  padding-top: calc(12vh);
+  padding-left: 13.5vw;
+  padding-right: calc(70vw);
   z-index: 999;
 
   overflow-x: hidden; 
@@ -202,9 +197,11 @@ export const WorkItem = styled.div`
   // display: grid;
   // grid-template-rows: 24px 1fr;
 
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 
-  scroll-margin-top: calc(48vh - 128px - 1.8rem + 103px);
+  /* scroll-margin-top: calc(48vh - 128px - 1.8rem + 103px); */
+  scroll-margin-top: calc(12vh);
+
   /* calc(48vh - 128px - 2rem + 103px); */
 
   /* padding-top: calc(48vh - 128px - 1.7rem + 103px); */
@@ -235,7 +232,7 @@ export const DeskWorkItem = styled.div`
   // margin-bottom: 38px;
   // scroll-margin-top: calc(48vh - 128px - 21px + 103px);
 
-  transition: .225s all ease-in-out;
+  transition: .1s all ease-in-out;
 
   color: ${props => props.theme.primary};
   padding: 0 4px;
@@ -382,13 +379,13 @@ export const WorkTitle = styled.div`
   align-items: start;
   // margin-top: 20px;
 
-  font-family: "SS3";
-  font-size: 3.2rem;
-  line-height: 3.8rem;
+  /* font-family: "SS3"; */
+  font-size: 14px;
+  /* line-height: 3.8rem; */
   color: ${props => props.theme.primary};
 
   @media screen and (max-width: 767px) {
-    font-size: 28px;
+    font-size: 14px;
     line-height: 35px;
     float: left;
     text-align: left;
@@ -402,7 +399,7 @@ export const WorkArrow = styled(LinkRouter)`
 
   @media screen and (max-width: 767px) {
     display: grid;
-    font-family: "SS3";
+    // font-family: "SS3";
     color: ${props => props.theme.primary};
     font-size: 14px;
     
@@ -419,7 +416,7 @@ export const WorkClass = styled.div`
     left: 0;
     align-items: start;
     text-align: left;
-    font-family: "SS3";
+    // font-family: "SS3";
     color: ${props => props.theme.primary};
     font-size: 12px;
     writing-mode: vertical-rl;
@@ -558,35 +555,21 @@ export const ImageHover = styled.div`
 `;
 
 export const WorkPreview = styled.div`
-  z-index: 1000;
+  z-index: -1;
   display: grid;
   // grid-template-columns: 1fr 1fr 2fr;
-  grid-template-rows: 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr; */
 
   position: fixed;
-  overflow: hidden;
-  height: 50px;
-  width: 130px;
-  top: ${props => (props.heightVar)};
-  right: 16px;
-  /* left: calc(31vw + 54px); */
-  align-content: center;
+  width: 19vw;
+  height: calc(76vh - 100px);
+  left: 49.5vw;
+  top: calc(24vh - 10px);
   text-align: left;
-
-  padding: 5px 7px 4px 12px;
-  border-radius: 5px;
-  border: 1px solid ${props => props.theme.bg};
 
   transition: 0.1s all ease-in-out;
   user-select: none;
   pointer-events: none;
-
-  background: ${props => props.theme.bgPreview};
-  backdrop-filter: blur(14px);
-
-  img {
-    display: none;
-  }
 
   @media screen and (max-width: 767px) {
     top: ${props => (props.mobileHVar)};
@@ -609,39 +592,22 @@ export const WorkPreview = styled.div`
     align-items: flex-end;
     align-content: end;
     float: right;
-
-    img {
-      display: block;
-      text-align: right;
-      align-content: end;
-      float: right;
-      // position: absolute;
-      // bottom: 0;
-      // right: 0;
-
-      object-fit: scale-down;
-      width: 21vw;
-      max-height: calc(18vh - 30px);
-      // height: calc(22vw - 28px);
-      // max-width: 21vw;
-      padding-bottom: 10px;
-    }
-  }
 `;
 
 export const WorkName = styled.div`
-  position: relative;
-  bottom: 0;
-  padding-top: 6px;
+  /* position: relative; */
+  /* bottom: 0; */
+  /* padding-top: 6px; */
   // width: 80%;
-  align-content: end;
+  /* align-content: end; */
 
   color: ${props => props.theme.primary};
   /* opacity: 0.9; */
-  text-decoration: none;
+  /* text-decoration: none; */
   // text-transform: uppercase;
-  font-size: 12px;
-  font-family: "SS3";
+  line-height: 155%;
+  font-size: 13px;
+  /* font-family: "SS3"; */
 
   @media screen and (max-width: 767px) {
     align-content: end;
@@ -653,17 +619,21 @@ export const WorkName = styled.div`
   }
 `;
 
-export const WorkDesc = styled.p`
-  margin-top: 2px;
+export const WorkDesc = styled.div`
+  position: absolute;
+  bottom: 0;
+  /* height: 30px; */
+  /* margin-top: 2px; */
   // width: 80%;
-  align-content: start;
+  /* align-content: start; */
 
   color: ${props => props.theme.secondary};
   // opacity: 0.9;
-  text-decoration: none;
+  /* text-decoration: none; */
   // text-transform: uppercase;
-  font-size: 10px;
-  font-family: "SS3";
+  font-size: 13px;
+  line-height: 145%;
+  /* font-family: "SS3"; */
 
   @media screen and (max-width: 767px) {
     margin-top: unset;
@@ -762,7 +732,7 @@ export const VisitLink = styled.a`
   color: ${props => props.theme.primary};
   opacity: 0.8;
   /* background: green; */
-  font-size: 14px;
+  font-size: 13px;
   font-family: "OpenSans";
 
   &:hover {
@@ -841,50 +811,37 @@ export const BgBlur = styled.div`
 
 export const WorkImageContainer = styled.div`
   position: fixed;
-  height: calc(100vh - 80px);
-  width: calc(69vw - 92px);
-  top: 80px;
-  margin-left: calc(46px + 33vw);
-  align-items: center;
+  height: calc(100vh);
+  width: 21vw;
+  top: 0;
+  left: 74vw;
+  text-align: left;
+  align-items: start;
+  align-content: start;
   
   /* border: 1px solid green; */
 
   @media screen and (max-width: 767px) {
-    // z-index: 999;
-    // top: 84px;
-    // width: 100vw;
-    // margin-left: 0;
-    // height: 18vh;
     display: none;
   }
 `
 
 export const WorkImage = styled.div`
   z-index: 999;
-  /* padding: 22px; */
-  margin-top: 2.25vh;
-  /* margin-left: 28px; */
-  width: calc(69vw - 92px - 5vw);
-  /* height: calc(100vh - 130px - 5rem); */
-  height: calc(100vh - 80px - 6.5vh);
-  text-align: center;
-  align-items: center;
-  /* justify-content: center; */
-  /* object-fit: contain; */
-
-  /* width: calc(85.7vw - 6.3rem); */
-  /* height: 16.5vh; */
-  /* background: url("testProjCover.png"); */
-  /* border: 4px solid pink; */
+  margin-top: calc(24vh - 10px);
+  width: 21vw;
+  height: calc(66vh - 80px);
+  text-align: left;
+  align-items: start;
   /* background: red; */
 
   img {
         /* display: block; */
         object-fit: scale-down;
-        height: 100%;
+        width: 100%;
         /* max-height: calc(100vh - 38px); */
         // max-width: 100%;
-        max-width: calc(69vw - 92px - 5vw);
+        max-height: calc(66vh - 80px);
         /* background-image: #201D17; */
         /* padding-left: 3.25rem; */
     }

@@ -284,6 +284,7 @@ const Works = ({ projects, toggleLight }) => {
   // });
 
 
+  const proj0 = { name: '//', class_short: 'June', val: 1, isCS: true, imgs: ["testProjCover1.png"], tags: ['UX Design', 'Figma', 'React.JS'], link: ['https://www.junehomes.com'] }
   const proj1 = { name: 'June ggg ONE One GGG OOO ggg', class_short: 'June', val: 1, isCS: true, imgs: ["testProjCover1.png"], tags: ['UX Design', 'Figma', 'React.JS'], link: ['https://www.junehomes.com'] }
   const proj2 = { name: 'Two', val: 2, isCS: false, imgs: ["test/pic1.png"], tags: ['2UX Design', 'Figma', 'React.JS'], link: [] }
   const proj3 = { name: 'three', val: 3, isCS: false, imgs: ["test/pic2.png"], tags: ['3UX Design', 'Figma', 'React.JS'], link: [] }
@@ -294,13 +295,13 @@ const Works = ({ projects, toggleLight }) => {
   const proj8 = { name: 'eight', val: 8, isCS: false, imgs: ["testProjCover8.png"], tags: ['8UX Design', 'Figma', 'React.JS'], link: [] }
   const proj9 = { name: 'nine', val: 9, isCS: false, imgs: ["testProjCover9.png", ""], tags: ['9UX Design', 'Figma', 'React.JS'], link: [] }
   
-  const myProjects = [ proj1, proj2, proj3, proj4, proj5, proj6, proj7, proj8, proj9 ];
+  const myProjects = [ proj0, proj1, proj2, proj3, proj4, proj5, proj6, proj7, proj8, proj9 ];
 
   const ListContainerRef = useRef();
 
   let observerOptions = {
     root: ListContainerRef.target,
-    rootMargin: '-48% 0px -51% 0px',
+    rootMargin: '-12% 0px -87.8% 0px',
     // threshold: 0.1
   }
 
@@ -327,7 +328,7 @@ const Works = ({ projects, toggleLight }) => {
       //     console.log("projects list", projectsList);
       //     console.log('root', projectsList.root);
       // }, observerOptions)
-      for (var i = 0; i < projects.length; i++) { 
+      for (var i = 0; i < myProjects.length; i++) { 
           // console.log('curr', myRefs[i].current);
           // console.log('root', root);
           const observer = new IntersectionObserver((projectsList) => {
@@ -386,7 +387,7 @@ const Works = ({ projects, toggleLight }) => {
   
 
   //MAIN PROJECTS LIST
-  let projects_list = projects.map((project, index) => {
+  let projects_list = myProjects.map((project, index) => {
 
     let project_tags = project.tags.map((tag, index) => (
       <ProjectTag>{tag}</ProjectTag>
@@ -394,98 +395,74 @@ const Works = ({ projects, toggleLight }) => {
 
     // let height_varPreview = "calc(120px + " + ((index) * (90 / (projects.length + 3))) + "vh)";
     
-    if (project.class_short == "June") {
-      // console.log('comparison', projectValue, index);
-      return (
-        <WorkItem id={index} ref={myRefs[index]} currProj={projectValue} thisProj={index}
-          // as={motion.div}
-          // initial="initial"
-          // animate="in"
-          // exit={projectValue === index ? "outSelected" : "outOther"}
-          // variants={pageVariants3}
-          // transition={{
-          //   type: "tween",
-          //   ease: [0.7, 0, 0.13, 1],
-          //   duration: 0.8,
-          //   delay: index * 0.16,
-          // }}
-        >
-          <DeskWorkItem onClick={()=> handleMobileClick(index)}>
-            <TopLine>
-                <CaseStudy>CASE STUDY</CaseStudy>
+    return (
+      <WorkItem id={index} ref={myRefs[index]} currProj={projectValue} thisProj={index}>
+          <DeskWorkItem onClick={()=> handleClick(index)}>
+            {/* <TopLine>
                 <TagsContainer>
                   {project_tags}
                 </TagsContainer>
-              </TopLine>
+              </TopLine> */}
               <WorkTitle>{project.name}</WorkTitle>
           </DeskWorkItem>
-          <MobileWorkItem onClick={()=> handleMobileClick(index)}>
-            <TopLine>
-              <CaseStudy>CASE STUDY</CaseStudy>
+          <MobileWorkItem onClick={()=> handleClick(index)}>
+            {/* <TopLine>
               <TagsContainer>
                 {project_tags}
               </TagsContainer>
-            </TopLine>
+            </TopLine> */}
             <WorkTitle>{project.name}</WorkTitle>
           </MobileWorkItem>
         </WorkItem>
-      )
-    } else {
-      // console.log('comparison', projectValue, index);
-      return (
-        <WorkItem id={index} ref={myRefs[index]} currProj={projectValue} thisProj={index}>
-          <DeskWorkItem onClick={()=> handleMobileClick(index)}>
-            <TopLine>
-                <TagsContainer>
-                  {project_tags}
-                </TagsContainer>
-              </TopLine>
-              <WorkTitle>{project.name}</WorkTitle>
-          </DeskWorkItem>
-          <MobileWorkItem onClick={()=> handleMobileClick(index)}>
-            <TopLine>
-              <TagsContainer>
-                {project_tags}
-              </TagsContainer>
-            </TopLine>
-            <WorkTitle>{project.name}</WorkTitle>
-          </MobileWorkItem>
-        </WorkItem>
-      )
-    }
+    );
+    // if (project.class_short == "June") {
+    //   // console.log('comparison', projectValue, index);
+    //   return (
+    //     <WorkItem id={index} ref={myRefs[index]} currProj={projectValue} thisProj={index}>
+    //       <DeskWorkItem onClick={()=> handleMobileClick(index)}>
+    //         {/* <TopLine>
+    //             <CaseStudy>CASE STUDY</CaseStudy>
+    //             <TagsContainer>
+    //               {project_tags}
+    //             </TagsContainer>
+    //         </TopLine> */}
+    //           <WorkTitle>{project.name}</WorkTitle>
+    //       </DeskWorkItem>
+    //       <MobileWorkItem onClick={()=> handleMobileClick(index)}>
+    //         {/* <TopLine>
+    //           <CaseStudy>CASE STUDY</CaseStudy>
+    //           <TagsContainer>
+    //             {project_tags}
+    //           </TagsContainer>
+    //         </TopLine> */}
+    //         <WorkTitle>{project.name}</WorkTitle>
+    //       </MobileWorkItem>
+    //     </WorkItem>
+    //   )
+    // } else {
+    //   // console.log('comparison', projectValue, index);
+    //   return (
+    //     <WorkItem id={index} ref={myRefs[index]} currProj={projectValue} thisProj={index}>
+    //       <DeskWorkItem onClick={()=> handleMobileClick(index)}>
+    //         {/* <TopLine>
+    //             <TagsContainer>
+    //               {project_tags}
+    //             </TagsContainer>
+    //           </TopLine> */}
+    //           <WorkTitle>{project.name}</WorkTitle>
+    //       </DeskWorkItem>
+    //       <MobileWorkItem onClick={()=> handleMobileClick(index)}>
+    //         {/* <TopLine>
+    //           <TagsContainer>
+    //             {project_tags}
+    //           </TagsContainer>
+    //         </TopLine> */}
+    //         <WorkTitle>{project.name}</WorkTitle>
+    //       </MobileWorkItem>
+    //     </WorkItem>
+    //   )
+    // }
   });
-
-  //test projects list
-  // const { ref: refName, inView: inView2, entry: entry2 } = useInView({
-  //   rootMargin: '-210px'
-  // });
-
-  // console.log('current proj index', projectValue);
-  // console.log('curr project visit', myProjects[projectValue].link.length);
-
-  // let tagsDisplayed = projects[projectValue].tags.map((tag, index) => (
-  //   <ProjTags
-  //     tag={tag}
-  //     key={tag.id}
-  //     index={index}
-  //     // tagsLength={4}
-  //   />
-  // ));
-
-  // let visit_link = () => {
-  //   if (projects[projectValue].link.length > 0) {
-  //     // console.log("got to link");
-  //     return (
-  //       <VisitLink href={projects[projectValue].link[0]} target="_blank">
-  //         Visit ↗
-  //       </VisitLink>
-  //     )
-  //   } else {
-  //     return (
-  //       <></>
-  //     );
-  //   }
-  // }
 
 
   // function ProjContent({ project }) {
@@ -527,8 +504,8 @@ const Works = ({ projects, toggleLight }) => {
 
   // console.log(window.screen.height);
 
-  let rightImageSource = "imgs/" + projects[projectValue].imgs[0];
-  // let rightImageSource = myProjects[projectValue].imgs[0];
+  // let rightImageSource = "imgs/" + projects[projectValue].imgs[0];
+  let rightImageSource = myProjects[projectValue].imgs[0];
   let height_var = "calc(110px + " + ((projectValue) * (88 / (projects.length + 1))) + "vh)";
   let mobile_height_var = "calc(134px + " + ((projectValue) * (54 / (projects.length + 4))) + "vh)";
 
@@ -549,6 +526,7 @@ const Works = ({ projects, toggleLight }) => {
       //     duration: 0.5,
       // }}
     >
+        <MarkerL />
       {/* <ThemeProvider theme={theme}> */}
       {/* <Divider
           as={motion.div}
@@ -592,9 +570,9 @@ const Works = ({ projects, toggleLight }) => {
       <WorkListContainer id="topWorks"
         ref={ListContainerRef}
         as={motion.div}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0, transition: {
+        initial={{ x: 0, y: '100vh' }}
+        animate={{ x: 0, y: '0vh' }}
+        exit={{ x: 0, y: '100vh', transition: {
           type: "tween",
           ease: [0.7, 0, 0.13, 1],
           duration: 0.2,
@@ -602,13 +580,12 @@ const Works = ({ projects, toggleLight }) => {
         transition={{
             type: "tween",
             ease: [0.7, 0, 0.13, 1],
-            duration: 0.5,
-            delay: 0.5
+            duration: 0.3,
+            // delay: 0.4
         }}
       >
         {/* {project_names} */}
         {/* <HitMarker /> */}
-        {/* <Marker /> */}
         {/* <MarkerL>&gt;</MarkerL> */}
         {/* <MarkerR /> */}
         {projects_list}
@@ -629,20 +606,21 @@ const Works = ({ projects, toggleLight }) => {
             type: "tween",
             ease: [0.7, 0, 0.13, 1],
             duration: 0.2,
-            delay: 0.55
+            delay: 0.5
         }}
         >
-          <img src={rightImageSource}/>
           <WorkName>{projects[projectValue].class}</WorkName>
-          <WorkDesc>{projects[projectValue].semester}</WorkDesc>
+          {/* <WorkName>{myProjects[projectValue].semester}</WorkName> */}
+          <WorkName>{projects[projectValue].desc}</WorkName>
+          {/* <WorkDesc><p>40.70270,-73.91847</p><p>Brooklyn, NY</p></WorkDesc> */}
       </WorkPreview>
+      
       {/* <WorksContainer id="topWorks" zVal="999">
         {project_previews}
       </WorksContainer> */}
       {/* </WorksContainerMove> */}
 
-      <ContentBg
-        // bgFileName={rightImageSource}
+      {/* <ContentBg
         as={motion.div}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -659,7 +637,7 @@ const Works = ({ projects, toggleLight }) => {
       >
         <img src={rightImageSource}/>
         <BgBlur />
-      </ContentBg>
+      </ContentBg> */}
 
       {/* <ClickableArea
         to={"/" + projectValue + "/works"}
@@ -707,7 +685,7 @@ const Works = ({ projects, toggleLight }) => {
         }}>
         <WorkImage
           as={motion.div}
-          initial={{ opacity: 0, scale: 0.97 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1}}
           exit={{ opacity: 0, scale: 0.99, transition: {
                 type: "tween",
@@ -717,8 +695,8 @@ const Works = ({ projects, toggleLight }) => {
           transition={{
               type: "tween",
               ease: [0.7, 0, 0.13, 1],
-              duration: 0.7,
-              delay: 0.5,
+              duration: 0.5,
+              delay: 0.3,
           }}
         >
           <img src={rightImageSource}/>

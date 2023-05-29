@@ -4,8 +4,10 @@ export const Container = styled.div`
     z-index: 1000;
     display: block;
     position: fixed;
-    width: 26vw;
-    height: 100vh;
+    left: 30vw;
+    top: 23.75vh;
+    width: 40vw;
+    height: 52vh;
     overflow: hidden;
 
     /* opacity: 0.7;  */
@@ -13,7 +15,9 @@ export const Container = styled.div`
     background: ${props => props.theme.bgSide};
     backdrop-filter: blur(12px);
 
-    border-right: 1px solid ${props => props.theme.border};;
+    /* opacity: 0.5; */
+
+    border: 1px solid ${props => props.theme.secondary};;
     /* filter: blur(-2x); */
     /* -webkit-filter: blur(-1.5px); */
     /* cursor: url("/imgs/cursor1.svg"), auto; */
@@ -30,9 +34,9 @@ export const Content = styled.div`
     overflow: hidden;
     width: 100%;
     z-index: 999;
-    padding-right: 24px;
-    padding-left: 20px;
-    padding-top: 20px;
+    padding-right: 14px;
+    padding-left: 14px;
+    padding-top: 14px;
     pointer-events: none;
 
     text-align: left;
@@ -53,44 +57,39 @@ export const Logo = styled.div`
 export const Name = styled.div`
     display: flex;
     line-height: 100%;
-    padding-top: 22px;
-    padding-bottom: 16px;
+    
+    /* padding-top: 22px; */
+    padding-bottom: 30px;
 
     color: ${props => props.theme.primary};;
-    font-size: 24px;
-    font-family: 'OpenSans';
-    line-height: 31.2px;
+    font-size: 14px;
 `
 
 export const Styled1 = styled.span`
     display: flex; 
     width: 100%;
-    
     color: ${props => props.theme.secondary};;
-    font-size: 12px;
-    font-family: 'OpenSans';
-    line-height: 16.7px;
+    font-size: 14px;
+    padding-bottom: 10px;
 `
 
 export const Styled2 = styled.div`
     display: flex;
     // padding-left: 22px;
-    width: 100%;
-    margin-top: 18px;
-    /* padding-bottom: 4px; */
+    width: 88%;
+    /* margin-top: 18px; */
     
     color: ${props => props.theme.primary};;
     font-size: 14px;
-    font-family: 'OpenSans';
-    line-height: 21px;
 `
 
 export const Bottom = styled.div`
-    position: fixed;
-    padding-left: 20px;
-    padding-right: 20px;
-    bottom: 22px;
+    position: absolute;
+    padding-left: 14px;
+    padding-right: 14px;
+    bottom: 12px;
     width: 100%;
+
     text-align: left;
     overflow: hidden;
     z-index: 997;
@@ -98,15 +97,15 @@ export const Bottom = styled.div`
 
 export const Close = styled.p`
     z-index: 999;
+    position: absolute;
+    top: 14px;
+    right: 14px;
     color: ${props => props.theme.primary};;
-    font-family: 'SS3';
     font-size: 14px;
 
-    padding-top: 30px;
-
     &:hover {
+        cursor: pointer;
         text-decoration: underline;
-        opacity: 0.8;
     }
 `
 
@@ -243,16 +242,16 @@ export const Social = styled.a`
 
     overflow: hidden;
 
-    padding-top: 8px;
-    font-family: 'SS3';
-    font-size: 14px;
+    padding-top: 4px;
+    /* font-family: 'SS3'; */
+    font-size: 26px;
 
     color: ${props => props.theme.primary};;
     text-decoration: none;
 
     &:hover {
         text-decoration: underline;
-    
+        cursor: pointer;
     }
 
 `
