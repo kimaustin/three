@@ -12,10 +12,14 @@ import {
   HitMarker,
   MobileWorkItem,
   DeskWorkItem,
+  Link,
   WorkArrow,
   ClickableArea,
   ProjectTag,
+  WorkDate,
+  Desc,
   ContentBg,
+  NavDOMLinkAbout,
   WorkListContainer,
   DetailsExpanded,
   WorkName,
@@ -42,17 +46,43 @@ import {
   BgBlur,
   WorkList,
   CaseStudy,
-  Divider
+  Divider,
+  FiltersContainer,
+  Filter
 } from "./WorkElements";
 
 // Scrollbar.init(document.querySelector('#my-scrollbar'), options);
 
 
-const Works = ({ projects, toggleLight }) => {
+const Works = ({ projects, toggle, aboutToggle, clearFilters, filters, photoFilter, audioFilter, meFilter, caseFilter, fabricFilter }) => {
 
   const [projectDisplayed, setProjectDisplayed] = useState(0);
   const [hoverAllowed, setHoverAllowed] = useState(true);
   const [imageZoomed, setImageZoomed] = useState(false);
+
+  // //filters
+  // const [filters, setFilters] = useState(["case"]);
+
+  // let updateFilters = (type) => {
+  //   const tempFilters = [...filters];
+
+  //   if (filters.includes(type)) {
+  //     const index = filters.indexOf(type);
+  //     tempFilters.splice(index, 1);
+
+  //     console.log("removed: ", type);
+  //     console.log("filters", tempFilters);
+
+  //     setFilters(tempFilters);
+  //   } else {
+  //     tempFilters.push(type);
+  //     console.log("added: ", type);
+  //     console.log("filters", tempFilters);
+
+  //     setFilters(tempFilters);
+  //   }
+  // }
+
   // const [animateProject, setAnimateProject] = useState(999);
 
   const { ref: myRef1, inView, entry } = useInView({
@@ -283,25 +313,28 @@ const Works = ({ projects, toggleLight }) => {
   //   }
   // });
 
-
-  const proj0 = { name: '//', class_short: 'June', val: 1, isCS: true, imgs: ["testProjCover1.png"], tags: ['UX Design', 'Figma', 'React.JS'], link: ['https://www.junehomes.com'] }
-  const proj1 = { name: 'June ggg ONE One GGG OOO ggg', class_short: 'June', val: 1, isCS: true, imgs: ["testProjCover1.png"], tags: ['UX Design', 'Figma', 'React.JS'], link: ['https://www.junehomes.com'] }
-  const proj2 = { name: 'Two', val: 2, isCS: false, imgs: ["test/pic1.png"], tags: ['2UX Design', 'Figma', 'React.JS'], link: [] }
-  const proj3 = { name: 'three', val: 3, isCS: false, imgs: ["test/pic2.png"], tags: ['3UX Design', 'Figma', 'React.JS'], link: [] }
-  const proj4 = { name: 'four', val: 4, isCS: true, imgs: ["testProjCover4.png"], tags: ['4UX Design', 'Figma', 'React.JS'], link: ['https://www.junehomes.com'] }
-  const proj5 = { name: 'five', val: 5, isCS: false, imgs: ["testProjCover5.png"], tags: ['5UX Design', 'Figma', 'React.JS'], link: [] }
-  const proj6 = { name: 'six', val: 6, isCS: false, imgs: ["testProjCover6.png"], tags: ['6UX Design', 'Figma', 'React.JS'], link: [] }
-  const proj7 = { name: 'seven', val: 7, isCS: true, imgs: ["testProjCover7.png"], tags: ['7UX Design', 'Figma', 'React.JS'], link: [] }
-  const proj8 = { name: 'eight', val: 8, isCS: false, imgs: ["testProjCover8.png"], tags: ['8UX Design', 'Figma', 'React.JS'], link: [] }
-  const proj9 = { name: 'nine', val: 9, isCS: false, imgs: ["testProjCover9.png", ""], tags: ['9UX Design', 'Figma', 'React.JS'], link: [] }
+  const proj1 = { name: 'June ggg ONE One GGG OOO ggg', type: 'photo', semester: 'mar 2023', class_short: 'June', val: 1, isCS: true, imgs: ["testProjCover1.png"], tags: ['UX Design', 'Figma', 'React.JS'], link: ['https://www.junehomes.com'] }
+  const proj2 = { name: 'Two', semester: 'june 2022', type: 'case', val: 2, isCS: false, imgs: ["test/pic1.png"], tags: ['2UX Design', 'Figma', 'React.JS'], link: [] }
+  const proj3 = { name: 'three', semester: 'apr 2023', type: 'fabric', val: 3, isCS: false, imgs: ["test/pic2.png"], tags: ['3UX Design', 'Figma', 'React.JS'], link: [] }
+  const proj4 = { name: 'four', semester: 'dec 2021', type: 'audio', val: 4, isCS: true, imgs: ["testProjCover4.png"], tags: ['4UX Design', 'Figma', 'React.JS'], link: ['https://www.junehomes.com'] }
+  const proj5 = { name: 'five', semester: 'nov 2022', type: 'case', val: 5, isCS: false, imgs: ["testProjCover5.png"], tags: ['5UX Design', 'Figma', 'React.JS'], link: [] }
+  const project_0 = { name: 'Heatmaps and Stress Analysis for Digital Objects', semester: 'nov 2022', type: 'case', val: 5, isCS: false, imgs: ["heatmap.jpeg"], tags: ['5UX Design', 'Figma', 'React.JS'], link: ['https://www.are.na/goreum-b/heatmaps-amp-stress-analysis'] }
+  const proj6 = { name: 'six', semester: 'mar 2023', type: 'case', val: 6, isCS: false, imgs: ["testProjCover6.png"], tags: ['6UX Design', 'Figma', 'React.JS'], link: [] }
+  const proj7 = { name: 'seven', semester: 'august 2022', type: 'photo', val: 7, isCS: true, imgs: ["testProjCover7.png"], tags: ['7UX Design', 'Figma', 'React.JS'], link: [] }
+  const proj8 = { name: 'eight', semester: 'may 2022', type: 'case', val: 8, isCS: false, imgs: ["testProjCover8.png"], tags: ['8UX Design', 'Figma', 'React.JS'], link: [] }
+  const proj9 = { name: 'nine', semester: 'dec 2025', type: 'photo', val: 9, isCS: false, imgs: ["testProjCover9.png", ""], tags: ['9UX Design', 'Figma', 'React.JS'], link: [] }
+  const proj10 = { name: 'ten!!!!!!!!!!', semester: 'dec 2025', type: 'audio', val: 9, isCS: false, imgs: ["testProjCover9.png", ""], tags: ['9UX Design', 'Figma', 'React.JS'], link: [] }
+  const proj11 = { name: 'this is eleven', semester: 'dec 3001', type: 'case', val: 9, isCS: false, imgs: ["testProjCover9.png", ""], tags: ['9UX Design', 'Figma', 'React.JS'], link: [] }
+  const proj12 = { name: 'nektine', semester: 'apr 2023', type: 'me', val: 3, isCS: false, imgs: ["test/pic2.png"], tags: ['3UX Design', 'Figma', 'React.JS'], link: [] }
+  const proj13 = { name: 'austin emmanuel kim', semester: 'apr 2023', type: 'me', val: 3, isCS: false, imgs: ["test/pic2.png"], tags: ['3UX Design', 'Figma', 'React.JS'], link: [] }
   
-  const myProjects = [ proj0, proj1, proj2, proj3, proj4, proj5, proj6, proj7, proj8, proj9 ];
+  const myProjects = [ proj1, proj2, proj3, proj4, proj5, project_0, proj6, proj7, proj8, proj9, proj10, proj11, proj12, proj13 ];
 
   const ListContainerRef = useRef();
 
   let observerOptions = {
     root: ListContainerRef.target,
-    rootMargin: '-12% 0px -87.8% 0px',
+    rootMargin: '-15.4% 0px -84.1% 0px',
     // threshold: 0.1
   }
 
@@ -333,17 +366,19 @@ const Works = ({ projects, toggleLight }) => {
           // console.log('root', root);
           const observer = new IntersectionObserver((projectsList) => {
             if (projectsList[0].isIntersecting) {
+              console.log("intersected item:", projectsList[0]);
+              console.log("testing type:", projectsList[0].target.type); 
+              if (filters.includes(projectsList[0].target.type)) {
+                console.log('INTERSECTED BUT DO NOT CHANGE');
               // console.log('scroll - current proj index', projectValue);
-              setProjectValue(projectsList[0].target.id);
-              // setAnimateProject(i);
-              projectsList[0].target.style.opacity = 1.0;
-              // projectsList[0].target.style.width = "95%";
-              // projectsList[0].target.style.marginLeft = "5%";
-              // projectsList[0].target.style.color = 'white';
+              } else {
+                setProjectValue(projectsList[0].target.id);
+              // projectsList[0].target.style.textdecoration = 'underline';
+              }
             } else {
               // setAnimateProject(999);
               // projectsList[0].target.style.color = '#B7B7B7';
-              projectsList[0].target.style.opacity = 0.4;
+              // projectsList[0].target.style.opacity = 0.4;
               // projectsList[0].target.style.width = "100%";
               // projectsList[0].target.style.marginLeft = 0;
             }
@@ -395,8 +430,12 @@ const Works = ({ projects, toggleLight }) => {
 
     // let height_varPreview = "calc(120px + " + ((index) * (90 / (projects.length + 3))) + "vh)";
     
+    // if (project.type == '')
+
+      // IF EMPTY, RETURN ALL
+
     return (
-      <WorkItem id={index} ref={myRefs[index]} currProj={projectValue} thisProj={index}>
+      <WorkItem id={index} ref={myRefs[index]} selected={(index == projectValue) ? true : false } filtered={(filters.length < 2 || (filters.includes(project.type))) ? true : false }>
           <DeskWorkItem onClick={()=> handleClick(index)}>
             {/* <TopLine>
                 <TagsContainer>
@@ -526,7 +565,17 @@ const Works = ({ projects, toggleLight }) => {
       //     duration: 0.5,
       // }}
     >
-        <MarkerL />
+      <FiltersContainer>
+        {/* <button onClick={clearFilters}>clear</button> */}
+        <Filter onClick={meFilter} active={(filters.includes("me")) ? true : false }>me</Filter>
+        <Filter onClick={caseFilter} active={(filters.includes("case")) ? true : false }>case studies</Filter>
+        <Filter onClick={photoFilter} active={(filters.includes("photo")) ? true : false }>photo</Filter>
+        <Filter onClick={audioFilter} active={(filters.includes("audio")) ? true : false }>audio</Filter>
+        <Filter onClick={fabricFilter} active={(filters.includes("fabric")) ? true : false }>fabric</Filter>
+        <NavDOMLinkAbout thispage={true} onClick={() => toggle('info')}>contact</NavDOMLinkAbout>
+        {/* <MobileMenuToggle onClick={mobileToggle}>Menu/About</MobileMenuToggle> */}
+      </FiltersContainer>
+        {/* <MarkerL /> */}
       {/* <ThemeProvider theme={theme}> */}
       {/* <Divider
           as={motion.div}
@@ -588,31 +637,35 @@ const Works = ({ projects, toggleLight }) => {
         {/* <HitMarker /> */}
         {/* <MarkerL>&gt;</MarkerL> */}
         {/* <MarkerR /> */}
+        {/* <p style={{ marginBottom: '20px' }}>//</p> */}
         {projects_list}
       </WorkListContainer>
-
+      <WorkDate>{myProjects[projectValue].semester}, {myProjects[projectValue].type}</WorkDate>
       <WorkPreview
+        filtered={(filters.length < 2 || (filters.includes(myProjects[projectValue].type))) ? true : false }
         heightVar={height_var}
         mobileHVar={mobile_height_var}
-        as={motion.div}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0, transition: {
-              type: "tween",
-              ease: [0.7, 0, 0.13, 1],
-              duration: 0.1
-          } }}
-        transition={{
-            type: "tween",
-            ease: [0.7, 0, 0.13, 1],
-            duration: 0.2,
-            delay: 0.5
-        }}
+        // as={motion.div}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // exit={{ opacity: 0, transition: {
+        //       type: "tween",
+        //       ease: [0.7, 0, 0.13, 1],
+        //       duration: 0.1
+        //   } }}
+        // transition={{
+        //     type: "tween",
+        //     ease: [0.7, 0, 0.13, 1],
+        //     duration: 0.2,
+        //     delay: 0.5
+        // }}
         >
-          <WorkName>{projects[projectValue].class}</WorkName>
+          {/* <WorkName>{projects[projectValue].class}</WorkName> */}
           {/* <WorkName>{myProjects[projectValue].semester}</WorkName> */}
-          <WorkName>{projects[projectValue].desc}</WorkName>
-          {/* <WorkDesc><p>40.70270,-73.91847</p><p>Brooklyn, NY</p></WorkDesc> */}
+          <Desc>{projects[projectValue].desc}</Desc>
+          <br />
+          <Link><a href={(myProjects[projectValue].link.length > 0 ? myProjects[projectValue].link[0] : '' )} target={"blank"}>{myProjects[projectValue].link[0]}</a></Link>
+          {/* <a href={"http://google.com"}>this is a link</a> */}
       </WorkPreview>
       
       {/* <WorksContainer id="topWorks" zVal="999">
@@ -670,34 +723,37 @@ const Works = ({ projects, toggleLight }) => {
       </ClickableArea> */}
 
       <WorkImageContainer
-        as={motion.div}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0, transition: {
-            type: "tween",
-            ease: [0.7, 0, 0.13, 1],
-            duration: 0.3
-          }}}
-        transition={{
-            type: "tween",
-            ease: [0.7, 0, 0.13, 1],
-            duration: 0.6,
-        }}>
+        filtered={(filters.length < 2 || (filters.includes(myProjects[projectValue].type))) ? true : false }
+        // as={motion.div}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // exit={{ opacity: 0, transition: {
+        //     type: "tween",
+        //     ease: [0.7, 0, 0.13, 1],
+        //     duration: 0.3
+        //   }}}
+        // transition={{
+        //     type: "tween",
+        //     ease: [0.7, 0, 0.13, 1],
+        //     duration: 0.6,
+        // }}
+        >
         <WorkImage
-          as={motion.div}
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1}}
-          exit={{ opacity: 0, scale: 0.99, transition: {
-                type: "tween",
-                ease: [0.7, 0, 0.13, 1],
-                duration: 0.2,
-            } }}
-          transition={{
-              type: "tween",
-              ease: [0.7, 0, 0.13, 1],
-              duration: 0.5,
-              delay: 0.3,
-          }}
+          // filtered={(filters.length < 2 || (filters.includes(myProjects[projectValue].type))) ? true : false }
+          // as={motion.div}
+          // initial={{ opacity: 0, scale: 0.98 }}
+          // animate={{ opacity: 1, scale: 1}}
+          // exit={{ opacity: 0, scale: 0.99, transition: {
+          //       type: "tween",
+          //       ease: [0.7, 0, 0.13, 1],
+          //       duration: 0.2,
+          //   } }}
+          // transition={{
+          //     type: "tween",
+          //     ease: [0.7, 0, 0.13, 1],
+          //     duration: 0.5,
+          //     delay: 0.3,
+          // }}
         >
           <img src={rightImageSource}/>
           {/* <img src={"testProjCover" + projectValue + ".png"}/> */}

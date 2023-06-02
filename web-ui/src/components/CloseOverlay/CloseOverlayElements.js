@@ -23,3 +23,16 @@ export const Overlay = styled.div`
     /* opacity: 0.4; */
     /* backdrop-filter: blur(13px); */
 `
+
+export const Fun = styled.div`
+    width: 100%;
+    height: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        align-items: center;
+        object-fit: scale-down;
+    }
+`

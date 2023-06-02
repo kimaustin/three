@@ -24,7 +24,6 @@ const Photography = ({ projects }) => {
     return (
       <ImageContainer
         // onClick={handleImgClick(index)}
-
       >
         <img 
           src={'film/film' + index + '.jpg'} 

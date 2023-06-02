@@ -5,14 +5,14 @@ export const Container = styled.div`
     display: block;
     position: fixed;
     left: 30vw;
-    top: 23.75vh;
+    top: 23.5vh;
     width: 40vw;
     height: 52vh;
     overflow: hidden;
 
     /* opacity: 0.7;  */
     /* background: #403939; */
-    background: ${props => props.theme.bgSide};
+    background: ${props => props.theme.bg};
     backdrop-filter: blur(12px);
 
     /* opacity: 0.5; */
@@ -34,9 +34,9 @@ export const Content = styled.div`
     overflow: hidden;
     width: 100%;
     z-index: 999;
-    padding-right: 14px;
-    padding-left: 14px;
-    padding-top: 14px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 16px;
     pointer-events: none;
 
     text-align: left;
@@ -61,7 +61,7 @@ export const Name = styled.div`
     /* padding-top: 22px; */
     padding-bottom: 30px;
 
-    color: ${props => props.theme.primary};;
+    color: ${props => props.theme.secondary};
     font-size: 14px;
 `
 
@@ -75,20 +75,32 @@ export const Styled1 = styled.span`
 
 export const Styled2 = styled.div`
     display: flex;
-    // padding-left: 22px;
+    padding-bottom: 10px;
     width: 88%;
     /* margin-top: 18px; */
     
     color: ${props => props.theme.primary};;
     font-size: 14px;
+    line-height: 143%;
+`
+
+export const Styled3 = styled.div`
+    position: absolute;
+    right: 16px;
+    bottom: 14px;
+
+    text-align: right;
+    font-size: 11px;
+    line-height: 145%;
+    opacity: 0.7;
 `
 
 export const Bottom = styled.div`
     position: absolute;
-    padding-left: 14px;
-    padding-right: 14px;
-    bottom: 12px;
-    width: 100%;
+    padding-left: 16px;
+    /* padding-right: 50%; */
+    bottom: 14px;
+    /* width: 100%; */
 
     text-align: left;
     overflow: hidden;
@@ -98,8 +110,8 @@ export const Bottom = styled.div`
 export const Close = styled.p`
     z-index: 999;
     position: absolute;
-    top: 14px;
-    right: 14px;
+    top: 16px;
+    right: 16px;
     color: ${props => props.theme.primary};;
     font-size: 14px;
 

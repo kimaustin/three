@@ -24,10 +24,10 @@ const Container = styled.div`
     /* z-index: -1; */
     /* display: grid; */
     position: fixed;
-    right: 18px;
+    right: 10px;
     top: 0px;
     height: 100vh;
-    padding: 22px 0 22px 0;
+    padding: 14px 0 22px 0;
 
     /* border: 2px solid blue; */
 
@@ -37,7 +37,7 @@ const Container = styled.div`
 
 const Bottom = styled.div`
     position: absolute;
-    bottom: 22px;
+    bottom: 14px;
     right: 0;
 `
 

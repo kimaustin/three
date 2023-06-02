@@ -106,7 +106,7 @@ const Main = () => {
             >
               {traits_list}
             </AboutMe>
-            <IndexLink currpage={currPage} thispage={'works'} to="/works">Index</IndexLink>
+            <IndexLink currpage={currPage} thispage={'works'} to="/everythingicaretoshare">Index</IndexLink>
             <Actions
               as={motion.div} 
               initial={{ x: 0, y: '-100vh' }} 

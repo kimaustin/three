@@ -1,6 +1,6 @@
 // import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
-import { Container, Overlay } from './CloseOverlayElements';
+import { Container, Fun, Overlay } from './CloseOverlayElements';
 
 const CloseOverlay = ({isOpen, aboutToggle, toggleAbout, mobileToggle}) => {
     return (
@@ -33,7 +33,11 @@ const CloseOverlay = ({isOpen, aboutToggle, toggleAbout, mobileToggle}) => {
                 duration: 0.0
                 }}
                 onClick={toggleAbout}
-            />
+            >
+                <Fun>
+                    <img src="star.png"/>
+                </Fun>
+            </Overlay>
         </Container>
     );
 };

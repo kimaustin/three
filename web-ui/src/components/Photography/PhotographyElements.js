@@ -9,13 +9,15 @@ export const Container = styled.div`
     /* grid-template-rows: repeat(auto-fill, 15vh); */
     grid-gap: 6px;
     justify-content: space-evenly;
-    left: 46px;
+    left: 5vw;
     top: 0;
-    width: calc(100vw - 46px);
+    /* width: calc(30vw); */
+    width: 100vw;
     height: 100vh;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 110px;
+    /* padding-left: 20px; */
+    padding-right: 70vw;
+    padding-top: 100px;
+    padding-bottom: 50px;
     
     overflow-x: hidden;
     overflow-y: scroll;
@@ -25,7 +27,7 @@ export const Container = styled.div`
     ::-webkit-scrollbar {
         display: none;
     }
-    /* background: ${props => props.theme.bgN}; */
+    /* background: green; */
 
     @media screen and (max-width: 767px) {
         grid-template-columns: repeat(auto-fill, 27.5vw);

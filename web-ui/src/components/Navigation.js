@@ -52,8 +52,8 @@ const Navigation = ({toggle, aboutToggle}) => {
     return (
         <Container>
             <NavLink currpage={currPage} thispage={'main'} to="/">me</NavLink>
-            <NavLink currpage={currPage} thispage={'works'} to="/works">case studies</NavLink>
-            <NavLink currpage={currPage} thispage={'photo'} to="/photography">photo</NavLink>
+            <NavLink currpage={currPage} thispage={'works'} to="/works">works & studies</NavLink>
+            <NavLink currpage={currPage} thispage={'photo'} to="/photo">photo</NavLink>
             <NavLink currpage={currPage} thispage={'test'} to="/test">audio</NavLink>
             <NavLink currpage={currPage} thispage={'fabric'} to="/fabric">fabric</NavLink>
             <NavDOMLinkAbout currpage={aboutToggle} thispage={true} onClick={() => toggle('info')}>contact</NavDOMLinkAbout>
@@ -70,15 +70,16 @@ export default Navigation;
 const Container = styled.div`
     position: fixed;
     top: 0;
-    left: 40vw;
+    left: 38vw;
+    /* left: 50vw; */
     display: grid;
-    margin-top: 27vh;
+    margin-top: 28vh;
     /* text-align: left; */
     /* height: ; */
     /* width: 46px; */
     /* width: 100vw; */
     /* background: #1E1C1F; */
-    /* background: green; */
+    background: green;
     /* background: ${props => props.theme.bgNav}; */
     /* backdrop-filter: blur(12px); */
     /* border-right: .5px solid ${props => props.theme.border}; */
@@ -97,10 +98,10 @@ const Container = styled.div`
 
 const NavLink = styled(LinkRouter)`
     display: grid;
-    padding-bottom: 7px;
+    padding-bottom: 8px;
     color: ${props => props.theme.primary};
     text-decoration: none;
-    font-size: 36px;
+    font-size: 38px;
 
     opacity: 0.3;
     /* font-family: "SS3"; */
@@ -108,7 +109,7 @@ const NavLink = styled(LinkRouter)`
     /* border: 1px solid green; */
 
     &:hover {
-        opacity: 0.9;
+        opacity: 0.85;
     }
 
     @media screen and (max-height: 767px) {
@@ -119,7 +120,7 @@ const NavDOMLinkAbout = styled.div`
     text-decoration: none;
     padding-top: 20px;
     
-    font-size: 36px;
+    font-size: 38px;
     color: ${props => props.theme.primary};
     opacity: 0.3;
 

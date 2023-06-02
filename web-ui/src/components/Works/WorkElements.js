@@ -17,7 +17,7 @@ export const Container = styled(motion.div)`
 
   overflow-y: hidden;
   overflow-x: none;
-  cursor: crosshair;
+  /* cursor: crosshair; */
 
   /* background: ${props => props.theme.bg}; */
   /* background: green; */
@@ -158,17 +158,16 @@ export const ClickableArea = styled.div`
 export const WorkListContainer = styled.div`
   position: fixed;
   top: 0;
-
   left: 0;
   width: calc(100vw);
   height: calc(100vh);
   overflow-y: scroll;
   /* padding-bottom: calc(51vh - 62px + 0.8rem); */
-  padding-bottom: calc(86vh - 13px);
+  padding-bottom: calc(83vh - 6px);
   /* padding-top: calc(48vh - 128px - 1.8rem + 103px); */
-  padding-top: calc(12vh);
-  padding-left: 13.5vw;
-  padding-right: calc(70vw);
+  padding-top: calc(15vh);
+  padding-left: 11vw;
+  padding-right: calc(71vw);
   z-index: 999;
 
   overflow-x: hidden; 
@@ -193,21 +192,26 @@ export const WorkListContainer = styled.div`
   }
 `;
 
+
 export const WorkItem = styled.div`
   // display: grid;
   // grid-template-rows: 24px 1fr;
+  margin-bottom: 11px;
+  scroll-margin-top: calc(15vh);
 
-  margin-bottom: 10px;
+  /* opacity: ${({ filtered, selected }) => ((filtered || selected) ? '1' : '0.4')}; */
+  opacity: ${({ selected }) => ((selected) ? '1' : '0.4')};
+  opacity: ${({ filtered }) => ((filtered) ? '1' : '0.4')};
 
-  /* scroll-margin-top: calc(48vh - 128px - 1.8rem + 103px); */
-  scroll-margin-top: calc(12vh);
+  text-decoration: ${({ selected, filtered }) => ((selected && filtered) ? 'underline' : 'none')};
+  pointer-events: ${({ filtered }) => (filtered ? 'auto' : 'none')};
 
   /* calc(48vh - 128px - 2rem + 103px); */
-
   /* padding-top: calc(48vh - 128px - 1.7rem + 103px); */
 
+  /* transition: 5s scale ease-in-out; */
 
-  transition: 5s scale ease-in-out;
+  /* display: ${({ filtered }) => (filtered ? 'flex' : 'none')}; */
 
   // color: #FFFFFF;
   // padding: 0 .25rem;
@@ -232,20 +236,20 @@ export const DeskWorkItem = styled.div`
   // margin-bottom: 38px;
   // scroll-margin-top: calc(48vh - 128px - 21px + 103px);
 
-  transition: .1s all ease-in-out;
+  /* transition: .1s all ease-in-out; */
 
   color: ${props => props.theme.primary};
   padding: 0 4px;
 
   &:hover {
     /* border-radius: 12px; */
-    transform: translateX( 6px );
+    /* transform: translateX( 6px ); */
     /* background: green; */
     /* opacity: 1; */
     cursor: pointer;
     /* padding-left: 20px; */
     /* color: ${props => props.theme.secondary}; */
-    /* text-decoration: underline; */
+    text-decoration: underline;
   }
 
   @media screen and (max-width: 767px) {
@@ -440,7 +444,7 @@ export const TextHover = styled.div`
   padding: 12px;
   border-radius: 6px;
 
-  transition: 0.1s all ease-in-out;
+  /* transition: 0.1s all ease-in-out; */
   user-select: none;
   pointer-events: none;
 
@@ -555,21 +559,26 @@ export const ImageHover = styled.div`
 `;
 
 export const WorkPreview = styled.div`
-  z-index: -1;
-  display: grid;
+  z-index: 1002;
+  /* display: grid; */
   // grid-template-columns: 1fr 1fr 2fr;
   /* grid-template-rows: 1fr 1fr; */
 
+  /* border: 2px solid blue; */
+
   position: fixed;
-  width: 19vw;
-  height: calc(76vh - 100px);
-  left: 49.5vw;
-  top: calc(24vh - 10px);
+  width: 14vw;
+  /* height: calc(70vh - 100px); */
+  left: 61vw;
+  top: 43vh;
   text-align: left;
 
-  transition: 0.1s all ease-in-out;
-  user-select: none;
-  pointer-events: none;
+  /* transition: 0.1s all ease-in-out; */
+  /* user-select: none;
+  pointer-events: none; */
+
+  opacity: ${({ filtered }) => ((filtered) ? '1' : '0.25')};
+  /* display: ${({ filtered }) => ((filtered) ? 'flex' : 'none')}; */
 
   @media screen and (max-width: 767px) {
     top: ${props => (props.mobileHVar)};
@@ -594,20 +603,14 @@ export const WorkPreview = styled.div`
     float: right;
 `;
 
-export const WorkName = styled.div`
-  /* position: relative; */
-  /* bottom: 0; */
-  /* padding-top: 6px; */
-  // width: 80%;
-  /* align-content: end; */
+export const Desc = styled.div`
 
   color: ${props => props.theme.primary};
-  /* opacity: 0.9; */
-  /* text-decoration: none; */
-  // text-transform: uppercase;
-  line-height: 155%;
-  font-size: 13px;
-  /* font-family: "SS3"; */
+  line-height: 153%;
+  font-size: 12px;
+  
+  user-select: none;
+  pointer-events: none;
 
   @media screen and (max-width: 767px) {
     align-content: end;
@@ -619,21 +622,40 @@ export const WorkName = styled.div`
   }
 `;
 
-export const WorkDesc = styled.div`
-  position: absolute;
-  bottom: 0;
-  /* height: 30px; */
-  /* margin-top: 2px; */
-  // width: 80%;
-  /* align-content: start; */
 
-  color: ${props => props.theme.secondary};
-  // opacity: 0.9;
-  /* text-decoration: none; */
-  // text-transform: uppercase;
-  font-size: 13px;
-  line-height: 145%;
-  /* font-family: "SS3"; */
+export const Link = styled.div`
+
+  color: ${props => props.theme.cs};
+  line-height: 153%;
+  font-size: 12px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 767px) {
+    align-content: end;
+    float: right;
+    text-align: right;
+    font-size: 11px;
+    padding-top: unset;
+    padding-bottom: 2px;
+  }
+`;
+
+
+export const WorkDate = styled.div`
+  position: fixed;
+  top: 15vh;
+  /* text-align: right;
+  right: calc(89vw + 20px); */
+  left: 18px;
+
+  color: ${props => props.theme.primary};
+  font-style: italic;
+  font-size: 14px;
+
+  /* border: 1px solid blue; */
 
   @media screen and (max-width: 767px) {
     margin-top: unset;
@@ -812,13 +834,15 @@ export const BgBlur = styled.div`
 export const WorkImageContainer = styled.div`
   position: fixed;
   height: calc(100vh);
-  width: 21vw;
-  top: 0;
-  left: 74vw;
+  width: 17vw;
+  top: calc(43vh);
+  right: 5.5vw;
   text-align: left;
   align-items: start;
   align-content: start;
   
+  opacity: ${({ filtered }) => ((filtered) ? '1' : '0.25')};
+
   /* border: 1px solid green; */
 
   @media screen and (max-width: 767px) {
@@ -828,12 +852,14 @@ export const WorkImageContainer = styled.div`
 
 export const WorkImage = styled.div`
   z-index: 999;
-  margin-top: calc(24vh - 10px);
-  width: 21vw;
-  height: calc(66vh - 80px);
+  width: 17vw;
+  /* height: calc(66vh - 80px); */
   text-align: left;
   align-items: start;
   /* background: red; */
+
+  /* opacity: ${({ filtered }) => ((filtered) ? '0.2' : '0.2')}; */
+  /* opacity: .3; */
 
   img {
         /* display: block; */
@@ -841,9 +867,10 @@ export const WorkImage = styled.div`
         width: 100%;
         /* max-height: calc(100vh - 38px); */
         // max-width: 100%;
-        max-height: calc(66vh - 80px);
+        max-height: calc(49vh - 80px);
         /* background-image: #201D17; */
         /* padding-left: 3.25rem; */
+        border: 0.25px solid ${props => props.theme.border};
     }
 
     @media screen and (max-width: 767px) {
@@ -864,6 +891,81 @@ export const WorkImage = styled.div`
 
 
 
+export const FiltersContainer = styled.div`
+    position: fixed;
+    top: 0;
+    left: 40vw;
+    /* left: 50vw; */
+    display: grid;
+    margin-top: 30vh;
+    /* text-align: left; */
+    /* height: ; */
+    /* width: 46px; */
+    /* width: 100vw; */
+    /* background: #1E1C1F; */
+    /* background: green; */
+    /* background: ${props => props.theme.bgNav}; */
+    /* backdrop-filter: blur(12px); */
+    /* border-right: .5px solid ${props => props.theme.border}; */
+    z-index: 1000;
+
+    @media screen and (max-width: 767px) {
+        top: unset;
+        /* left: 0; */
+        bottom: 0px;
+        width: 100vw;
+        border-top: .5px solid ${props => props.theme.border};
+        border-bottom: unset;
+        height: 52px;
+    }
+`
+
+export const Filter = styled.div`
+    display: grid;
+    padding-bottom: 8px;
+    color: ${props => props.theme.primary};
+    text-decoration: none;
+    font-size: 42px;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+    opacity: ${({ active }) => (active ? '0.9' : '0.3')};
+    /* font-family: "SS3"; */
+
+    /* border: 1px solid green; */
+
+    &:hover {
+        opacity: 0.85;
+        cursor: pointer;
+    }
+
+    @media screen and (max-height: 767px) {
+    }
+`
+
+export const NavDOMLinkAbout = styled.div`
+    text-decoration: none;
+    padding-top: 22px;
+    
+    font-size: 38px;
+    color: ${props => props.theme.primary};
+    opacity: 0.3;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+    &:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+`
 
 
 

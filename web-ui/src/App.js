@@ -76,12 +76,12 @@ function App() {
   };
 
   const darkTheme = {
-    bg: "rgba(10, 10, 10, 1)",
+    bg: "rgba(14, 10, 14, 1)",
     bgBlur: "rgba(35, 35, 35, .65)",
     bgSide: "rgba(51, 49, 52, 0.8)",
     bgNav: "rgba(30, 30, 31, 0.65)",
     bgPreview: "rgba(8, 8, 8, 0.85)",
-    primary: "rgba(245, 251, 255, 0.95)",
+    primary: "rgba(255, 255, 255, 0.98)",
     secondary: "#BABABA",
     border: "#3E3E3E",
     cs: "#5685FF",
@@ -95,12 +95,120 @@ function App() {
     setLight(!light);
   };
 
+
+  //filters
+  const [filters, setFilters] = useState([""]);
+
+  // let updateFilters = (type) => {
+  //   const tempFilters = [...filters];
+
+  //   if (filters.includes(type)) {
+  //     const index = filters.indexOf(type);
+  //     tempFilters.splice(index, 1);
+
+  //     console.log("removed: ", type);
+  //     console.log("filters", tempFilters);
+
+  //     setFilters(tempFilters);
+  //   } else {
+  //     tempFilters.push(type);
+  //     console.log("added: ", type);
+  //     console.log("filters", tempFilters);
+
+  //     setFilters(tempFilters);
+  //   }
+  // }
+
+  const filterAudio = () => {
+    const tempFilters = [...filters];
+    if (filters.includes("audio")) {
+      const index = filters.indexOf("audio");
+      tempFilters.splice(index, 1);
+      console.log("removed audio");
+      console.log("filters", tempFilters);
+      setFilters(tempFilters);
+    } else {
+      tempFilters.push("audio");
+      console.log("added audio");
+      console.log("filters", tempFilters);
+      setFilters(tempFilters);
+    }
+  }
+
+  const filterPhoto = () => {
+    const tempFilters = [...filters];
+    if (filters.includes("photo")) {
+      const index = filters.indexOf("photo");
+      tempFilters.splice(index, 1);
+      console.log("removed photo");
+      console.log("filters", tempFilters);
+      setFilters(tempFilters);
+    } else {
+      tempFilters.push("photo");
+      console.log("added photo");
+      console.log("filters", tempFilters);
+      setFilters(tempFilters);
+    }
+  }
+    
+  const filterMe = () => {
+    const tempFilters = [...filters];
+    if (filters.includes("me")) {
+      const index = filters.indexOf("me");
+      tempFilters.splice(index, 1);
+      console.log("removed me");
+      console.log("filters", tempFilters);
+      setFilters(tempFilters);
+    } else {
+      tempFilters.push("me");
+      console.log("added me");
+      console.log("filters", tempFilters);
+      setFilters(tempFilters);
+    }
+  }
+
+  const filterFabric = () => {
+    const tempFilters = [...filters];
+    if (filters.includes("fabric")) {
+      const index = filters.indexOf("fabric");
+      tempFilters.splice(index, 1);
+      console.log("removed fabric");
+      console.log("filters", tempFilters);
+      setFilters(tempFilters);
+    } else {
+      tempFilters.push("fabric");
+      console.log("added fabric");
+      console.log("filters", tempFilters);
+      setFilters(tempFilters);
+    }
+  }
+    
+  const filterCase = () => {
+    const tempFilters = [...filters];
+    if (filters.includes("case")) {
+      const index = filters.indexOf("case");
+      tempFilters.splice(index, 1);
+      console.log("removed case");
+      console.log("filters", tempFilters);
+      setFilters(tempFilters);
+    } else {
+      tempFilters.push("case");
+      console.log("added case");
+      console.log("filters", tempFilters);
+      setFilters(tempFilters);
+    }
+  }
+    
+  const clearFilters = () => {
+    setFilters([]);
+  }
+
   return (
     <Router>
       <ThemeProvider theme={light ? lightTheme : darkTheme}>
         <GlobalFonts />
         <Switcher toggle={switcher1} status={light}/>
-        <Navigation toggle={toggleAbout} aboutToggle={aboutToggle}/>
+        {/* <Navigation toggle={toggleAbout} aboutToggle={aboutToggle}/> */}
         {/* <Versions drawerToggle={versionDrawer} toggle={toggleDrawer} /> */}
         <NavBar mobileToggle={toggle} isOpen={isOpen}/>
         <AboutPanel aboutToggle={aboutToggle} toggle={toggleAbout}></AboutPanel>
@@ -113,12 +221,12 @@ function App() {
             <AnimatePresence exitBeforeEnter>
               <Switch location={location} key={location.pathname}>
                 <Route exact path="/" component={Main} />
-                <Route exact path="/works" component={Works} />
-                {/* <Route exact path="/works" render={(props) => <Works theme={colorTheme} {...props} />}/> */}
+                {/* <Route exact path="/works" component={Works} /> */}
+                <Route exact path="/everythingicaretoshare" render={(props) => <Works toggle={toggleAbout} aboutToggle={aboutToggle} filters={filters} clearFilters={clearFilters} photoFilter={filterPhoto} audioFilter={filterAudio} caseFilter={filterCase} meFilter={filterMe} fabricFilter={filterFabric} {...props} />}/>
                 {/* <Route exact path="/blog" component={Blog} />  */}
-                <Route exact path="/photo" component={Photography} />
-                <Route path="/:workId?/works" component={WorkExpanded} exact />
-                <Route path="/:workId?/images" component={Images} />
+                {/* <Route exact path="/photo" component={Photography} /> */}
+                {/* <Route path="/:workId?/works" component={WorkExpanded} exact /> */}
+                {/* <Route path="/:workId?/images" component={Images} /> */}
               </Switch>
             </AnimatePresence>
           )}

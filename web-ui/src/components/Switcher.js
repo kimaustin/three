@@ -19,8 +19,8 @@ const Container = styled.div`
     z-index: 999;
     position: fixed;
     width: 10vw;
-    left: 45vw;
-    top: 14px;
+    left: 47vw;
+    bottom: 24px;
 
     @media screen and (max-width: 767px) {
     }
@@ -28,6 +28,7 @@ const Container = styled.div`
 
 const Label = styled.div`
     position: absolute;
+    text-align: center;
     left: 0;
     top: 0;
     font-size: 14px;
