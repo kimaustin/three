@@ -179,8 +179,8 @@ export const Name = styled.div`
     display: inline;
     line-height: 100%;
 
-    font-size: 2.7vw;
-    font-family: 'CG LI';
+    /* font-size: 2.7vw; */
+    /* font-family: 'CG LI'; */
     letter-spacing: -.03vw;
 
     /* transform: skew(-12deg); */

@@ -34,9 +34,9 @@ export const Content = styled.div`
     overflow: hidden;
     width: 100%;
     z-index: 999;
-    padding-right: 16px;
-    padding-left: 16px;
-    padding-top: 16px;
+    padding-right: 10px;
+    padding-left: 12px;
+    padding-top: 14px;
     pointer-events: none;
 
     text-align: left;
@@ -59,10 +59,22 @@ export const Name = styled.div`
     line-height: 100%;
     
     /* padding-top: 22px; */
-    padding-bottom: 30px;
+    /* padding-bottom: 36px; */
+    padding-bottom: 12%;
 
     color: ${props => props.theme.secondary};
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 300;
+    /* letter-spacing: 0.25px; */
+`
+
+export const Divider = styled.div`
+    z-index: -1;
+    position: fixed;
+    height: 100%;
+    width: 1px;
+    right: 50%;
+    border-left: 1px solid ${props => props.theme.border};
 `
 
 export const Styled1 = styled.span`
@@ -75,34 +87,39 @@ export const Styled1 = styled.span`
 
 export const Styled2 = styled.div`
     display: flex;
-    padding-bottom: 10px;
-    width: 88%;
+    padding-bottom: 20px;
+    width: calc(50% - 24px);
     /* margin-top: 18px; */
     
     color: ${props => props.theme.primary};;
     font-size: 14px;
-    line-height: 143%;
+    line-height: 147%;
 `
 
 export const Styled3 = styled.div`
     position: absolute;
-    right: 16px;
-    bottom: 14px;
-
-    text-align: right;
-    font-size: 11px;
+    /* right: 12px; */
+    bottom: 10px;
+    /* max-width: calc(25% + 12px); */
+    /* width: calc(50% - 24px); */
+    
+    /* text-align: right; */
+    font-size: 12px;
     line-height: 145%;
     opacity: 0.7;
+
+    /* border: 1px solid blue; */
 `
 
 export const Bottom = styled.div`
     position: absolute;
-    padding-left: 16px;
+    padding-left: 12px;
     /* padding-right: 50%; */
-    bottom: 14px;
+    bottom: 8px;
     /* width: 100%; */
+    right: 12px;
 
-    text-align: left;
+    text-align: right;
     overflow: hidden;
     z-index: 997;
 `
@@ -110,8 +127,8 @@ export const Bottom = styled.div`
 export const Close = styled.p`
     z-index: 999;
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 14px;
+    right: 12px;
     color: ${props => props.theme.primary};;
     font-size: 14px;
 

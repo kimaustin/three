@@ -151,17 +151,17 @@ function App() {
     }
   }
     
-  const filterMe = () => {
+  const filterProjects = () => {
     const tempFilters = [...filters];
-    if (filters.includes("me")) {
-      const index = filters.indexOf("me");
+    if (filters.includes("project")) {
+      const index = filters.indexOf("project");
       tempFilters.splice(index, 1);
-      console.log("removed me");
+      console.log("removed project");
       console.log("filters", tempFilters);
       setFilters(tempFilters);
     } else {
-      tempFilters.push("me");
-      console.log("added me");
+      tempFilters.push("project");
+      console.log("added project");
       console.log("filters", tempFilters);
       setFilters(tempFilters);
     }
@@ -222,7 +222,7 @@ function App() {
               <Switch location={location} key={location.pathname}>
                 <Route exact path="/" component={Main} />
                 {/* <Route exact path="/works" component={Works} /> */}
-                <Route exact path="/everythingicaretoshare" render={(props) => <Works toggle={toggleAbout} aboutToggle={aboutToggle} filters={filters} clearFilters={clearFilters} photoFilter={filterPhoto} audioFilter={filterAudio} caseFilter={filterCase} meFilter={filterMe} fabricFilter={filterFabric} {...props} />}/>
+                <Route exact path="/everythingicaretoshare" render={(props) => <Works toggle={toggleAbout} aboutToggle={aboutToggle} filters={filters} clearFilters={clearFilters} photoFilter={filterPhoto} audioFilter={filterAudio} caseFilter={filterCase} projectFilter={filterProjects} fabricFilter={filterFabric} {...props} />}/>
                 {/* <Route exact path="/blog" component={Blog} />  */}
                 {/* <Route exact path="/photo" component={Photography} /> */}
                 {/* <Route path="/:workId?/works" component={WorkExpanded} exact /> */}

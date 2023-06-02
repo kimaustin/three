@@ -163,11 +163,11 @@ export const WorkListContainer = styled.div`
   height: calc(100vh);
   overflow-y: scroll;
   /* padding-bottom: calc(51vh - 62px + 0.8rem); */
-  padding-bottom: calc(83vh - 6px);
+  padding-bottom: calc(100vh - 24px - 12px);
   /* padding-top: calc(48vh - 128px - 1.8rem + 103px); */
-  padding-top: calc(15vh);
-  padding-left: 11vw;
-  padding-right: calc(71vw);
+  padding-top: calc(12px);
+  padding-left: 8px;
+  padding-right: calc(((100vw - 16px) / 12) * 9);
   z-index: 999;
 
   overflow-x: hidden; 
@@ -196,8 +196,8 @@ export const WorkListContainer = styled.div`
 export const WorkItem = styled.div`
   // display: grid;
   // grid-template-rows: 24px 1fr;
-  margin-bottom: 11px;
-  scroll-margin-top: calc(15vh);
+  margin-bottom: 7px;
+  scroll-margin-top: calc(12px);
 
   /* opacity: ${({ filtered, selected }) => ((filtered || selected) ? '1' : '0.4')}; */
   opacity: ${({ selected }) => ((selected) ? '1' : '0.4')};
@@ -567,10 +567,11 @@ export const WorkPreview = styled.div`
   /* border: 2px solid blue; */
 
   position: fixed;
-  width: 14vw;
+  width: calc((((100vw - 16px) / 12) * 2) - 12px);
   /* height: calc(70vh - 100px); */
-  left: 61vw;
-  top: 43vh;
+  left: calc(((100vw - 16px) / 12) * 3);
+
+  top: 12vh;
   text-align: left;
 
   /* transition: 0.1s all ease-in-out; */
@@ -624,7 +625,6 @@ export const Desc = styled.div`
 
 
 export const Link = styled.div`
-
   color: ${props => props.theme.cs};
   line-height: 153%;
   font-size: 12px;
@@ -646,10 +646,8 @@ export const Link = styled.div`
 
 export const WorkDate = styled.div`
   position: fixed;
-  top: 15vh;
-  /* text-align: right;
-  right: calc(89vw + 20px); */
-  left: 18px;
+  top: 12px;
+  left: calc(((100vw - 16px) / 12) * 3);
 
   color: ${props => props.theme.primary};
   font-style: italic;
@@ -835,8 +833,8 @@ export const WorkImageContainer = styled.div`
   position: fixed;
   height: calc(100vh);
   width: 17vw;
-  top: calc(43vh);
-  right: 5.5vw;
+  top: calc(12vh);
+  right: calc(((100vw - 16px) / 12) * 5);
   text-align: left;
   align-items: start;
   align-content: start;
@@ -889,12 +887,12 @@ export const WorkImage = styled.div`
 
 
 
-
-
 export const FiltersContainer = styled.div`
     position: fixed;
-    top: 0;
-    left: 40vw;
+    /* top: 0; */
+    left: calc(((100vw - 16px) / 12) * 3);
+    /* left: 24vw; */
+    bottom: 10px;
     /* left: 50vw; */
     display: grid;
     margin-top: 30vh;
@@ -922,10 +920,10 @@ export const FiltersContainer = styled.div`
 
 export const Filter = styled.div`
     display: grid;
-    padding-bottom: 8px;
+    padding-top: 4px;
     color: ${props => props.theme.primary};
     text-decoration: none;
-    font-size: 42px;
+    font-size: 36px;
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -946,10 +944,14 @@ export const Filter = styled.div`
 `
 
 export const NavDOMLinkAbout = styled.div`
+
+    position: fixed;
+    left: 50vw;
+    bottom: 10px;
+
     text-decoration: none;
-    padding-top: 22px;
     
-    font-size: 38px;
+    font-size: 36px;
     color: ${props => props.theme.primary};
     opacity: 0.3;
 

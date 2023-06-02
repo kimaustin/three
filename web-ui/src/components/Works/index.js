@@ -54,7 +54,7 @@ import {
 // Scrollbar.init(document.querySelector('#my-scrollbar'), options);
 
 
-const Works = ({ projects, toggle, aboutToggle, clearFilters, filters, photoFilter, audioFilter, meFilter, caseFilter, fabricFilter }) => {
+const Works = ({ projects, toggle, aboutToggle, clearFilters, filters, photoFilter, audioFilter, projectFilter, caseFilter, fabricFilter }) => {
 
   const [projectDisplayed, setProjectDisplayed] = useState(0);
   const [hoverAllowed, setHoverAllowed] = useState(true);
@@ -313,10 +313,10 @@ const Works = ({ projects, toggle, aboutToggle, clearFilters, filters, photoFilt
   //   }
   // });
 
-  const proj1 = { name: 'June ggg ONE One GGG OOO ggg', type: 'photo', semester: 'mar 2023', class_short: 'June', val: 1, isCS: true, imgs: ["testProjCover1.png"], tags: ['UX Design', 'Figma', 'React.JS'], link: ['https://www.junehomes.com'] }
+  const proj1 = { name: 'June ggg ONE One GGG OOO ggg', type: 'project', semester: 'mar 2023', class_short: 'June', val: 1, isCS: true, imgs: ["testProjCover1.png"], tags: ['UX Design', 'Figma', 'React.JS'], link: ['https://www.junehomes.com'] }
   const proj2 = { name: 'Two', semester: 'june 2022', type: 'case', val: 2, isCS: false, imgs: ["test/pic1.png"], tags: ['2UX Design', 'Figma', 'React.JS'], link: [] }
   const proj3 = { name: 'three', semester: 'apr 2023', type: 'fabric', val: 3, isCS: false, imgs: ["test/pic2.png"], tags: ['3UX Design', 'Figma', 'React.JS'], link: [] }
-  const proj4 = { name: 'four', semester: 'dec 2021', type: 'audio', val: 4, isCS: true, imgs: ["testProjCover4.png"], tags: ['4UX Design', 'Figma', 'React.JS'], link: ['https://www.junehomes.com'] }
+  const proj4 = { name: 'four', semester: 'dec 2021', type: 'project', val: 4, isCS: true, imgs: ["testProjCover4.png"], tags: ['4UX Design', 'Figma', 'React.JS'], link: ['https://www.junehomes.com'] }
   const proj5 = { name: 'five', semester: 'nov 2022', type: 'case', val: 5, isCS: false, imgs: ["testProjCover5.png"], tags: ['5UX Design', 'Figma', 'React.JS'], link: [] }
   const project_0 = { name: 'Heatmaps and Stress Analysis for Digital Objects', semester: 'nov 2022', type: 'case', val: 5, isCS: false, imgs: ["heatmap.jpeg"], tags: ['5UX Design', 'Figma', 'React.JS'], link: ['https://www.are.na/goreum-b/heatmaps-amp-stress-analysis'] }
   const proj6 = { name: 'six', semester: 'mar 2023', type: 'case', val: 6, isCS: false, imgs: ["testProjCover6.png"], tags: ['6UX Design', 'Figma', 'React.JS'], link: [] }
@@ -334,7 +334,7 @@ const Works = ({ projects, toggle, aboutToggle, clearFilters, filters, photoFilt
 
   let observerOptions = {
     root: ListContainerRef.target,
-    rootMargin: '-15.4% 0px -84.1% 0px',
+    rootMargin: '2% 0px 97.75% 0px',
     // threshold: 0.1
   }
 
@@ -372,7 +372,7 @@ const Works = ({ projects, toggle, aboutToggle, clearFilters, filters, photoFilt
                 console.log('INTERSECTED BUT DO NOT CHANGE');
               // console.log('scroll - current proj index', projectValue);
               } else {
-                setProjectValue(projectsList[0].target.id);
+                // setProjectValue(projectsList[0].target.id);
               // projectsList[0].target.style.textdecoration = 'underline';
               }
             } else {
@@ -413,8 +413,9 @@ const Works = ({ projects, toggle, aboutToggle, clearFilters, filters, photoFilt
   const handleClick = (index) => {
     // console.log('proj clicked', index);
     // console.log('clicked - current proj index', projectValue);
-    myRefs[index].current?.scrollIntoView({ behavior: 'smooth' });
+    // myRefs[index].current?.scrollIntoView({ behavior: 'smooth' });
     // navigate("/" + projectValue + "/works");
+    setProjectValue(index);
 
     // await timeout(1000); //for 1 sec delay
     // setProjectValue(index);
@@ -566,13 +567,13 @@ const Works = ({ projects, toggle, aboutToggle, clearFilters, filters, photoFilt
       // }}
     >
       <FiltersContainer>
-        {/* <button onClick={clearFilters}>clear</button> */}
-        <Filter onClick={meFilter} active={(filters.includes("me")) ? true : false }>me</Filter>
+        {/* <p onClick={clearFilters}>clear</p> */}
+        <Filter onClick={projectFilter} active={(filters.includes("project")) ? true : false }>projects</Filter>
         <Filter onClick={caseFilter} active={(filters.includes("case")) ? true : false }>case studies</Filter>
         <Filter onClick={photoFilter} active={(filters.includes("photo")) ? true : false }>photo</Filter>
         <Filter onClick={audioFilter} active={(filters.includes("audio")) ? true : false }>audio</Filter>
         <Filter onClick={fabricFilter} active={(filters.includes("fabric")) ? true : false }>fabric</Filter>
-        <NavDOMLinkAbout thispage={true} onClick={() => toggle('info')}>contact</NavDOMLinkAbout>
+        <NavDOMLinkAbout thispage={true} onClick={() => toggle('info')}>about</NavDOMLinkAbout>
         {/* <MobileMenuToggle onClick={mobileToggle}>Menu/About</MobileMenuToggle> */}
       </FiltersContainer>
         {/* <MarkerL /> */}

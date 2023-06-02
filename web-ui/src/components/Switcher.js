@@ -18,25 +18,26 @@ export default Switcher;
 const Container = styled.div`
     z-index: 999;
     position: fixed;
-    width: 10vw;
-    left: 47vw;
-    bottom: 24px;
+    right: 10px;
+    top: 12px;
 
     @media screen and (max-width: 767px) {
     }
 `
 
 const Label = styled.div`
-    position: absolute;
-    text-align: center;
-    left: 0;
-    top: 0;
+    /* position: absolute; */
+    text-align: right;
+    /* float: right; */
+    /* left: 0; */
+    /* top: 0; */
     font-size: 14px;
-    opacity: 0.7;
+    /* opacity: 1; */
     color: ${props => props.theme.primary};
 
     &:hover {
-        opacity: 1;
+        /* opacity: 1; */
+        text-decoration: underline;
         cursor: pointer;
     }
 
