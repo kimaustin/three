@@ -22,6 +22,7 @@ import Photography from "./components/Photography";
 import Versions from "./components/Versions";
 import Switcher from "./components/Switcher";
 import Marks from "./components/Marks";
+import MobileAboutPanel from "./components/MobileAboutPanel";
 import Navigation from "./components/Navigation";
 
 //Our App Components
@@ -30,16 +31,16 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
-    // console.log("mobile nav toggled", isOpen);
+    console.log("mobile nav toggled", isOpen);
     setIsOpen(!isOpen);
   };
 
-  const [versionDrawer, setVersionDrawer] = useState(false);
+  // const [versionDrawer, setVersionDrawer] = useState(false);
 
-  const toggleDrawer = () => {
-      console.log("drawer toggled to", versionDrawer);
-      setVersionDrawer(!versionDrawer);
-  };
+  // const toggleDrawer = () => {
+  //     console.log("drawer toggled to", versionDrawer);
+  //     setVersionDrawer(!versionDrawer);
+  // };
 
   const [aboutToggle, setAboutToggle] = useState(false);
   
@@ -51,17 +52,12 @@ function App() {
       setAboutToggle(false);
     }
   }
-
-  // const toggleAbout = () => {
-  //   console.log("about toggled");
-  //   setAboutToggle(!setAboutToggle);
-  // };
-
-  const [sideProjectsToggle, setSideProjectsToggle] = useState(false);
-
-  // const location = useLocation();
-  //TODO: make 2 Styled Component Themes, declare state that is one Theme.
-  //----- ON dark/mode press, change state to other theme. Pass in state to each component.
+  
+  // const [mobileAbout, setMobileAbout] = useState(false);
+  
+  // const toggleMobileAbout = () => {
+  //     setMobileAbout(!mobileAbout);
+  // }
 
   const lightTheme = {
     bg: "rgba(255, 255, 255, 1)",
@@ -84,7 +80,7 @@ function App() {
     primary: "rgba(255, 255, 255, 0.98)",
     secondary: "#BABABA",
     border: "#3E3E3E",
-    cs: "#5685FF",
+    cs: "#4A72FF",
   }
 
   const [light, setLight] = useState(true);
@@ -97,7 +93,7 @@ function App() {
 
 
   //filters
-  const [filters, setFilters] = useState([""]);
+  const [filters, setFilters] = useState([]);
 
   // let updateFilters = (type) => {
   //   const tempFilters = [...filters];
@@ -210,8 +206,9 @@ function App() {
         <Switcher toggle={switcher1} status={light}/>
         {/* <Navigation toggle={toggleAbout} aboutToggle={aboutToggle}/> */}
         {/* <Versions drawerToggle={versionDrawer} toggle={toggleDrawer} /> */}
-        <NavBar mobileToggle={toggle} isOpen={isOpen}/>
+        <NavBar aboutToggle={toggleAbout} mobileToggle={toggle} isOpen={isOpen} filters={filters} clearFilters={clearFilters} photoFilter={filterPhoto} audioFilter={filterAudio} caseFilter={filterCase} projectFilter={filterProjects} fabricFilter={filterFabric}/>
         <AboutPanel aboutToggle={aboutToggle} toggle={toggleAbout}></AboutPanel>
+        <MobileAboutPanel toggle={aboutToggle} togglePanel={toggleAbout}></MobileAboutPanel>
         <Marks />
         {/* <SideProjects sideProjectsToggle={sideProjectsToggle} /> */}
         {/* <Wipe isLightTheme={isLightTheme}/> */}
@@ -221,8 +218,8 @@ function App() {
             <AnimatePresence exitBeforeEnter>
               <Switch location={location} key={location.pathname}>
                 <Route exact path="/" component={Main} />
-                {/* <Route exact path="/works" component={Works} /> */}
-                <Route exact path="/everythingicaretoshare" render={(props) => <Works toggle={toggleAbout} aboutToggle={aboutToggle} filters={filters} clearFilters={clearFilters} photoFilter={filterPhoto} audioFilter={filterAudio} caseFilter={filterCase} projectFilter={filterProjects} fabricFilter={filterFabric} {...props} />}/>
+                {/* <Route exact path="/everythingicaretoshare" component={Works} /> */}
+                <Route exact path="/everythingicaretoshare" render={(props) => <Works toggle={toggleAbout} mobileToggleStatus={isOpen} mobileToggle={toggle} filters={filters} clearFilters={clearFilters} photoFilter={filterPhoto} audioFilter={filterAudio} caseFilter={filterCase} projectFilter={filterProjects} fabricFilter={filterFabric} {...props} />}/>
                 {/* <Route exact path="/blog" component={Blog} />  */}
                 {/* <Route exact path="/photo" component={Photography} /> */}
                 {/* <Route path="/:workId?/works" component={WorkExpanded} exact /> */}

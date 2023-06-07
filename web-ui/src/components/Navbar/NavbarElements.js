@@ -1,27 +1,23 @@
 import { Link as LinkRouter } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components'
+
 
 export const Container = styled.div`
-    z-index: 1000;
-    height: 420px;
-    width: 100vw;
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
-
-    background: ${props => props.theme.bgNav};
-    backdrop-filter: blur(13px);
-
-    border-top: 1px solid ${props => props.theme.border};
-    /* filter: blur(-2x); */
-    /* -webkit-filter: blur(-1.5px); */
-    /* cursor: url("/imgs/cursor1.svg"), auto; */
+    display: none;
 
     @media screen and (max-width: 767px) {
-        backdrop-filter: blur(10px);
+        display: block;
+        z-index: 1000;
+        height: 100vh;
+        width: 57vw;
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding-left: 12px;
+        border-left: .75px solid ${props => props.theme.secondary};
+        background: ${props => props.theme.bg};
     }
 `
 
@@ -101,19 +97,12 @@ export const NavLogo = styled(LinkRouter)`
 `
 
 export const Close = styled.div`
-    display: block;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    // height: 40px;
-    padding-right: 14px;
-    padding-bottom: 18px;
+    position: absolute;
+    bottom: 14px;
+    /* right: 12px; */
+    /* right: 12px; */
     color: ${props => props.theme.primary};
-    font-family: 'OpenSans';
     font-size: 14px;
-    letter-spacing: 0.2px;
-    font-weight: 400;
-    
 `
 
 export const About = styled.div`
@@ -334,5 +323,76 @@ export const NavBtnLink = styled(LinkRouter)`
         transition: all 0.3s ease-in-out;
         background: #fff;
         color: #010606;
+    }
+`
+
+
+
+export const FiltersContainer = styled.div`
+    display: none;
+
+    @media screen and (max-width: 767px) {
+        display: grid;
+        position: absolute;
+        /* left: 40px; */
+        /* bottom: 13px; */
+        top: 45vh;
+        width: calc(100vw - 16px - 40px);
+    }
+`
+
+export const Filter = styled.div`
+    margin-top: 6px;
+    /* width: 100%; */
+    width: fit-content;
+    /* height: 30px; */
+    /* padding-top: */
+    color: ${props => props.theme.primary};
+    text-decoration: none;
+    font-size: 30px;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+    opacity: ${({ active }) => (active ? '0.9' : '0.35')};
+
+    /* border: 1px solid green; */
+    // WHEN ACTIVE, SHOW X ON HOVER
+
+    a {
+      /* opacity: 0; */
+      font-size: 14px;
+    }
+`
+
+export const ClearFilters = styled.div`
+    /* position: fixed;
+    left: calc(((100vw - 16px) / 12) * 3); */
+    color: ${props => props.theme.primary};
+    width: fit-content;
+
+    text-decoration: none;
+    font-size: 14px;
+
+    margin-top: 20px;
+    /* margin-top: 18vh; */
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+    pointer-events: ${({ active }) => (active ? 'auto' : 'none')};
+    opacity: ${({ active }) => (active ? '1' : '0.3')};
+    /* opacity: 0.5; */
+
+    /* border: 1px solid blue; */
+    /* transform-origin: 0 0;
+    transform: rotate(-90deg); */
+
+    &:hover {
+        /* opacity: 1; */
+        text-decoration: underline;
+        cursor: pointer;
     }
 `

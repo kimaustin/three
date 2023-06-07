@@ -35,4 +35,8 @@ export const Fun = styled.div`
         align-items: center;
         object-fit: scale-down;
     }
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 `

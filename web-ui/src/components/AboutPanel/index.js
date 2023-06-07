@@ -24,20 +24,21 @@ const About = ({ toggle, aboutToggle }) => {
         </ProfileContainer> */}
         {/* <Close onClick={toggle}>close</Close> */}
         <Content>
-          <Name>austin emmanuel kim</Name>
           {/* <Styled1>Currently based in Brooklyn, NY</Styled1> */}
+          <Name>austin emmanuel kim</Name>
           <Styled2>Multi-disciplinary designer, developer, and artist with a passion for building meaningful experiences.</Styled2>
-          <Styled2>I graduated from Northeastern University in May of 2021 with a bachelors of Computer Science and Design, and have been working on various web and graphic design projects accross many fields.</Styled2>
+          <Styled2>I graduated from Northeastern University in May of 2021 with a bachelors of Computer Science and Design, and have been working on various web and graphic design projects across many fields.</Styled2>
           <Styled2>I love experimenting with new technologies, techniques, patterns, styles, and sounds.</Styled2>
           {/* <Styled1 style={{ paddingBottom: 0, paddingTop: '12px' }}>Last Updated: May 4, 2023</Styled1>
           <Styled1>Built by me in React (framer, styled-components) + Elixir.</Styled1> */}
-          <Styled3>Last Updated: May 30, 2023 <br />Built by in React + Elixir.</Styled3>
           {/* <Styled1 style={{ color: '#6C9EFF', paddingTop: '10px' }}>Open for work and collaboration</Styled1> */}
+          <Styled3>Last Updated: May 30, 2023 <br />Built in React + Elixir.</Styled3>
         </Content>
         <Bottom>
-          <Social onClick={() => window.open("/imgs/Resume_Spring23.pdf")} target="_blank">Resume</Social>
-          <Social href="https://www.instagram.com/nektine/" target="_blank">Instagram</Social>
-          <Social href="mailto:nektinemedia@gmail.com" target="_blank">Email</Social>
+          <Social href="mailto:nektinemedia@gmail.com" target="_blank">email</Social>
+          <Social href="https://www.instagram.com/nektine/" target="_blank">instagram</Social>
+          <Social href="https://www.are.na/goreum-b" target="_blank">are.na</Social>
+          <Social onClick={() => window.open("/imgs/Resume_Spring23.pdf")} target="_blank">resume_may2023</Social>
         </Bottom>
       </Container>
   );

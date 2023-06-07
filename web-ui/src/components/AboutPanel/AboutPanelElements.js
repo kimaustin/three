@@ -13,7 +13,6 @@ export const Container = styled.div`
     /* opacity: 0.7;  */
     /* background: #403939; */
     background: ${props => props.theme.bg};
-    backdrop-filter: blur(12px);
 
     /* opacity: 0.5; */
 
@@ -25,7 +24,7 @@ export const Container = styled.div`
     @media screen and (max-width: 767px) {
         width: 100vw;
         border-right: unset;
-        backdrop-filter: blur(10px);
+        /* backdrop-filter: blur(10px); */
         display: none;
     }
 `
@@ -34,9 +33,14 @@ export const Content = styled.div`
     overflow: hidden;
     width: 100%;
     z-index: 999;
+
+    /* position: absolute; */
+    /* bottom: 0; */
+
     padding-right: 10px;
     padding-left: 12px;
     padding-top: 14px;
+    padding-bottom: 12px;
     pointer-events: none;
 
     text-align: left;
@@ -57,10 +61,13 @@ export const Logo = styled.div`
 export const Name = styled.div`
     display: flex;
     line-height: 100%;
+    /* position: fixed; */
+    /* left: 12px; */
+    /* top: 14px; */
     
     /* padding-top: 22px; */
     /* padding-bottom: 36px; */
-    padding-bottom: 12%;
+    /* padding-bottom: 12%; */
 
     color: ${props => props.theme.secondary};
     font-size: 12px;
@@ -71,9 +78,9 @@ export const Name = styled.div`
 export const Divider = styled.div`
     z-index: -1;
     position: fixed;
-    height: 100%;
+    height: 52vh;
     width: 1px;
-    right: 50%;
+    right: 45%;
     border-left: 1px solid ${props => props.theme.border};
 `
 
@@ -87,8 +94,8 @@ export const Styled1 = styled.span`
 
 export const Styled2 = styled.div`
     display: flex;
-    padding-bottom: 20px;
-    width: calc(50% - 24px);
+    padding-top: 20px;
+    width: calc(55% - 24px);
     /* margin-top: 18px; */
     
     color: ${props => props.theme.primary};;
@@ -99,14 +106,15 @@ export const Styled2 = styled.div`
 export const Styled3 = styled.div`
     position: absolute;
     /* right: 12px; */
-    bottom: 10px;
+    bottom: 14px;
     /* max-width: calc(25% + 12px); */
     /* width: calc(50% - 24px); */
+    padding-top: 18px;
     
     /* text-align: right; */
     font-size: 12px;
     line-height: 145%;
-    opacity: 0.7;
+    opacity: 0.6;
 
     /* border: 1px solid blue; */
 `
@@ -115,7 +123,7 @@ export const Bottom = styled.div`
     position: absolute;
     padding-left: 12px;
     /* padding-right: 50%; */
-    bottom: 8px;
+    bottom: 12px;
     /* width: 100%; */
     right: 12px;
 

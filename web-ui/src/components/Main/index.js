@@ -13,83 +13,83 @@ const Main = () => {
         
   const history = useHistory();
   const [isStillLoading, setIsStillLoading] = useState(true);
-  const [currTrait, setCurrTrait] = useState(0);
+  // const [currTrait, setCurrTrait] = useState(0);
 
   const location = useLocation();
   let currPage = location.pathname.split("/").pop();
 
-  // useEffect(() => {
-  //   const onPageLoad = () => {
-  //     // alert("hi");
-  //     // toggleLight;
-  //     history.push('/works');
-  //   };
+  useEffect(() => {
+    const onPageLoad = () => {
+      // alert("hi");
+      // toggleLight;
+      history.push('/everythingicaretoshare');
+    };
 
-  //   if (document.readyState === 'complete') {
-  //     onPageLoad();
-  //   } else {
-  //     window.addEventListener('load', onPageLoad);
-  //     // Remove the event listener when component unmounts
-  //     return () => window.removeEventListener('load', onPageLoad);
-  //   }
-  // }, []);
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+  }, []);
 
-  const t1 = { name: 'Austin Emmanuel Kim', desc: 'UX Designer, Web Developer, Lover of type, Photographer, Experiential Advisor, Ableton Lover, Curator, Blogger', img: 'test/pic3.png', tags: ['UX Design', 'Figma', 'React.JS'] }
-  const t2 = { name: '김호연', desc: 'my given korean name.', img: 'test/pic5.png', tags: ['2UX Design', 'Figma', 'React.JS'] }
-  const t3 = { name: 'nektine', desc: 'my given instagram name.', img: 'test/pic4.png', tags: ['3UX Design', 'Figma', 'React.JS'] }
-  const t4 = { name: 'goreum_b', desc: 'my given artist name, korean roots.', img: 'test/pic1.png', tags: ['4UX Design', 'Figma', 'React.JS'] }
+  // const t1 = { name: 'Austin Emmanuel Kim', desc: 'UX Designer, Web Developer, Lover of type, Photographer, Experiential Advisor, Ableton Lover, Curator, Blogger', img: 'test/pic3.png', tags: ['UX Design', 'Figma', 'React.JS'] }
+  // const t2 = { name: '김호연', desc: 'my given korean name.', img: 'test/pic5.png', tags: ['2UX Design', 'Figma', 'React.JS'] }
+  // const t3 = { name: 'nektine', desc: 'my given instagram name.', img: 'test/pic4.png', tags: ['3UX Design', 'Figma', 'React.JS'] }
+  // const t4 = { name: 'goreum_b', desc: 'my given artist name, korean roots.', img: 'test/pic1.png', tags: ['4UX Design', 'Figma', 'React.JS'] }
   
-  const myTraits = [ t1, t2, t3, t4 ];
+  // const myTraits = [ t1, t2, t3, t4 ];
 
-  const traitContainerRef = useRef();
+  // const traitContainerRef = useRef();
 
-  let observerOptions = {
-    root: traitContainerRef.target,
-    rootMargin: '-24% 0px -75% 0px',
-  }
+  // let observerOptions = {
+  //   root: traitContainerRef.target,
+  //   rootMargin: '-24% 0px -75% 0px',
+  // }
 
-  const traitRefs = [];
-  traitRefs.push(useRef());
-  traitRefs.push(useRef());
-  traitRefs.push(useRef());
-  traitRefs.push(useRef());
-  traitRefs.push(useRef());
+  // const traitRefs = [];
+  // traitRefs.push(useRef());
+  // traitRefs.push(useRef());
+  // traitRefs.push(useRef());
+  // traitRefs.push(useRef());
+  // traitRefs.push(useRef());
 
-  useEffect (() => {
-      for (var i = 0; i < myTraits.length; i++) { 
-          const observer = new IntersectionObserver((traitsList) => {
-            if (traitsList[0].isIntersecting) {
-              console.log("target id", traitsList[0].target.id);
-              console.log("scroll - curr trait", currTrait);
-              setCurrTrait(traitsList[0].target.id);
-              traitsList[0].target.style.opacity = 1.0;
-            } else {
-              traitsList[0].target.style.opacity = 0.4;
-            }
-          }, observerOptions)
-          observer.observe(traitRefs[i].current);
-      }
-  }, [])
+  // useEffect (() => {
+  //     for (var i = 0; i < myTraits.length; i++) { 
+  //         const observer = new IntersectionObserver((traitsList) => {
+  //           if (traitsList[0].isIntersecting) {
+  //             console.log("target id", traitsList[0].target.id);
+  //             console.log("scroll - curr trait", currTrait);
+  //             setCurrTrait(traitsList[0].target.id);
+  //             traitsList[0].target.style.opacity = 1.0;
+  //           } else {
+  //             traitsList[0].target.style.opacity = 0.4;
+  //           }
+  //         }, observerOptions)
+  //         observer.observe(traitRefs[i].current);
+  //     }
+  // }, [])
 
-  const handleClick = async event => {
-    traitRefs[event].current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  // const handleClick = async event => {
+  //   traitRefs[event].current?.scrollIntoView({ behavior: 'smooth' });
+  // };
 
-  let traits_list = myTraits.map((trait, index) => {
-    return (
-      <Info id={index} ref={traitRefs[index]} onClick={() => handleClick(index)}>{trait.name}
-        {/* <a> {trait.</a> */}
-        {/* <img src={trait.img}/> */}
-      </Info>
-    )
-  });
+  // let traits_list = myTraits.map((trait, index) => {
+  //   return (
+  //     <Info id={index} ref={traitRefs[index]} onClick={() => handleClick(index)}>{trait.name}
+  //       {/* <a> {trait.</a> */}
+  //       {/* <img src={trait.img}/> */}
+  //     </Info>
+  //   )
+  // });
 
-  console.log("curr trait val", currTrait);
-  console.log("curr trait", myTraits[currTrait]);
+  // console.log("curr trait val", currTrait);
+  // console.log("curr trait", myTraits[currTrait]);
 
   return (
       <Container>
-            <AboutMe
+            {/* <AboutMe
               ref={traitContainerRef}
               as={motion.div} 
               initial={{ x: 0, y: '-100vh' }} 
@@ -123,7 +123,7 @@ const Main = () => {
             >
               <Desc>{myTraits[currTrait].desc}</Desc>
               <Location><p>40.70270,-73.91847</p><p>Brooklyn, NY</p></Location>
-            </Actions>
+            </Actions> */}
           {/* <MarkerL /> */}
       </Container>
   );
