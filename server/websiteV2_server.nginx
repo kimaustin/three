@@ -3,18 +3,18 @@ server {
     listen [::]:80;
 
     # TODO: DONE(?) ->This should be your server name.
-    server_name austinkim.works;
+    server_name archive.austinkim.works;
 
     location / {
-        proxy_pass http://localhost:7111;
+        proxy_pass http://localhost:9111;
     }
 
     location /api {
-        proxy_pass http://localhost:6111;
+        proxy_pass http://localhost:1999;
     }
 
    location /works {
-        proxy_pass http://localhost:7111;
+        proxy_pass http://localhost:1999;
     }
 
 }
