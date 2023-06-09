@@ -152,7 +152,7 @@ export const ToTop = styled.div`
 
   @media screen and (max-width: 767px) {
     margin-top: 28vh;
-    margin-bottom: 60px;
+    margin-bottom: 140px;
   }
 `
 
@@ -555,7 +555,7 @@ export const FiltersToggle = styled.div`
     background: ${props => props.theme.bg};
     font-size: 16px;
     bottom: 13px;
-    left: calc(42vw + 8.5px);
+    left: calc(42vw + 8px);
   }
 `;
 

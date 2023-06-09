@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from "framer-motion";
 import styled from 'styled-components';
-import { Link as LinkRouter, useLocation } from 'react-router-dom';
 
 const MobileAboutPanel = ({toggle, togglePanel}) => {
-
     return (
         <Container
             as={motion.div} 
@@ -18,21 +16,18 @@ const MobileAboutPanel = ({toggle, togglePanel}) => {
         >
             <Close onClick={togglePanel}>✕</Close>
             <Content>
-                {/* <Styled1>Currently based in Brooklyn, NY</Styled1> */}
-                {/* <Name>austin emmanuel kim</Name> */}
                 <Label>40.70270,-73.91847</Label>
                 <Label>Brooklyn, NY</Label>
                 <br />
                 <Name>austin emmanuel kim</Name>
                 <Styled>Multi-disciplinary designer, developer, and artist with a passion for building meaningful experiences.</Styled>
-                <Styled>I graduated from Northeastern University in May of 2021 with a bachelors of Computer Science and Design, and have been working on various web and graphic design projects across many fields.</Styled>
-                <Styled>I love experimenting with new technologies, techniques, patterns, styles, and sounds.</Styled>
-                <br />
-                <Styled3>Built in React + Elixir.</Styled3>
-                <Powered>Powered by nektinemedia.</Powered>
+                <Styled>Bachelors of Computer Science & Design<br />Northeastern University 2021.</Styled>
+                <Styled>Passionate about expanding into new technologies, techniques, patterns, styles, and sounds.</Styled>
                 <br />
                 <Open2W>Currently open to work</Open2W>
-            </Content>
+                <br />
+                <Styled3>Built in React + Elixir.</Styled3>
+                <Powered>Powered by nektinemedia.</Powered> </Content>
             <Bottom>
                 <Social href="mailto:nektinemedia@gmail.com" target="_blank">email</Social>
                 <Social href="https://www.instagram.com/nektine/" target="_blank">instagram</Social>
@@ -52,7 +47,7 @@ const Container = styled.div`
      display: none;
 
     @media screen and (max-width: 767px) {
-        display: block;
+        display: flex;
         z-index: 1000;
         height: 100vh;
         width: calc(100vw - 74px);
@@ -83,18 +78,19 @@ const Close = styled.p`
 const Content = styled.div`
     overflow: hidden;
     width: 100%;
-    z-index: 999;
+    z-index: 1000;
+
+    /* position: fixed; */
+    /* left: 10px; */
+    /* top: 14px; */
+    /* border: 5px solid blue; */
 
     padding-right: 8px;
     padding-top: 14px;
     padding-bottom: 12px;
-    pointer-events: none;
+    /* pointer-events: none; */
 
     text-align: left;
-
-    @media screen and (max-height: 640px) {
-        display: none;
-    }
 `
 
 const Name = styled.div`
@@ -105,7 +101,7 @@ const Name = styled.div`
     font-size: 12px;
 `
 const Styled = styled.div`
-    padding-top: 20px;
+    padding-top: 14px;
     padding-right: 18px;
     
     color: ${props => props.theme.primary};;
@@ -121,9 +117,10 @@ const Styled3 = styled.div`
 `
 
 const Bottom = styled.div`
-    position: absolute;
-    bottom: 8px;
-    z-index: 997;
+    position: fixed;
+    bottom: 13px;
+    /* bottom: 90px; */
+    /* z-index: 997; */
 `
 
 export const Social = styled.a`
@@ -138,11 +135,6 @@ export const Social = styled.a`
 
     color: ${props => props.theme.primary};;
     text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-        cursor: pointer;
-    }
 `
 
 const Label = styled.div`
@@ -150,9 +142,6 @@ const Label = styled.div`
     line-height: 138%;
     opacity: 0.6;
     color: ${props => props.theme.primary};
-
-    @media screen and (max-width: 767px) {
-    }
 `
 const Open2W = styled.div`
     font-size: 14px;
@@ -160,9 +149,6 @@ const Open2W = styled.div`
     opacity: 1;
     font-style: italic;
     color: ${props => props.theme.cs};
-
-    @media screen and (max-width: 767px) {
-    }
 `
 
 const Powered = styled.div`
@@ -170,7 +156,4 @@ const Powered = styled.div`
     line-height: 138%;
     opacity: 0.6;
     color: ${props => props.theme.primary};
-
-    @media screen and (max-width: 767px) {
-    }
 `

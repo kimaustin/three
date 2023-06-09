@@ -24,7 +24,7 @@ const Navbar = ({aboutToggle, mobileToggle, isOpen, clearFilters, filters, photo
         <Container
             example_var={mobileAbout}
             as={motion.div} initial={{ x: '100vw', y: 0 }} 
-            animate={isOpen ? {  x: '43vw', y: 0 } : { x: '100vw', y: 0 }}
+            animate={isOpen ? {  x: '50vw', y: 0 } : { x: '100vw', y: 0 }}
             transition={{
             type: "tween",
             ease: [0.28, 1.35, 1.5, .91],

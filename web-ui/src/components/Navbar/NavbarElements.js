@@ -10,7 +10,7 @@ export const Container = styled.div`
         display: block;
         z-index: 1000;
         height: 100vh;
-        width: 57vw;
+        width: 50vw;
         overflow: hidden;
         position: fixed;
         bottom: 0;
