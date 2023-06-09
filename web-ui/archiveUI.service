@@ -1,0 +1,9 @@
+[Unit]
+Description=arhcive site service
+
+[Service]
+WorkingDirectory=/home/portfolio/three/web-ui
+ExecStart=/usr/local/bin/serve -s build -l 9111
+
+[Install]
+WantedBy=multi-user.target
