@@ -118,8 +118,8 @@ const Styled3 = styled.div`
 
 const Bottom = styled.div`
     position: fixed;
-    bottom: 13px;
-    /* bottom: 90px; */
+    /* bottom: 13px; */
+    bottom: 139px;
     /* z-index: 997; */
 `
 
