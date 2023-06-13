@@ -82,7 +82,7 @@ export const WorkListContainer = styled.div`
   padding-bottom: 16px;
   /* padding-top: calc(48vh - 128px - 1.8rem + 103px); */
   padding-top: 6px;
-  padding-left: 7px;
+  padding-left: 6px;
   padding-right: calc((((100vw - 16px) / 12) * 9) + 32px);
   z-index: 999;
 
@@ -115,7 +115,7 @@ export const WorkItem = styled.div`
 
   padding: 2.5px 3px 0px 3px;
   /* text-decoration: ${({ selected, filtered }) => ((selected && filtered) ? 'underline' : 'none')}; */
-  border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? 'black' : 'white')};
+  border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? ${props => props.theme.primary} : ${props => props.theme.bg})};
   text-decoration-color: ${props => props.theme.primary};
   pointer-events: ${({ filtered }) => (filtered ? 'auto' : 'none')};  
   
@@ -127,7 +127,7 @@ export const WorkItem = styled.div`
   &:hover {
     /* opacity: 1; */
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid ${props => props.theme.primary};
     /* text-decoration: underline; */
   }
 
