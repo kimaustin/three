@@ -82,7 +82,7 @@ export const WorkListContainer = styled.div`
   padding-bottom: 16px;
   /* padding-top: calc(48vh - 128px - 1.8rem + 103px); */
   padding-top: 6px;
-  padding-left: 10px;
+  padding-left: 7px;
   padding-right: calc((((100vw - 16px) / 12) * 9) + 32px);
   z-index: 999;
 
@@ -106,14 +106,16 @@ export const WorkListContainer = styled.div`
 export const WorkItem = styled.div`
   display: grid;
   width: fit-content;
-  margin-bottom: 4px;
+  margin-bottom: 1.5px;
   scroll-margin-top: calc(6px);
 
   /* opacity: ${({ filtered, selected }) => ((filtered || selected) ? '1' : '0.4')}; */
   opacity: ${({ filtered }) => ((filtered) ? '1' : '0.35')};
   /* opacity: ${({ selected }) => ((selected) ? '1' : '0.4')}; */
 
-  text-decoration: ${({ selected, filtered }) => ((selected && filtered) ? 'underline' : 'none')};
+  padding: 2.5px 3px 0px 3px;
+  /* text-decoration: ${({ selected, filtered }) => ((selected && filtered) ? 'underline' : 'none')}; */
+  border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? 'black' : 'white')};
   text-decoration-color: ${props => props.theme.primary};
   pointer-events: ${({ filtered }) => (filtered ? 'auto' : 'none')};  
   
@@ -125,11 +127,12 @@ export const WorkItem = styled.div`
   &:hover {
     /* opacity: 1; */
     cursor: pointer;
-    text-decoration: underline;
+    border: 1px solid black;
+    /* text-decoration: underline; */
   }
 
   @media screen and (max-width: 767px) {
-    margin-bottom: 10px;
+    margin-bottom: 9px;
     width: fit-content;
     /* width: calc(50vw - 16px); */
   }
@@ -137,7 +140,8 @@ export const WorkItem = styled.div`
 
 export const ToTop = styled.div`
   /* margin-top: 50px; */
-  margin-top: 55vh;
+  margin-top: 50vh;
+  margin-left: 4px;
   width: fit-content;
 
   font-size: 14px;
@@ -152,6 +156,7 @@ export const ToTop = styled.div`
 
   @media screen and (max-width: 767px) {
     margin-top: 28vh;
+    margin-left: unset;
     margin-bottom: 140px;
   }
 `
