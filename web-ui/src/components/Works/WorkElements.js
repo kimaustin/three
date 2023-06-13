@@ -108,16 +108,20 @@ export const WorkItem = styled.div`
   width: fit-content;
   margin-bottom: 1.5px;
   scroll-margin-top: calc(6px);
+  padding: 2.5px 3px 0px 3px;
+  pointer-events: ${({ filtered }) => (filtered ? 'auto' : 'none')};  
 
   /* opacity: ${({ filtered, selected }) => ((filtered || selected) ? '1' : '0.4')}; */
   opacity: ${({ filtered }) => ((filtered) ? '1' : '0.35')};
-  /* opacity: ${({ selected }) => ((selected) ? '1' : '0.4')}; */
 
-  padding: 2.5px 3px 0px 3px;
   /* text-decoration: ${({ selected, filtered }) => ((selected && filtered) ? 'underline' : 'none')}; */
-  border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? ${props => props.theme.primary} : ${props => props.theme.bg})};
+  /* border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? 'black' : 'white')}; */
+  /* border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? '${props => props.theme.primary}' : '${props => props.theme.bg}')}; */
+  /* border: 1px solid ${({ outlined }) => (outlined ? 'green' : '${props => props.theme.bg}')}; */
+  border: 1px solid ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)};
+
   text-decoration-color: ${props => props.theme.primary};
-  pointer-events: ${({ filtered }) => (filtered ? 'auto' : 'none')};  
+  /* text-decoration-thickness: 3px; */
   
   color: ${props => props.theme.primary};
   font-size: 14px;

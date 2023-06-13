@@ -430,7 +430,6 @@ const Works = ({ projects, toggle, mobileToggle, clearFilters, filters, photoFil
     ));
 
     // let height_varPreview = "calc(120px + " + ((index) * (90 / (projects.length + 3))) + "vh)";
-    
     // if (project.type == '')
       // IF EMPTY, RETURN ALL
 
@@ -439,8 +438,11 @@ const Works = ({ projects, toggle, mobileToggle, clearFilters, filters, photoFil
         onClick={()=> handleClick(index)}
         id={index} 
         ref={myRefs[index]}
-        selected={(index == projectValue) ? true : false } 
-        filtered={(filters.length < 1 || (filters.includes(project.type))) ? true : false }>
+        // selected={(index == projectValue) ? true : false } 
+        outlined={((index == projectValue) && (filters.length < 1 || (filters.includes(project.type)))) ? true : false } 
+        filtered={(filters.length < 1 || (filters.includes(project.type))) ? true : false }
+        // filtered={((filters.length < 1 || (filters.includes(project.type))) && (index == projectValue)) ? true : false }
+        >
               {project.name}
         </WorkItem>
     );
