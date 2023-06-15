@@ -11,6 +11,7 @@ server/.elixir_ls/
 web-ui/build/
 web-ui/public/imgs/
 web-ui/node_modules/.cache/
+web-ui/node_modules/.cache/.eslintcache
 web-ui/node_modules/
 web-ui/.DS_Store
 web-ui/public/.DS_Store
