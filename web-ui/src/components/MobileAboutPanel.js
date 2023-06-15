@@ -48,7 +48,7 @@ const Container = styled.div`
 
     @media screen and (max-width: 767px) {
         display: flex;
-        z-index: 1000;
+        z-index: 1001;
         height: 100vh;
         width: calc(100vw - 74px);
         overflow: hidden;
@@ -117,9 +117,10 @@ const Styled3 = styled.div`
 `
 
 const Bottom = styled.div`
+    z-index: 1000;
     position: fixed;
     /* bottom: 13px; */
-    bottom: 139px;
+    bottom: 88px;
     /* z-index: 997; */
 `
 

@@ -118,7 +118,7 @@ export const WorkItem = styled.div`
   /* border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? 'black' : 'white')}; */
   /* border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? '${props => props.theme.primary}' : '${props => props.theme.bg}')}; */
   /* border: 1px solid ${({ outlined }) => (outlined ? 'green' : '${props => props.theme.bg}')}; */
-  border: 1px solid ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)};
+  border: .75px solid ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)};
 
   text-decoration-color: ${props => props.theme.primary};
   /* text-decoration-thickness: 3px; */
