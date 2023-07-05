@@ -8,11 +8,10 @@ const Marks = ({toggle, toggleLight, status, toggleDark, themeToggleStatus}) => 
             <Label>40.70270,-73.91847</Label>
             <br />
             <Label>Brooklyn, NY</Label>
-            <br />
-            <br />
-            <br />
-            <Open2W>Currently open to work</Open2W><br />
-            <Powered>Powered by nektinemedia :D</Powered>
+            <Bottom> 
+                <Open2W>Currently open to work</Open2W><br />
+                <Powered>Powered by nektinemedia :D</Powered>
+            </Bottom>
         </Container>
     );
 };
@@ -27,8 +26,9 @@ const Container = styled.div`
     /* display: grid; */
     /* width: auto; */
     position: fixed;
-    right: 10px;
-    bottom: 15px;
+    right: 12px;
+    /* bottom: 17px; */
+    top: 12px;
     /* height: 100vh; */
     /* padding: 14px 0 22px 0; */
 
@@ -40,7 +40,7 @@ const Container = styled.div`
 `
 
 const Label = styled.div`
-    font-size: 14px;
+    font-size: 15px;
     line-height: 138%;
     opacity: 0.7;
     float: right;
@@ -51,8 +51,15 @@ const Label = styled.div`
     }
 `
 
+const Bottom = styled.div`
+    position: fixed;
+    bottom: 17px;
+    right: 12px;
+    /* width: auto */
+`
+
 const Open2W = styled.div`
-    font-size: 14px;
+    font-size: 15px;
     line-height: 138%;
     opacity: 0.85;
     float: right;
@@ -65,7 +72,7 @@ const Open2W = styled.div`
 `
 
 const Powered = styled.div`
-    font-size: 12px;
+    font-size: 15px;
     line-height: 138%;
     opacity: 0.7;
     float: right;

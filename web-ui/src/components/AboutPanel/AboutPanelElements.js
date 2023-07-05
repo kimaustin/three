@@ -4,10 +4,11 @@ export const Container = styled.div`
     z-index: 1000;
     display: block;
     position: fixed;
-    left: 30vw;
-    top: 23.5vh;
-    width: 40vw;
-    height: 52vh;
+    /* left: 15vw; */
+    left: 23vw;
+    top: 22.25vh;
+    width: 54vw;
+    height: 45vh;
     overflow: hidden;
 
     /* opacity: 0.7;  */
@@ -16,7 +17,7 @@ export const Container = styled.div`
 
     /* opacity: 0.5; */
 
-    border: 1px solid ${props => props.theme.secondary};;
+    border: .75px solid ${props => props.theme.primary};;
     /* filter: blur(-2x); */
     /* -webkit-filter: blur(-1.5px); */
     /* cursor: url("/imgs/cursor1.svg"), auto; */
@@ -31,15 +32,17 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     overflow: hidden;
-    width: 100%;
+    /* width: 100%; */
+    max-width: 64%;
     z-index: 999;
 
+    /* background: green; */
     /* position: absolute; */
     /* bottom: 0; */
 
     padding-right: 10px;
     padding-left: 12px;
-    padding-top: 14px;
+    padding-top: 15px;
     padding-bottom: 12px;
     pointer-events: none;
 
@@ -66,11 +69,11 @@ export const Name = styled.div`
     /* top: 14px; */
     
     /* padding-top: 22px; */
-    /* padding-bottom: 36px; */
+    padding-bottom: 8px;
     /* padding-bottom: 12%; */
 
-    color: ${props => props.theme.secondary};
-    font-size: 12px;
+    color: ${props => props.theme.primary};
+    font-size: 28px;
     font-weight: 300;
     /* letter-spacing: 0.25px; */
 `
@@ -78,9 +81,9 @@ export const Name = styled.div`
 export const Divider = styled.div`
     z-index: -1;
     position: fixed;
-    height: 52vh;
+    height: 45vh;
     width: 1px;
-    right: 45%;
+    right: 42.5%;
     border-left: 1px solid ${props => props.theme.border};
 `
 
@@ -88,33 +91,34 @@ export const Styled1 = styled.span`
     display: flex; 
     width: 100%;
     color: ${props => props.theme.secondary};;
-    font-size: 14px;
-    padding-bottom: 10px;
+    font-size: 13px;
+    line-height: 138%;
+    padding-bottom: 8px;
 `
 
 export const Styled2 = styled.div`
     display: flex;
     padding-top: 20px;
-    width: calc(55% - 24px);
+    /* width: calc(55% - 24px); */
     /* margin-top: 18px; */
     
     color: ${props => props.theme.primary};;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 147%;
 `
 
 export const Styled3 = styled.div`
     position: absolute;
     /* right: 12px; */
-    bottom: 14px;
+    bottom: 12px;
     /* max-width: calc(25% + 12px); */
     /* width: calc(50% - 24px); */
     padding-top: 18px;
     
     /* text-align: right; */
-    font-size: 12px;
-    line-height: 145%;
-    opacity: 0.6;
+    font-size: 13px;
+    line-height: 135%;
+    opacity: 0.5;
 
     /* border: 1px solid blue; */
 `
@@ -123,9 +127,10 @@ export const Bottom = styled.div`
     position: absolute;
     padding-left: 12px;
     /* padding-right: 50%; */
-    bottom: 12px;
+    bottom: 10px;
     /* width: 100%; */
-    right: 12px;
+    right: 13px;
+    /* background: green; */
 
     text-align: right;
     overflow: hidden;
@@ -135,10 +140,10 @@ export const Bottom = styled.div`
 export const Close = styled.p`
     z-index: 999;
     position: absolute;
-    top: 14px;
-    right: 12px;
+    top: 13px;
+    right: 13px;
     color: ${props => props.theme.primary};;
-    font-size: 14px;
+    font-size: 15px;
 
     &:hover {
         cursor: pointer;

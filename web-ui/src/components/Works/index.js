@@ -354,7 +354,7 @@ const Works = ({ projects, toggle, mobileToggle, clearFilters, filters, photoFil
   const p45 = { type: "words", link: "https://nektine.wordpress.com/2019/02/24/give-it-a-listen-planet-stardom/", name: "Give it a Listen: Planet Stardom", semester: "feb 2018", desc: "'...energy continues until the last two songs, Gorgeous, I and Magna & Friends, which beautifully end the album in grounded, soft, and earthy tones. Gorgeous, I in particular was very moving; you could clearly feel the passion in the melodic waves...' - Exerpt from blog post. Part of a music review series from my budding artist years.", imgs: [""], tags: ["blog"]};
   const p46 = { type: "words", link: "https://nektine.wordpress.com/2018/02/22/give-it-a-listen-the-trip/", name: "Give it a Listen: The Trip", semester: "jan 2018", desc: "'...The Trip is straightforward, but also entrancing. For the whole song, the same instruments are droning on over the same notes again and again, and yet… you don’t want them to stop playing. The song creates an atmosphere that you actually want to be stuck in. That’s why her message works so well: to accept the beautiful, pit-less road ahead...' - Exerpt from blog post. Part of a music review series from my budding artist years.", imgs: [""], tags: ["blog"]};
 
-  const myProjects = [ p44, p1, p2, p3, p4, p5, p6, p7, p8, p10, p35, p11, p12, p40, p13, p14, p15, p16, p17, p18, p24, p19, p20, p21, p31, p9, p22, p23, p25, p26, p27, pX7, p28, p29, p30, p32, p33, p36, p37, p38, p39, p43, p46, p42, p34, p41, p45 ];
+  const myProjects = [ p44, p1, p6, p3, p2, p4, p5, p7, p8, p10, p35, p11, p12, p40, p13, p14, p15, p16, p17, p18, p24, p19, p20, p21, p31, p9, p22, p23, p25, p26, p27, pX7, p28, p29, p30, p32, p33, p36, p37, p38, p39, p43, p46, p42, p34, p41, p45 ];
 
   const ListContainerRef = useRef();
 
@@ -477,11 +477,11 @@ const Works = ({ projects, toggle, mobileToggle, clearFilters, filters, photoFil
           onClick={clearFilters} 
           active={(filters.length > 0) ? true : false }
         >clear all</ClearFilters>
-        <Filter onClick={projectFilter} active={(filters.includes("project")) ? true : false }>projects <a>{(filters.includes("project")) ? "✕" : ""}</a></Filter>
-        <Filter onClick={caseFilter} active={(filters.includes("case")) ? true : false }>case studies <a>{(filters.includes("case")) ? "✕" : ""}</a></Filter>
-        <Filter onClick={photoFilter} active={(filters.includes("photo")) ? true : false }>photo <a>{(filters.includes("photo")) ? "✕" : ""}</a></Filter>
-        <Filter onClick={audioFilter} active={(filters.includes("audio")) ? true : false }>audio <a>{(filters.includes("audio")) ? "✕" : ""}</a></Filter>
-        <Filter onClick={fabricFilter} active={(filters.includes("fabric")) ? true : false }>fabric <a>{(filters.includes("fabric")) ? "✕" : ""}</a></Filter>
+        <Filter onClick={projectFilter} active={(filters.includes("project")) ? true : false }>projects <a>{(filters.includes("project")) ? " ✕" : ""}</a></Filter>
+        <Filter onClick={caseFilter} active={(filters.includes("case")) ? true : false }>case studies <a>{(filters.includes("case")) ? " ✕" : ""}</a></Filter>
+        <Filter onClick={photoFilter} active={(filters.includes("photo")) ? true : false }>photo <a>{(filters.includes("photo")) ? " ✕" : ""}</a></Filter>
+        <Filter onClick={audioFilter} active={(filters.includes("audio")) ? true : false }>audio <a>{(filters.includes("audio")) ? " ✕" : ""}</a></Filter>
+        <Filter onClick={fabricFilter} active={(filters.includes("fabric")) ? true : false }>fabric <a>{(filters.includes("fabric")) ? " ✕" : ""}</a></Filter>
       </FiltersContainer>
 
       <NavDOMLinkAbout thispage={true} onClick={() => toggle('info')}>about</NavDOMLinkAbout>

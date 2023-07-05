@@ -79,10 +79,10 @@ export const WorkListContainer = styled.div`
   overflow-y: scroll;
   /* padding-bottom: calc(51vh - 62px + 0.8rem); */
   /* padding-bottom: calc(100vh - 24px - 12px); */
-  padding-bottom: 16px;
+  padding-bottom: 20px;
   /* padding-top: calc(48vh - 128px - 1.8rem + 103px); */
-  padding-top: 6px;
-  padding-left: 6px;
+  padding-top: 10px;
+  padding-left: 12px;
   padding-right: calc((((100vw - 16px) / 12) * 9) + 32px);
   z-index: 999;
 
@@ -97,7 +97,9 @@ export const WorkListContainer = styled.div`
 
   @media screen and (max-width: 767px) {
     z-index: 999;
-    padding-right: calc(57vw + 12px);
+    padding-right: calc(57vw + 16px);
+    /* padding-right: unset; */
+    /* width: 42vw; */
     padding-left: 8px;
     padding-bottom: 12px;
   }
@@ -106,39 +108,51 @@ export const WorkListContainer = styled.div`
 export const WorkItem = styled.div`
   display: grid;
   width: fit-content;
-  margin-bottom: 1.5px;
+  margin-bottom: 2px;
   scroll-margin-top: calc(6px);
   padding: 2.5px 3px 0px 3px;
   pointer-events: ${({ filtered }) => (filtered ? 'auto' : 'none')};  
 
   /* opacity: ${({ filtered, selected }) => ((filtered || selected) ? '1' : '0.4')}; */
   opacity: ${({ filtered }) => ((filtered) ? '1' : '0.35')};
-
-  /* text-decoration: ${({ selected, filtered }) => ((selected && filtered) ? 'underline' : 'none')}; */
+  /* font-weight: ${({ outlined }) => ((outlined) ? 'medium' : 'none')}; */
+  /* letter-spacing: ${({ outlined }) => ((outlined) ? '1px' : 'auto')}; */
+  text-transform:  ${({ outlined }) => ((outlined) ? 'uppercase' : 'none')};
+  margin-left:  ${({ outlined }) => ((outlined) ? '18px' : 'none')};
+  margin-top:  ${({ outlined }) => ((outlined) ? '9px' : 'none')};
+  margin-bottom:  ${({ outlined }) => ((outlined) ? '8px' : 'none')};
+  /* text-decoration: ${({ outlined }) => ((outlined) ? 'underline' : 'none')}; */
   /* border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? 'black' : 'white')}; */
   /* border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? '${props => props.theme.primary}' : '${props => props.theme.bg}')}; */
   /* border: 1px solid ${({ outlined }) => (outlined ? 'green' : '${props => props.theme.bg}')}; */
-  border: 1px solid ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)};
+  /* border: 1px solid ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)}; */
 
-  text-decoration-color: ${props => props.theme.primary};
+  /* text-decoration-color: ${props => props.theme.primary}; */
   /* text-decoration-thickness: 3px; */
   
   color: ${props => props.theme.primary};
-  font-size: 14px;
+  font-size: 15px;
   text-align: left;
   line-height: 145%;
 
   &:hover {
     /* opacity: 1; */
     cursor: pointer;
-    border: 1px solid ${props => props.theme.primary};
-    /* text-decoration: underline; */
+    /* border: 1px solid ${props => props.theme.primary}; */
+    text-decoration: underline;
+    /* font-weight: bold; */
+    /* margin-left: 14px; */
   }
 
   @media screen and (max-width: 767px) {
     margin-bottom: 9px;
     width: fit-content;
+    margin-left: unset;
+    font-weight: ${({ outlined }) => ((outlined) ? 'bold' : 'none')};
+    /* text-decoration: ${({ outlined }) => ((outlined) ? 'underline' : 'none')}; */
+    margin-top: unset;
     /* width: calc(50vw - 16px); */
+    /* text-align:  ${({ outlined }) => ((outlined) ? 'right' : 'none')}; */
   }
 `;
 
@@ -148,7 +162,7 @@ export const ToTop = styled.div`
   margin-left: 4px;
   width: fit-content;
 
-  font-size: 14px;
+  font-size: 15px;
   color: ${props => props.theme.primary};
   font-style: italic;
   /* font-weight: 600; */
@@ -217,13 +231,12 @@ export const DetailsContainer = styled.div`
 
 export const WorkDate = styled.div`
   position: fixed;
-  top: 6px;
-  /* top: 12px; */
-  left: calc(((100vw - 16px) / 12) * 3);
+  top: 12px;
+  left: calc(((100vw) / 12) * 3);
 
   color: ${props => props.theme.primary};
   font-style: italic;
-  font-size: 14px;
+  font-size: 15px;
 
   /* border: 1px solid blue; */
 
@@ -232,6 +245,7 @@ export const WorkDate = styled.div`
     position: unset;
     font-size: 11px;
     margin-bottom: 9vh;
+    margin-top: 8px;
     /* margin-bottom: 34px; */
   }
 `
@@ -240,7 +254,7 @@ export const WorkImageContainer = styled.div`
   position: fixed;
   width: 23vw;
   top: calc(13vh);
-  left: calc(((100vw - 16px) / 12) * 6);
+  left: calc(((100vw) / 12) * 6);
   text-align: left;
   align-items: start;
   align-content: start;
@@ -306,8 +320,8 @@ export const WorkPreview = styled.div`
 
   position: fixed;
   /* height: fit-content; */
-  width: calc((((100vw - 16px) / 12) * 3) - 44px);
-  left: calc(((100vw - 16px) / 12) * 3);
+  width: calc((((100vw) / 12) * 3) - 44px);
+  left: calc(((100vw) / 12) * 3);
 
   top: 13vh;
   text-align: left;
@@ -321,7 +335,8 @@ export const WorkPreview = styled.div`
 export const Desc = styled.div`
   color: ${props => props.theme.primary};
   line-height: 153%;
-  font-size: 12px;
+  /* opacity: 0.85; */
+  font-size: 13px;
   
   user-select: none;
   pointer-events: none;
@@ -337,7 +352,7 @@ export const Link = styled.a`
   /* opacity: ${({ filtered }) => ((filtered) ? '1' : '0.25')}; */
 
   line-height: 153%;
-  font-size: 12px;
+  font-size: 13px;
 
   /* position: fixed; */
   /* height: fit-content; */
@@ -395,9 +410,9 @@ export const MobileLink = styled.a`
 export const FiltersContainer = styled.div`
     position: fixed;
     /* top: 0; */
-    left: calc(((100vw - 16px) / 12) * 3);
+    left: calc(((100vw) / 12) * 3);
     /* left: 24vw; */
-    bottom: 10px;
+    bottom: 12px;
     /* bottom:  */
     /* left: 50vw; */
     display: grid;
@@ -419,14 +434,14 @@ export const FiltersContainer = styled.div`
 `
 
 export const Filter = styled.div`
-    margin-top: 5px;
+    margin-top: 4px;
     /* width: 100%; */
     width: fit-content;
     /* height: 30px; */
     /* padding-top: */
     color: ${props => props.theme.primary};
     text-decoration: none;
-    font-size: 36px;
+    font-size: 32px;
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -439,7 +454,7 @@ export const Filter = styled.div`
 
     a {
       opacity: 0;
-      font-size: 16px;
+      font-size: 20px;
     }
 
     ${props => props.active && css`
@@ -469,7 +484,7 @@ export const ClearFilters = styled.div`
     width: fit-content;
 
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
 
     margin-bottom: 7px;
 
@@ -484,7 +499,7 @@ export const ClearFilters = styled.div`
     /* padding: 4px 8px 2px 7px; */
     /* border: 1px solid ${props => props.theme.primary}; */
     /* background: ${props => props.theme.bg}; */
-    font-size: 14px;
+    font-size: 15px;
     /* border: 1px solid blue; */
     /* transform-origin: 0 0;
     transform: rotate(-90deg); */
@@ -502,13 +517,12 @@ export const NavDOMLinkAbout = styled.div`
     position: fixed;
     z-index: 1000;
 
-    /* left: 50vw; */
-    left: calc(((100vw - 16px) / 12) * 6);
-    bottom: 10px;
+    left: calc(((100vw) / 12) * 6);
+    bottom: 12px;
 
     text-decoration: none;
     
-    font-size: 36px;
+    font-size: 32px;
     color: ${props => props.theme.primary};
     opacity: 0.3;
 
