@@ -6,7 +6,7 @@ export const Container = styled.div`
     position: fixed;
     /* left: 15vw; */
     left: 23vw;
-    top: 22.25vh;
+    top: 27vh;
     width: 54vw;
     height: 45vh;
     overflow: hidden;

@@ -17,14 +17,14 @@ export default Switcher;
 const Container = styled.div`
     z-index: 999;
     position: fixed;
-    right: 12px;
+    right: 18px;
     /* top: 13px; */
     top: calc(50vh - 24px);
     color: ${props => props.theme.primary};
 
     padding: 5px 8px 3px 8px;
     border: 1px solid ${props => props.theme.primary};
-    background: ${props => props.theme.bg};
+    /* background: ${props => props.theme.bg}; */
 
     &:hover {
         background: ${props => props.theme.primary};

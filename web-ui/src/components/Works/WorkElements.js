@@ -79,10 +79,12 @@ export const WorkListContainer = styled.div`
   overflow-y: scroll;
   /* padding-bottom: calc(51vh - 62px + 0.8rem); */
   /* padding-bottom: calc(100vh - 24px - 12px); */
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
+  padding-bottom: 10vh;
   /* padding-top: calc(48vh - 128px - 1.8rem + 103px); */
-  padding-top: 10px;
-  padding-left: 12px;
+  /* padding-top: 10px; */
+  /* padding-left: 14px; */
+  padding-left: 3px;
   padding-right: calc((((100vw - 16px) / 12) * 9) + 32px);
   z-index: 999;
 
@@ -108,7 +110,7 @@ export const WorkListContainer = styled.div`
 export const WorkItem = styled.div`
   display: grid;
   width: fit-content;
-  margin-bottom: 2px;
+  margin-bottom: 2.5px;
   scroll-margin-top: calc(6px);
   padding: 2.5px 3px 0px 3px;
   pointer-events: ${({ filtered }) => (filtered ? 'auto' : 'none')};  
@@ -126,7 +128,6 @@ export const WorkItem = styled.div`
   /* border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? '${props => props.theme.primary}' : '${props => props.theme.bg}')}; */
   /* border: 1px solid ${({ outlined }) => (outlined ? 'green' : '${props => props.theme.bg}')}; */
   /* border: 1px solid ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)}; */
-
   /* text-decoration-color: ${props => props.theme.primary}; */
   /* text-decoration-thickness: 3px; */
   
@@ -158,9 +159,10 @@ export const WorkItem = styled.div`
 
 export const ToTop = styled.div`
   /* margin-top: 50px; */
-  margin-top: 50vh;
+  margin-top: 30vh;
   margin-left: 4px;
-  width: fit-content;
+  /* width: fit-content; */
+  text-align: right;
 
   font-size: 15px;
   color: ${props => props.theme.primary};
@@ -232,7 +234,7 @@ export const DetailsContainer = styled.div`
 export const WorkDate = styled.div`
   position: fixed;
   top: 12px;
-  left: calc(((100vw) / 12) * 3);
+  left: calc(((100vw) / 12) * 3  + 20px);
 
   color: ${props => props.theme.primary};
   font-style: italic;
@@ -254,7 +256,7 @@ export const WorkImageContainer = styled.div`
   position: fixed;
   width: 23vw;
   top: calc(13vh);
-  left: calc(((100vw) / 12) * 6);
+  left: calc(((100vw) / 12) * 6 + 20px);
   text-align: left;
   align-items: start;
   align-content: start;
@@ -321,7 +323,7 @@ export const WorkPreview = styled.div`
   position: fixed;
   /* height: fit-content; */
   width: calc((((100vw) / 12) * 3) - 44px);
-  left: calc(((100vw) / 12) * 3);
+  left: calc(((100vw) / 12) * 3 + 20px);
 
   top: 13vh;
   text-align: left;
@@ -410,10 +412,10 @@ export const MobileLink = styled.a`
 export const FiltersContainer = styled.div`
     position: fixed;
     /* top: 0; */
-    left: calc(((100vw) / 12) * 3);
+    left: calc(((100vw) / 12) * 3 + 20px);
     /* left: 24vw; */
-    bottom: 12px;
-    /* bottom:  */
+    bottom: 18px;
+    /* bottom: 12vw; */
     /* left: 50vw; */
     display: grid;
     margin-top: 30vh;
@@ -441,7 +443,7 @@ export const Filter = styled.div`
     /* padding-top: */
     color: ${props => props.theme.primary};
     text-decoration: none;
-    font-size: 32px;
+    font-size: 29px;
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -486,7 +488,7 @@ export const ClearFilters = styled.div`
     text-decoration: none;
     font-size: 15px;
 
-    margin-bottom: 7px;
+    margin-bottom: 8px;
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -517,12 +519,16 @@ export const NavDOMLinkAbout = styled.div`
     position: fixed;
     z-index: 1000;
 
-    left: calc(((100vw) / 12) * 6);
-    bottom: 12px;
+    left: calc(((100vw) / 12) * 6 + 20px);
+    /* left: calc(((100vw) / 12) * 3 + 20px); */
+    bottom: 18px;
+    /* top: 10px; */
+    /* bottom: 8vh; */
+    /* bottom: 2.5vh; */
 
     text-decoration: none;
     
-    font-size: 32px;
+    font-size: 29px;
     color: ${props => props.theme.primary};
     opacity: 0.3;
 

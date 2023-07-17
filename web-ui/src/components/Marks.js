@@ -5,12 +5,21 @@ import styled from 'styled-components';
 const Marks = ({toggle, toggleLight, status, toggleDark, themeToggleStatus}) => {
     return (
         <Container>
-            <Label>40.70270,-73.91847</Label>
+            <Powered>Powered by nektinemedia :D</Powered><br />
+            <Open2W>Currently open to work</Open2W>
+            {/* <Label>40.70270,-73.91847</Label>
             <br />
-            <Label>Brooklyn, NY</Label>
+            <Label>Brooklyn, NY</Label> */}
             <Bottom> 
-                <Open2W>Currently open to work</Open2W><br />
-                <Powered>Powered by nektinemedia :D</Powered>
+                <Label>40.70270,-73.91847</Label>
+                <br />
+                <Label>Brooklyn, NY</Label>
+                <br />
+                <br />
+                <br />
+                <br />
+                {/* <Open2W>Currently open to work</Open2W><br />
+                <Powered>Powered by nektinemedia :D</Powered> */}
             </Bottom>
         </Container>
     );
@@ -26,7 +35,7 @@ const Container = styled.div`
     /* display: grid; */
     /* width: auto; */
     position: fixed;
-    right: 12px;
+    right: 18px;
     /* bottom: 17px; */
     top: 12px;
     /* height: 100vh; */
@@ -54,7 +63,7 @@ const Label = styled.div`
 const Bottom = styled.div`
     position: fixed;
     bottom: 17px;
-    right: 12px;
+    right: 18px;
     /* width: auto */
 `
 
