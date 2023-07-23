@@ -356,7 +356,7 @@ const Works = ({ projects, toggle, mobileToggle, clearFilters, filters, photoFil
   const p47 = { type: "case", link: "http://v1.austinkim.works", name: "Work Portfolio V1 (v1.austinkim.works)", semester: "nov 2021", desc: "Very first version of my digital portfolio where I dive deeper into more of my professional work.", imgs: ["portfolio/v1.jpeg"], tags: ["blog"]};
   const p48 = { type: "case", name: "June Homes Portfolio Showcase [Figma]", link: "https://www.figma.com/file/VNTKP5kQkPeUMtZAwKfC0O/June-Homes---Figma-Portfolio-Showcase?type=design&node-id=5-126&mode=design&t=z50KodqiNnpB55y8-4", semester: "jun 2023", desc: "Organized showcase of various initaitves I designed with June Homes. Projects range from a new Design System, iOS designs, and multiple system revisions.", imgs: ["june/showcase.jpeg"], tags: ["june"]};
 
-  const myProjects = [ p44, p48, p1, p6, p3, p2, p4, p5, p47, p7, p8, p10, p35, p11, p12, p40, p13, p14, p15, p16, p17, p18, p24, p19, p20, p21, p31, p9, p22, p23, p25, p26, p27, pX7, p28, p29, p30, p32, p33, p36, p37, p38, p39, p43, p46, p42, p34, p41, p45 ];
+  const myProjects = [ p44, p1, p48, p6, p3, p2, p4, p5, p47, p7, p8, p10, p35, p11, p12, p40, p13, p14, p15, p16, p17, p18, p24, p19, p20, p21, p31, p9, p22, p23, p25, p26, p27, pX7, p28, p29, p30, p32, p33, p36, p37, p38, p39, p43, p46, p42, p34, p41, p45 ];
 
   const ListContainerRef = useRef();
 

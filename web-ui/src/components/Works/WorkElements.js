@@ -358,8 +358,9 @@ export const Link = styled.a`
 
   /* position: fixed; */
   /* height: fit-content; */
-  width: calc((((100vw - 16px) / 12) * 3) - 44px);
+  width: calc((((100vw - 16px) / 12) * 3) - 100px);
   /* top: 50vh; */
+  padding-right: 18px;
   /* top: 10vh; */
   top: calc(13vh - 30px);
 
