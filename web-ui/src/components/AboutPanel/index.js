@@ -38,7 +38,7 @@ const About = ({ toggle, aboutToggle }) => {
           <Social href="mailto:nektinemedia@gmail.com" target="_blank">email</Social>
           <Social href="https://www.instagram.com/nektine/" target="_blank">instagram</Social>
           <Social href="https://www.are.na/goreum-b" target="_blank">are.na</Social>
-          <Social onClick={() => window.open("/imgs/Resume_Spring23.pdf")} target="_blank">resume_may2023</Social>
+          <Social onClick={() => window.open("/akim_resume_summer2023.pdf")} target="_blank">resume_2023</Social>
         </Bottom>
       </Container>
   );
