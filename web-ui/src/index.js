@@ -4,7 +4,7 @@ import React from 'react';
 import { Normalize } from 'styled-normalize';
 import ReactDOM from 'react-dom';
 import store from './store';
-import { load_defaults, get_all_projects } from './api';
+// import { load_defaults, get_all_projects } from './api';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -19,7 +19,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-load_defaults();  
+// load_defaults();  
 reportWebVitals();
 
 

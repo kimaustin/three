@@ -28,6 +28,10 @@ import Navigation from "./components/Navigation";
 //Our App Components
 function App() {
   
+
+  // const [projectValue, setProjectValue] = useState(0);
+
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {

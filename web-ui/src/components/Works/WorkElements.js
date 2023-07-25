@@ -84,7 +84,7 @@ export const WorkListContainer = styled.div`
   /* padding-top: calc(48vh - 128px - 1.8rem + 103px); */
   /* padding-top: 10px; */
   /* padding-left: 14px; */
-  padding-left: 3px;
+  padding-left: 4px;
   padding-right: calc((((100vw - 16px) / 12) * 9) + 32px);
   z-index: 999;
 

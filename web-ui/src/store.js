@@ -76,7 +76,7 @@ function root_reducer(state, action) {
     return state1;
 }
 
-get_all_projects();
+// get_all_projects();
 // fetch_projects();
 
 let preloadedState;
