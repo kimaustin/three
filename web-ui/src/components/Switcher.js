@@ -36,7 +36,7 @@ const Container = styled.div`
         z-index: 1000;
         top: unset;
         right: unset;
-        left: 8px;
+        left: 12px;
         /* left: calc(42vw + 6px); */
         bottom: 13px;
         /* pointer-events: none; */

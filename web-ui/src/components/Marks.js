@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Marks = ({toggle, toggleLight, status, toggleDark, themeToggleStatus}) => {
     return (
         <Container>
-            <Powered>Powered by nektinemedia :D</Powered><br />
+            <Powered>Powered by realitycomposer</Powered><br />
             <Open2W>Currently open to work</Open2W>
             {/* <Label>40.70270,-73.91847</Label>
             <br />

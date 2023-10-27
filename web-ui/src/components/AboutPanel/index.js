@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Content, Logo, Name, ProfileContainer, Resume, ImageSide, ResumeDownload, Bottom, Social, Side, Loader, Desc, Styled1, Styled2, Close, Styled3, Divider } from './AboutPanelElements';
+import { Container, Content, Logo, Name, ProfileContainer, Resume, ImageSide, ResumeDownload, Bottom, Social, Side, Styled0, Loader, Desc, Styled1, Styled2, Close, Styled3, Divider } from './AboutPanelElements';
 import { ListContainer } from '../Works/WorkElements';
 import { motion } from "framer-motion";
 
@@ -26,19 +26,22 @@ const About = ({ toggle, aboutToggle }) => {
         <Content>
           {/* <Styled1>Currently based in Brooklyn, NY</Styled1> */}
           <Name>Austin Emmanuel Kim</Name>
-          <Styled1>Northeastern University '2021<br />Computer Science and Design</Styled1>
+          <Styled0>Reality Composer — The Wandering Bateman — 호연</Styled0>
+          {/* <Styled1>Northeastern University '2021<br />Computer Science and Design</Styled1> */}
+          <Styled1>Bachelors of Computer Science and Design @ Northeastern University</Styled1>
           {/* <Styled2>Northeastern University '2021<br /> Bachelors of Computer Science and Design</Styled2> */}
-          <Styled2>Multi-disciplinary designer, developer, and artist with a passion for building meaningful experiences. I love experimenting with new technologies, techniques, patterns, styles, and sounds.</Styled2>
+          <Styled2>Multi-disciplinary designer, developer, and artistwith a passion for building meaningful experiences. Passionate about new technologies, patterns, systems, and sounds.</Styled2>
+          <Styled2>Currently into : FSOL, puerh, strawberry-player, buggy g. riphead, go, plexus.earth</Styled2>
           {/* <Styled1 style={{ paddingBottom: 0, paddingTop: '12px' }}>Last Updated: May 4, 2023</Styled1>
           <Styled1>Built by me in React (framer, styled-components) + Elixir.</Styled1> */}
           {/* <Styled1 style={{ color: '#6C9EFF', paddingTop: '10px' }}>Open for work and collaboration</Styled1> */}
-          <Styled3>Last Updated: May 30, 2023 <br />Built in React + Elixir.</Styled3>
+          <Styled3>Last Updated: Oct 15, 2023 <br />Built in React + Elixir.</Styled3>
         </Content>
         <Bottom>
-          <Social href="mailto:nektinemedia@gmail.com" target="_blank">email</Social>
-          <Social href="https://www.instagram.com/nektine/" target="_blank">instagram</Social>
-          <Social href="https://www.are.na/goreum-b" target="_blank">are.na</Social>
-          <Social onClick={() => window.open("/akim_resume_summer2023.pdf")} target="_blank">resume_2023</Social>
+          <Social onClick={() => window.open("/akim_resume_summer2023.pdf")} target="_blank">CV</Social>
+          <Social href="mailto:nektinemedia@gmail.com" target="_blank">EMAIL</Social>
+          <Social href="https://www.are.na/reality-composer" target="_blank">ARE.NA</Social>
+          <Social href="https://www.instagram.com/reality.composer/" target="_blank">INSTAGRAM</Social>
         </Bottom>
       </Container>
   );

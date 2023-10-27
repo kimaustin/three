@@ -16,23 +16,22 @@ const MobileAboutPanel = ({toggle, togglePanel}) => {
         >
             <Close onClick={togglePanel}>✕</Close>
             <Content>
+                <Name>Austin E. Kim</Name>
+                
+                <Styled2>Reality Composer — The Wandering Bateman — 호연</Styled2>
                 <Label>40.70270,-73.91847</Label>
                 <Label>Brooklyn, NY</Label>
-                <br />
-                <Name>austin emmanuel kim</Name>
                 <Styled>Multi-disciplinary designer, developer, and artist with a passion for building meaningful experiences.</Styled>
-                <Styled>Bachelors of Computer Science & Design<br />Northeastern University 2021.</Styled>
-                <Styled>Passionate about expanding into new technologies, techniques, patterns, styles, and sounds.</Styled>
+                <Styled>Bachelors of Computer Science and Design @ Northeastern University</Styled>
+                <Styled>Passionate about new technologies, patterns, systems, and sounds.</Styled>
                 <br />
                 <Open2W>Currently open to work</Open2W>
-                <br />
-                <Styled3>Built in React + Elixir.</Styled3>
-                <Powered>Powered by nektinemedia.</Powered> </Content>
+                <Powered>Built in React + Elixir. <br />Powered by realitycomposer</Powered> </Content>
             <Bottom>
-                <Social href="mailto:nektinemedia@gmail.com" target="_blank">email</Social>
-                <Social href="https://www.instagram.com/nektine/" target="_blank">instagram</Social>
-                <Social href="https://www.are.na/goreum-b" target="_blank">are.na</Social>
-                <Social onClick={() => window.open("/akim_resume_summer2023.pdf")} target="_blank">resume_2023</Social>
+            <Social onClick={() => window.open("/akim_resume_summer2023.pdf")} target="_blank">CV</Social>
+          <Social href="mailto:nektinemedia@gmail.com" target="_blank">EMAIL</Social>
+          <Social href="https://www.are.na/reality-composer" target="_blank">ARE.NA</Social>
+          <Social href="https://www.instagram.com/reality.composer/" target="_blank">INSTAGRAM</Social>
             </Bottom>
         </Container>
     );
@@ -54,7 +53,7 @@ const Container = styled.div`
         overflow: hidden;
         position: fixed;
         left: 0;
-        padding-left: 10px;
+        padding-left: 11px;
         padding-right: 12px;
         border-right: .75px solid ${props => props.theme.secondary};
         background: ${props => props.theme.bg};
@@ -97,17 +96,31 @@ const Name = styled.div`
     display: flex;
     line-height: 100%;
 
-    color: ${props => props.theme.secondary};
-    font-size: 12px;
+    color: ${props => props.theme.primary};
+    font-size: 24px;
+    padding-top: 1px;
+    margin-bottom: -9px;
 `
 const Styled = styled.div`
     padding-top: 14px;
     padding-right: 18px;
     
     color: ${props => props.theme.primary};;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 143%;
 `
+
+const Styled2 = styled.div`
+    padding-top: 14px;
+    padding-right: 18px;
+    
+    color: ${props => props.theme.primary};;
+    font-size: 14px;
+    line-height: 143%;
+    opacity: 0.7;
+    padding-bottom: 7px;
+`
+
 const Styled3 = styled.div`
     /* padding-top: 18px; */
     
@@ -153,6 +166,8 @@ const Open2W = styled.div`
 `
 
 const Powered = styled.div`
+    position: absolute;
+    bottom: 16px;
     font-size: 12px;
     line-height: 138%;
     opacity: 0.6;

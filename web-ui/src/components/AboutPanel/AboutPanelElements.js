@@ -5,9 +5,10 @@ export const Container = styled.div`
     display: block;
     position: fixed;
     /* left: 15vw; */
-    left: 23vw;
-    top: 27vh;
-    width: 54vw;
+    left: 24vw;
+    top: 26.5vh;
+    /* bottom: 6vh; */
+    width: 52vw;
     height: 45vh;
     overflow: hidden;
 
@@ -17,7 +18,7 @@ export const Container = styled.div`
 
     /* opacity: 0.5; */
 
-    border: .75px solid ${props => props.theme.primary};;
+    border: 1px solid ${props => props.theme.primary};
     /* filter: blur(-2x); */
     /* -webkit-filter: blur(-1.5px); */
     /* cursor: url("/imgs/cursor1.svg"), auto; */
@@ -40,10 +41,11 @@ export const Content = styled.div`
     /* position: absolute; */
     /* bottom: 0; */
 
-    padding-right: 10px;
-    padding-left: 12px;
-    padding-top: 15px;
-    padding-bottom: 12px;
+    padding-right: 14px;
+    padding-left: 14px;
+    padding-top: 16px;
+    /* padding-top: 15%; */
+    padding-bottom: 14px;
     pointer-events: none;
 
     text-align: left;
@@ -69,7 +71,7 @@ export const Name = styled.div`
     /* top: 14px; */
     
     /* padding-top: 22px; */
-    padding-bottom: 8px;
+    padding-bottom: 6px;
     /* padding-bottom: 12%; */
 
     color: ${props => props.theme.primary};
@@ -84,41 +86,53 @@ export const Divider = styled.div`
     height: 45vh;
     width: 1px;
     right: 42.5%;
-    border-left: 1px solid ${props => props.theme.border};
+    border-left: 1px solid ${props => props.theme.primary};
+`
+
+export const Styled0 = styled.a`
+    /* display: flex;  */
+    /* width: 100%; */
+    color: ${props => props.theme.secondary};;
+    font-size: 14px;
+    line-height: 138%;
+    /* padding-bottom: 8px; */
 `
 
 export const Styled1 = styled.span`
     display: flex; 
     width: 100%;
     color: ${props => props.theme.secondary};;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 138%;
-    padding-bottom: 8px;
+    padding-bottom: 14px;
 `
 
 export const Styled2 = styled.div`
     display: flex;
     padding-top: 20px;
-    /* width: calc(55% - 24px); */
+    width: 90%;
     /* margin-top: 18px; */
     
     color: ${props => props.theme.primary};;
-    font-size: 15px;
+    font-size: 19px;
     line-height: 147%;
 `
 
 export const Styled3 = styled.div`
     position: absolute;
     /* right: 12px; */
-    bottom: 12px;
+    bottom: 13px;
     /* max-width: calc(25% + 12px); */
     /* width: calc(50% - 24px); */
     padding-top: 18px;
     
     /* text-align: right; */
-    font-size: 13px;
+    font-size: 14px;
     line-height: 135%;
-    opacity: 0.5;
+    opacity: 0.6;
+
+    color: ${props => props.theme.primary};
+
 
     /* border: 1px solid blue; */
 `
@@ -127,9 +141,9 @@ export const Bottom = styled.div`
     position: absolute;
     padding-left: 12px;
     /* padding-right: 50%; */
-    bottom: 10px;
+    bottom: 12px;
     /* width: 100%; */
-    right: 13px;
+    right: 15px;
     /* background: green; */
 
     text-align: right;
@@ -140,8 +154,8 @@ export const Bottom = styled.div`
 export const Close = styled.p`
     z-index: 999;
     position: absolute;
-    top: 13px;
-    right: 13px;
+    top: 14px;
+    right: 14px;
     color: ${props => props.theme.primary};;
     font-size: 15px;
 
