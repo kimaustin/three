@@ -182,17 +182,17 @@ function App() {
     }
   }
     
-  const filterCase = () => {
+  const filterStudy = () => {
     const tempFilters = [...filters];
-    if (filters.includes("case")) {
-      const index = filters.indexOf("case");
+    if (filters.includes("study")) {
+      const index = filters.indexOf("study");
       tempFilters.splice(index, 1);
-      console.log("removed case");
+      console.log("removed study");
       console.log("filters", tempFilters);
       setFilters(tempFilters);
     } else {
-      tempFilters.push("case");
-      console.log("added case");
+      tempFilters.push("study");
+      console.log("added study");
       console.log("filters", tempFilters);
       setFilters(tempFilters);
     }
@@ -209,7 +209,7 @@ function App() {
         <Switcher toggle={switcher1} status={light}/>
         {/* <Navigation toggle={toggleAbout} aboutToggle={aboutToggle}/> */}
         <Versions drawerToggle={versionDrawer} toggle={toggleDrawer} />
-        <NavBar aboutToggle={toggleAbout} mobileToggle={toggle} isOpen={isOpen} filters={filters} clearFilters={clearFilters} photoFilter={filterPhoto} audioFilter={filterAudio} caseFilter={filterCase} projectFilter={filterProjects} fabricFilter={filterFabric}/>
+        <NavBar aboutToggle={toggleAbout} mobileToggle={toggle} isOpen={isOpen} filters={filters} clearFilters={clearFilters} photoFilter={filterPhoto} audioFilter={filterAudio} studyFilter={filterStudy} projectFilter={filterProjects} fabricFilter={filterFabric}/>
         <AboutPanel aboutToggle={aboutToggle} toggle={toggleAbout}></AboutPanel>
         <MobileAboutPanel toggle={aboutToggle} togglePanel={toggleAbout}></MobileAboutPanel>
         <Marks />
@@ -222,7 +222,7 @@ function App() {
               <Switch location={location} key={location.pathname}>
                 <Route exact path="/" component={Main} />
                 {/* <Route exact path="/everythingicaretoshare" component={Works} /> */}
-                <Route exact path="/everythingicaretoshare" render={(props) => <Works toggle={toggleAbout} mobileToggleStatus={isOpen} mobileToggle={toggle} filters={filters} clearFilters={clearFilters} photoFilter={filterPhoto} audioFilter={filterAudio} caseFilter={filterCase} projectFilter={filterProjects} fabricFilter={filterFabric} {...props} />}/>
+                <Route exact path="/everythingicaretoshare" render={(props) => <Works toggle={toggleAbout} mobileToggleStatus={isOpen} mobileToggle={toggle} filters={filters} clearFilters={clearFilters} photoFilter={filterPhoto} audioFilter={filterAudio} studyFilter={filterStudy} projectFilter={filterProjects} fabricFilter={filterFabric} {...props} />}/>
                 {/* <Route exact path="/blog" component={Blog} />  */}
                 {/* <Route exact path="/photo" component={Photography} /> */}
                 {/* <Route path="/:workId?/works" component={WorkExpanded} exact /> */}

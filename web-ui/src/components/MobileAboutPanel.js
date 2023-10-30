@@ -17,7 +17,6 @@ const MobileAboutPanel = ({toggle, togglePanel}) => {
             <Close onClick={togglePanel}>✕</Close>
             <Content>
                 <Name>Austin E. Kim</Name>
-                
                 <Styled2>Reality Composer — The Wandering Bateman — 호연</Styled2>
                 <Label>40.70270,-73.91847</Label>
                 <Label>Brooklyn, NY</Label>
@@ -28,10 +27,10 @@ const MobileAboutPanel = ({toggle, togglePanel}) => {
                 <Open2W>Currently open to work</Open2W>
                 <Powered>Built in React + Elixir. <br />Powered by realitycomposer</Powered> </Content>
             <Bottom>
-            <Social onClick={() => window.open("/akim_resume_summer2023.pdf")} target="_blank">CV</Social>
-          <Social href="mailto:nektinemedia@gmail.com" target="_blank">EMAIL</Social>
-          <Social href="https://www.are.na/reality-composer" target="_blank">ARE.NA</Social>
-          <Social href="https://www.instagram.com/reality.composer/" target="_blank">INSTAGRAM</Social>
+                <Social onClick={() => window.open("/akim_resume_summer2023.pdf")} target="_blank">CV</Social>
+                <Social href="mailto:hoyeun@realitycomposer.space" target="_blank">EMAIL</Social>
+                <Social href="https://www.are.na/reality-composer" target="_blank">ARE.NA</Social>
+                <Social href="https://www.instagram.com/reality.composer/" target="_blank">INSTAGRAM</Social>
             </Bottom>
         </Container>
     );
@@ -102,12 +101,12 @@ const Name = styled.div`
     margin-bottom: -9px;
 `
 const Styled = styled.div`
-    padding-top: 14px;
+    padding-top: 12px;
     padding-right: 18px;
     
     color: ${props => props.theme.primary};;
     font-size: 16px;
-    line-height: 143%;
+    line-height: 135%;
 `
 
 const Styled2 = styled.div`
@@ -163,11 +162,12 @@ const Open2W = styled.div`
     opacity: 1;
     font-style: italic;
     color: ${props => props.theme.cs};
+    margin-bottom: 4px;
 `
 
 const Powered = styled.div`
-    position: absolute;
-    bottom: 16px;
+    /* position: absolute; */
+    /* bottom: 16px; */
     font-size: 12px;
     line-height: 138%;
     opacity: 0.6;

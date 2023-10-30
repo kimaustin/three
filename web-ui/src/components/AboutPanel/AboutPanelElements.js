@@ -115,7 +115,7 @@ export const Styled2 = styled.div`
     
     color: ${props => props.theme.primary};;
     font-size: 19px;
-    line-height: 147%;
+    line-height: 131%;
 `
 
 export const Styled3 = styled.div`

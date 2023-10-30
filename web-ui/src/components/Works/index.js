@@ -32,7 +32,7 @@ import {
 // Scrollbar.init(document.querySelector('#my-scrollbar'), options);
 
 
-const Works = ({ projects, toggle, mobileToggle, clearFilters, filters, photoFilter, audioFilter, projectFilter, caseFilter, fabricFilter }) => {
+const Works = ({ projects, toggle, mobileToggle, clearFilters, filters, photoFilter, audioFilter, projectFilter, studyFilter, fabricFilter }) => {
 
   const [projectDisplayed, setProjectDisplayed] = useState(0);
   const [hoverAllowed, setHoverAllowed] = useState(true);
@@ -357,9 +357,11 @@ const Works = ({ projects, toggle, mobileToggle, clearFilters, filters, photoFil
   const p48 = { type: "study", name: "June Homes Portfolio Showcase [Figma]", link: "https://www.figma.com/file/VNTKP5kQkPeUMtZAwKfC0O/June-Homes---Figma-Portfolio-Showcase?type=design&node-id=5-126&mode=design&t=z50KodqiNnpB55y8-4", semester: "jun 2023", desc: "Organized showcase of various initaitves I designed with June Homes. Projects range from a new Design System, iOS designs, and multiple system revisions.", imgs: ["june/showcase_ex.jpeg"], tags: ["june"]};
   const p49 = { type: "audio", name: "Bounds of Proxima Centauri", link: "", semester: "— 2023", desc: "Artwork for upcoming debut album, 'Bounds of Proxima Centauri', for The Wandering Bateman. Release date TBD.", imgs: ["graphic/bounds1.jpeg"], tags: ["wandering bateman"]};
   const p50 = { type: "audio", name: "Tunes of the Yeoman", link: "https://music.apple.com/us/playlist/tunes-of-the-yeoman/pl.u-V9D77WKT1jBdVJ", semester: "CBC Autumn Classic, oct 2023", desc: "Curated atmosphere for the Bones of the Yeoman. The fuel that drove the Bones to come out victorious in CBC's first ever Autumn Classic.", imgs: ["fun/tunes.jpeg"], tags: ["wandering bateman"]};
-  const p51 = { type: "audio", name: "A Nektine Memorial", link: "https://www.instagram.com/p/CyZdb6xM2by/?img_index=1", semester: "oct 2023", desc: "It's hard to distance ourselves from online expression these days, and a big part of owning up to this reality is fully realizing yourself in an online persona. Sometimes the name behind our identities feel limiting, or behind us. I felt evolution was only possible with a new name to live behind, which may be childish, but maybe not. Maybe I’ll regret leaving behind such a personally constructed name, but maybe not. Am I living shadowed and defined by the channels of the internet, or is the online fueling me to reach heightened levels of self previously impossible? Hard to say….", imgs: ["fun/nektine.jpeg"], tags: ["nektine"]};
+  const p51 = { type: "project", name: "A Nektine Memorial", link: "https://www.instagram.com/p/CyZdb6xM2by/?img_index=1", semester: "oct 2023", desc: "It's hard to distance ourselves from online expression these days, a big part of owning up to this reality is fully realizing yourself in an online persona. Sometimes the name behind our identities feel limiting, or behind us. I felt evolution was only possible with a new name to live behind, which may be childish, but maybe not. Maybe I’ll regret leaving behind such a personally constructed name, but maybe not. Am I living shadowed and defined by the channels of the internet, or is the online fueling me to reach heightened levels of self previously impossible? Hard to say….", imgs: ["fun/nektine.jpeg"], tags: ["nektine"]};
+  const p52 = { type: "study", name: "An Obsidian love letter", link: "", semester: "oct 2023", desc: "Love letter to Obsidian. Paving the way for thought collection. Paving the way for information as bio-artifacts. To see your mind realized as a breathing system of nodes... Obsidian Graph Feature top 10 features of all time, shadowed only by the likes of Global Scrap Paper, comping in Logic, few others.", imgs: ["fun/obsidian.jpeg"], tags: ["obsidian"]};
+  const p53 = { type: "project", name: "GO.", link: "", semester: "aug 2023", desc: "A must-document moment, winning my first in-person game of GO. This is how you catch the bug, feeling like youve improved, learned, and reap the rewards of actively studying. Beating someone who you know is much stronger than you through a handicap difference. A poised application of knowledge, accumulated through weeks of losses. The reward of effort's equivalent exchange to consequence, so great. I want to continue to rise. I am akira toya. I am hikaru shindo. To rise is to rise in humility, and show intellectual prowess, hunger, ambition, vision, confidence.", imgs: ["fun/go.jpeg"], tags: ["obsidian"]};
 
-  const myProjects = [ p44, p51, p48, p50, p1, p6, p3, p49, p2, p4, p5, p47, p7, p8, p10, p35, p11, p12, p40, p13, p14, p15, p16, p17, p18, p24, p19, p20, p21, p31, p9, p22, p23, p25, p26, p27, pX7, p28, p29, p30, p32, p33, p36, p37, p38, p39, p43, p46, p42, p34, p41, p45 ];
+  const myProjects = [ p44, p51, p48, p52, p1, p50, p6, p3, p47, p53, p49, p2, p4, p5, p7, p8, p10, p35, p11, p12, p40, p13, p14, p15, p16, p17, p18, p24, p19, p20, p21, p31, p9, p22, p23, p25, p26, p27, pX7, p28, p29, p32, p33, p36, p37, p38, p39, p43, p46, p42, p34, p41, p45 ];
 
   const ListContainerRef = useRef();
 
@@ -487,7 +489,7 @@ const Works = ({ projects, toggle, mobileToggle, clearFilters, filters, photoFil
           active={(filters.length > 0) ? true : false }
         >clear</ClearFilters>
         <Filter onClick={projectFilter} active={(filters.includes("project")) ? true : false }>projects <a>{(filters.includes("project")) ? " ✕" : ""}</a></Filter>
-        <Filter onClick={caseFilter} active={(filters.includes("case")) ? true : false }>case studies <a>{(filters.includes("case")) ? " ✕" : ""}</a></Filter>
+        <Filter onClick={studyFilter} active={(filters.includes("study")) ? true : false }>case studies <a>{(filters.includes("study")) ? " ✕" : ""}</a></Filter>
         <Filter onClick={photoFilter} active={(filters.includes("photo")) ? true : false }>photo <a>{(filters.includes("photo")) ? " ✕" : ""}</a></Filter>
         <Filter onClick={audioFilter} active={(filters.includes("audio")) ? true : false }>audio <a>{(filters.includes("audio")) ? " ✕" : ""}</a></Filter>
         <Filter onClick={fabricFilter} active={(filters.includes("fabric")) ? true : false }>fabric <a>{(filters.includes("fabric")) ? " ✕" : ""}</a></Filter>
