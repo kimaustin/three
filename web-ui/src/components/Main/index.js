@@ -22,7 +22,7 @@ const Main = () => {
     const onPageLoad = () => {
       // alert("hi");
       // toggleLight;
-      history.push('/everythingicaretoshare');
+      history.push('/reality1');
     };
 
     if (document.readyState === 'complete') {

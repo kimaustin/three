@@ -220,9 +220,9 @@ function App() {
           render={({ location }) => (
             <AnimatePresence exitBeforeEnter>
               <Switch location={location} key={location.pathname}>
-                {/* <Route exact path="/" component={Main} /> */}
+                <Route exact path="/" component={Main} />
                 {/* <Route exact path="/everythingicaretoshare" component={Works} /> */}
-                <Route exact path="/" render={(props) => <Works toggle={toggleAbout} mobileToggleStatus={isOpen} mobileToggle={toggle} filters={filters} clearFilters={clearFilters} photoFilter={filterPhoto} audioFilter={filterAudio} studyFilter={filterStudy} projectFilter={filterProjects} fabricFilter={filterFabric} {...props} />}/>
+                <Route exact path="/reality1" render={(props) => <Works toggle={toggleAbout} mobileToggleStatus={isOpen} mobileToggle={toggle} filters={filters} clearFilters={clearFilters} photoFilter={filterPhoto} audioFilter={filterAudio} studyFilter={filterStudy} projectFilter={filterProjects} fabricFilter={filterFabric} {...props} />}/>
                 {/* <Route exact path="/blog" component={Blog} />  */}
                 {/* <Route exact path="/photo" component={Photography} /> */}
                 {/* <Route path="/:workId?/works" component={WorkExpanded} exact /> */}
