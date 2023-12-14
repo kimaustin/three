@@ -16,6 +16,9 @@ export const Container = styled(motion.div)`
   }
 
   overflow: hidden;
+
+  /* background-image: url("fun/bg0.jpg"); */
+
 `
 
 export const Divider = styled.div`
@@ -82,10 +85,11 @@ export const WorkListContainer = styled.div`
   /* padding-bottom: 20px; */
   padding-bottom: 10vh;
   /* padding-top: calc(48vh - 128px - 1.8rem + 103px); */
-  padding-top: 14px;
-  padding-left: 16px;
+  padding-top: 17px;
+  /* padding-top: 40vh; */
+  padding-left: 8px;
   /* padding-left: 34px; */
-  padding-right: calc((((100vw - 16px) / 12) * 9) + 20px);
+  padding-right: calc((((100vw - 16px) / 12) * 9) - 20px);
   z-index: 999;
 
   overflow-x: hidden; 
@@ -109,12 +113,33 @@ export const WorkListContainer = styled.div`
   }
 `;
 
+
+export const Indicator = styled.div`
+    position: absolute;
+    margin-top: 10px;
+    /* right: calc((((100vw - 16px) / 12) * 9) + 20px); */
+    /* right: calc((((100vw - 16px) / 12) * 9 - 40px)); */
+    left: 14px;
+    user-select: none;
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)};
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+`
+
 export const WorkItem = styled.div`
   display: grid;
   width: fit-content;
   /* max-width: 100%; */
-  margin-bottom: 2.2px;
-  scroll-margin-top: calc(6px);
+  margin-bottom: 2px;
+  margin-left: 30px;
+  scroll-margin-top: calc(16px);
   padding: 3px 4px 0px 4px;
   pointer-events: ${({ filtered }) => (filtered ? 'auto' : 'none')};  
 
@@ -139,25 +164,33 @@ export const WorkItem = styled.div`
   /* background: ${props => props.theme.bg}; */
   /* text-decoration-color: ${props => props.theme.primary}; */
   /* text-decoration-thickness: 3px; */
-
+  user-select: none;
   
   color: ${props => props.theme.primary};
 
   /* color: ${props => ((props.outlined) ? props.theme.bg : props.theme.primary)}; */
   /* background: ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)}; */
 
-  font-size: 15px;
+  font-size: 26px;
   text-align: left;
-  line-height: 145%;
+  line-height: 130%;
 
   &:hover {
     /* opacity: 1; */
     cursor: pointer;
-    border: 1.5px solid ${props => props.theme.primary};
+    /* border: 1.5px solid ${props => props.theme.primary}; */
     /* text-decoration: underline; */
     /* font-weight: bold; */
     /* margin-left: 14px; */
+
+    opacity: ${props => ((props.outlined) ? 1 : 0.6 )};
+
+    ${Indicator} {
+      background-color: ${props => props.theme.primary};
+    }
+
   }
+  
 
   @media screen and (max-width: 767px) {
     margin-bottom: 8px;
@@ -174,6 +207,7 @@ export const WorkItem = styled.div`
     /* color: ${props => ((props.outlined) ? props.theme.bg : props.theme.primary)};
     background: ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)}; */
 
+    font-size: 14px;
     max-width: 80vw;
     /* overflow: hidden;
     white-space: nowrap;
@@ -181,20 +215,6 @@ export const WorkItem = styled.div`
   }
 `;
 
-export const Indicator = styled.div`
-    position: absolute;
-    margin-top: 4.5px;
-    right: calc((((100vw - 16px) / 12) * 9) + 20px);
-    user-select: none;
-    width: 8px;
-    height: 8px;
-
-    background: ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)};
-
-    @media screen and (max-width: 767px) {
-      display: none;
-    }
-`
 
 export const ToTop = styled.div`
   /* margin-top: 50px; */
@@ -238,7 +258,8 @@ export const DetailsContainer = styled.div`
     position: fixed;
     /* top: 10vh; */
     /* top: 12px; */
-    top: 6px;
+    top: 0;
+    padding-top: 1vh;
     max-height: calc(100vh - 98px);
     left: calc(42vw + 8px);
     /* left: 33.3vw; */
@@ -251,18 +272,20 @@ export const DetailsContainer = styled.div`
       display: none;
     }
 
-    overflow-y: scroll;
+    /* z-index: 999; */
+
+    overflow-y: hidden;
   }
 `
 
 export const WorkDate = styled.div`
   position: fixed;
   top: 18px;
-  left: calc(((100vw) / 12) * 3  + 20px);
+  left: calc(((100vw) / 12) * 3  + 60px);
 
   color: ${props => props.theme.primary};
   font-style: italic;
-  font-size: 15px;
+  font-size: 16px;
 
   /* border: 1px solid blue; */
 
@@ -270,7 +293,7 @@ export const WorkDate = styled.div`
     opacity: 0.75;
     position: unset;
     font-size: 11px;
-    margin-bottom: 9vh;
+    margin-bottom: 2vh;
     margin-top: 8px;
     /* margin-bottom: 34px; */
   }
@@ -278,29 +301,51 @@ export const WorkDate = styled.div`
 
 export const WorkImageContainer = styled.div`
   position: fixed;
-  width: 23vw;
-  top: calc(13vh);
-  left: calc(((100vw) / 12) * 6 + 20px);
+  /* top: calc(13.1vh); */
+  top: 0;
+  left: calc(((100vw) / 12) * 6 + 60px);
+
+  padding-top: 13.1vh;
+  padding-bottom: calc(100px);
+
   text-align: left;
   align-items: start;
   align-content: start;
-  
+
+  display: grid;
+  width: 23.5vw;
+  /* height: calc(86.9vh - 70px); */
+  height: 100vh;
+
   /* border: 1px solid green; */
+
+  z-index: 999;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+
+  -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    ::-webkit-scrollbar {
+      display: none;
+    }
 
   @media screen and (max-width: 767px) {
     position: unset;
+    padding-top: unset;
     width: calc(58vw - 20px);
     height: fit-content;
+    height: 40vh;
     left: calc(50vw + 8px);
-    align-items: end;
-    align-content: end;
+    align-items: start;
+    align-content: start;
   }
 `
 
 export const WorkImage = styled.div`
   z-index: 999;
-  width: 23vw;
-  height: 39vh;
+  width: 23.5vw;
+  /* height: 39vh; */
   /* height: calc(66vh - 80px); */
   text-align: left;
   align-items: start;
@@ -314,7 +359,7 @@ export const WorkImage = styled.div`
         /* width: 100%;
         max-height: calc(49vh - 80px); */
 
-        max-width: 23vw;
+        max-width: 23.5vw;
         max-height: 100%;
 
         /* background-image: #201D17; */
@@ -323,6 +368,8 @@ export const WorkImage = styled.div`
         align-items: start;
         align-content: start;
         border: 0.25px solid ${props => props.theme.border};
+
+        margin-bottom: 6px;
     }
 
   @media screen and (max-width: 767px) {
@@ -335,8 +382,8 @@ export const WorkImage = styled.div`
 
     img {
       max-width: calc(58vw - 20px);
-      align-items: end;
-      align-content: end;
+      align-items: start;
+      align-content: start;
     }
   }
 `
@@ -347,14 +394,14 @@ export const WorkPreview = styled.div`
   position: fixed;
   /* height: fit-content; */
   width: calc((((100vw) / 12) * 3) - 44px);
-  left: calc(((100vw) / 12) * 3 + 20px);
+  left: calc(((100vw) / 12) * 3 + 60px);
 
   top: 13vh;
   text-align: left;
 
   @media screen and (max-width: 767px) {
     position: unset;
-    margin-top: 4px;
+    margin-top: 6px;
     width: calc(58vw - 20px);
 `;
 
@@ -362,7 +409,7 @@ export const Desc = styled.div`
   color: ${props => props.theme.primary};
   line-height: 153%;
   /* opacity: 0.85; */
-  font-size: 13px;
+  font-size: 16px;
   
   user-select: none;
   pointer-events: none;
@@ -449,9 +496,9 @@ export const MobileLink = styled.div`
 export const FiltersContainer = styled.div`
     position: fixed;
     /* top: 0; */
-    left: calc(((100vw) / 12) * 3 + 20px);
+    left: calc(((100vw) / 12) * 3 + 60px);
     /* left: 24vw; */
-    bottom: 18px;
+    bottom: 14px;
     /* bottom: 12vw; */
     /* left: 50vw; */
     display: grid;
@@ -480,7 +527,7 @@ export const Filter = styled.div`
     /* padding-top: */
     color: ${props => props.theme.primary};
     text-decoration: none;
-    font-size: 29px;
+    font-size: 40px;
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -556,18 +603,28 @@ export const NavDOMLinkAbout = styled.div`
     position: fixed;
     z-index: 1000;
 
-    left: calc(((100vw) / 12) * 6 + 20px);
     /* left: calc(((100vw) / 12) * 3 + 20px); */
-    bottom: 18px;
-    /* top: 10px; */
+    right: 20px;
+    top: calc(50vh - 60px);
+    /* left: calc(((100vw) / 12) * 6 + 60px);
+    top: 16px; */
+    /* bottom: 14px; */
     /* bottom: 8vh; */
     /* bottom: 2.5vh; */
 
     text-decoration: none;
     
-    font-size: 29px;
+    font-size: 26px;
+    /* opacity: 0.3; */
     color: ${props => props.theme.primary};
-    opacity: 0.3;
+    background: ${props => props.theme.bg};
+    border: 1px solid ${props => props.theme.primary};
+
+    padding-top: 3px;
+    padding-bottom: 1px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding: 5px 8px 3px 8px;
 
 
     -webkit-user-select: none; /* Safari */
@@ -575,8 +632,10 @@ export const NavDOMLinkAbout = styled.div`
     user-select: none; /* Standard syntax */
 
     &:hover {
-        opacity: 0.9;
+        /* opacity: 0.9; */
         cursor: pointer;
+        color: ${props => props.theme.bg};
+        background: ${props => props.theme.primary};
     }
 
     @media screen and (max-width: 767px) {
@@ -584,6 +643,7 @@ export const NavDOMLinkAbout = styled.div`
       opacity: 0.9;
       font-size: 30px;
       bottom: 6px;
+      top: unset;
       left: unset;
       right: 10px;
       opacity: 1;

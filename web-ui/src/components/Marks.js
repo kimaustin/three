@@ -65,6 +65,8 @@ const Bottom = styled.div`
     bottom: 17px;
     right: 18px;
     /* width: auto */
+    /* border: 2px solid blue; */
+
 `
 
 const Open2W = styled.div`

@@ -35,7 +35,7 @@ const About = ({ toggle, aboutToggle }) => {
           {/* <Styled1 style={{ paddingBottom: 0, paddingTop: '12px' }}>Last Updated: May 4, 2023</Styled1>
           <Styled1>Built by me in React (framer, styled-components) + Elixir.</Styled1> */}
           {/* <Styled1 style={{ color: '#6C9EFF', paddingTop: '10px' }}>Open for work and collaboration</Styled1> */}
-          <Styled3>Last Updated: Oct 15, 2023 <br />Built in React + Elixir.</Styled3>
+          <Styled3>Last Updated: Dec 13, 2023 <br />Built in React + Elixir.</Styled3>
         </Content>
         <Bottom>
           <Social onClick={() => window.open("/akim_resume_summer2023.pdf")} target="_blank">CV</Social>

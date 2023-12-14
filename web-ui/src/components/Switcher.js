@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Switcher = ({toggle, toggleLight, status, toggleDark, themeToggleStatus}) => {
     return (
         <Container onClick={toggle}>
-            <Label>{status ? "dark mode" : "light mode"}</Label>
+            <Label>{status ? "i want dark" : "i want light"}</Label>
         </Container>
     );
 };
@@ -17,19 +17,25 @@ export default Switcher;
 const Container = styled.div`
     z-index: 999;
     position: fixed;
-    right: 18px;
+    /* right: 18px; */
     /* top: 13px; */
-    top: calc(50vh - 24px);
+    /* top: calc(50vh - 60px); */
+    top: 15px;
     color: ${props => props.theme.primary};
 
-    padding: 5px 8px 3px 8px;
-    border: 1px solid ${props => props.theme.primary};
+    left: calc(((100vw) / 12) * 6 + 60px);
+
+    opacity: 0.5; 
+
+    /* padding: 5px 8px 3px 8px; */
+    /* border: 1px solid ${props => props.theme.primary}; */
     /* background: ${props => props.theme.bg}; */
 
     &:hover {
-        background: ${props => props.theme.primary};
-        color: ${props => props.theme.bg};
+        /* background: ${props => props.theme.primary}; */
+        /* color: ${props => props.theme.bg}; */
         cursor: pointer;
+        opacity: 1;
     }
     
     @media screen and (max-width: 767px) {
@@ -43,6 +49,7 @@ const Container = styled.div`
         padding: 5px 8px 3px 8px;
         border: 1px solid ${props => props.theme.primary};
         background: ${props => props.theme.bg};
+        opacity: 1;
 
         &:hover {
             background: ${props => props.theme.bg};
@@ -58,7 +65,7 @@ const Label = styled.div`
     /* float: right; */
     /* left: 0; */
     /* top: 0; */
-    font-size: 15px;
+    font-size: 38px;
     /* opacity: 1; */
     /* color: ${props => props.theme.primary}; */
     /* padding: 4px 7px 2px 7px; */
