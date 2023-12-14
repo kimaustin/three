@@ -3,7 +3,7 @@ server {
     listen [::]:80;
 
     # TODO: DONE(?) ->This should be your server name.
-    server_name www.realitycomposer.space;
+    server_name www.realitycomposer.online;
 
     location / {
         proxy_pass http://localhost:9111;
