@@ -89,7 +89,7 @@ export const WorkListContainer = styled.div`
   /* padding-top: 40vh; */
   padding-left: 8px;
   /* padding-left: 34px; */
-  padding-right: calc((((100vw - 16px) / 12) * 9) - 20px);
+  padding-right: calc((((100vw - 16px) / 12) * 9) - 24px);
   z-index: 999;
 
   overflow-x: hidden; 
@@ -171,7 +171,7 @@ export const WorkItem = styled.div`
   /* color: ${props => ((props.outlined) ? props.theme.bg : props.theme.primary)}; */
   /* background: ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)}; */
 
-  font-size: 26px;
+  font-size: 24px;
   text-align: left;
   line-height: 130%;
 
