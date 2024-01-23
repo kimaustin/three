@@ -27,7 +27,7 @@ const MobileAboutPanel = ({toggle, togglePanel}) => {
                 <Open2W>Currently open to work</Open2W>
                 <Powered>Built in React + Elixir. <br />Powered by realitycomposer</Powered> </Content>
             <Bottom>
-                <Social onClick={() => window.open("/akim_resume_summer2023.pdf")} target="_blank">CV</Social>
+                <Social onClick={() => window.open("/akim_cv.pdf")} target="_blank">CV</Social>
                 <Social href="mailto:hoyeun@realitycomposer.space" target="_blank">EMAIL</Social>
                 <Social href="https://www.are.na/reality-composer" target="_blank">ARE.NA</Social>
                 <Social href="https://www.instagram.com/reality.composer/" target="_blank">INSTAGRAM</Social>

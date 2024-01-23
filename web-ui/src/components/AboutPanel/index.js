@@ -38,7 +38,7 @@ const About = ({ toggle, aboutToggle }) => {
           <Styled3>Last Updated: Dec 13, 2023 <br />Built in React + Elixir.</Styled3>
         </Content>
         <Bottom>
-          <Social onClick={() => window.open("/akim_resume_summer2023.pdf")} target="_blank">CV</Social>
+          <Social onClick={() => window.open("/akim_cv.pdf")} target="_blank">CV</Social>
           <Social href="mailto:hoyeun@realitycomposer.space" target="_blank">EMAIL</Social>
           <Social href="https://www.are.na/reality-composer" target="_blank">ARE.NA</Social>
           <Social href="https://www.instagram.com/reality.composer/" target="_blank">INSTAGRAM</Social>
