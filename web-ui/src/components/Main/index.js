@@ -4,7 +4,6 @@ import { withRouter } from 'react-router';
 import { useLocation } from 'react-router-dom';
 // import { useInView, inView, InView } from 'react-intersection-observer';
 import { motion } from "framer-motion";
-import { ProgressiveImage } from "react-progressive-image";
 import { useHistory } from 'react-router';
 import { AboutMe, Actions, Container, Info, Desc, Location, IndexLink } from './MainElements';
 import { MarkerL } from '../Works/WorkElements';
