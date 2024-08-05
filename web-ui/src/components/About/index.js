@@ -150,7 +150,7 @@ const About = ({ toggle, aboutToggle }) => {
           }}
         >
           Built by me in <InlineLink href="https://react.dev" target="_blank">React</InlineLink> + <InlineLink href="https://elixir-lang.org" target="_blank">Elixir</InlineLink>. <br />
-          Last Updated Dec 23, 2023
+          Last Updated Feb 2, 2024
         </Styled2>
 
         <Content>
@@ -212,11 +212,10 @@ const About = ({ toggle, aboutToggle }) => {
               delay: .85
             }}
             >
-            <Social onClick={() => window.open("imgs/ResumeFall2021.pdf")} target="_blank">Resume</Social>
+            <Social onClick={() => window.open("/akim_cv.pdf")} target="_blank">Resume</Social>
             <Social onClick={() => window.open("https://www.linkedin.com/in/austinkim072775/")} target="_blank">LinkedIn</Social>
-            <Social onClick={() => window.open("https://www.instagram.com/nektine/")} target="_blank">Instagram</Social>
-            <Social onClick={() => window.open("https://open.spotify.com/user/122352291?si=4d4715d1bbe74146")} target="_blank">Spotify</Social>
-            <Social onClick={() => window.open("mailto:nektinemedia@gmail.com")} target="_blank">Email</Social>
+            <Social onClick={() => window.open("https://www.instagram.com/reality.composer/")} target="_blank">Instagram</Social>
+            <Social onClick={() => window.open("mailto:hoyeun@realitycomposer.space")} target="_blank">Email</Social>
             <Social onClick={() => window.open("tel:+17705954256")} target="_blank">Phone</Social>
           </Links>
         </Content>

@@ -14,10 +14,6 @@ const Marks = ({toggle, toggleLight, status, toggleDark, themeToggleStatus}) => 
                 <Label>40.70270,-73.91847</Label>
                 <br />
                 <Label>Brooklyn, NY</Label>
-                <br />
-                <br />
-                <br />
-                <br />
                 {/* <Open2W>Currently open to work</Open2W><br />
                 <Powered>Powered by nektinemedia :D</Powered> */}
             </Bottom>

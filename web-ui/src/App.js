@@ -39,13 +39,6 @@ function App() {
     setIsOpen(!isOpen);
   };
 
-  const [versionDrawer, setVersionDrawer] = useState(false);
-
-  const toggleDrawer = () => {
-      console.log("drawer toggled to", versionDrawer);
-      setVersionDrawer(!versionDrawer);
-  };
-
   const [aboutToggle, setAboutToggle] = useState(false);
   
   const toggleAbout = (currPage) => {
@@ -208,7 +201,7 @@ function App() {
         <GlobalFonts />
         <Switcher toggle={switcher1} status={light}/>
         {/* <Navigation toggle={toggleAbout} aboutToggle={aboutToggle}/> */}
-        <Versions drawerToggle={versionDrawer} toggle={toggleDrawer} />
+        <Versions />
         <NavBar aboutToggle={toggleAbout} mobileToggle={toggle} isOpen={isOpen} filters={filters} clearFilters={clearFilters} photoFilter={filterPhoto} audioFilter={filterAudio} studyFilter={filterStudy} projectFilter={filterProjects} fabricFilter={filterFabric}/>
         <AboutPanel aboutToggle={aboutToggle} toggle={toggleAbout}></AboutPanel>
         <MobileAboutPanel toggle={aboutToggle} togglePanel={toggleAbout}></MobileAboutPanel>
