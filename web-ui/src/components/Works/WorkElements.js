@@ -80,12 +80,13 @@ export const WorkListContainer = styled.div`
   width: calc(100vw);
   height: calc(100vh);
   overflow-y: scroll;
+  /* border: 1px solid blue; */
   /* padding-bottom: calc(51vh - 62px + 0.8rem); */
   /* padding-bottom: calc(100vh - 24px - 12px); */
   /* padding-bottom: 20px; */
   padding-bottom: 10vh;
   /* padding-top: calc(48vh - 128px - 1.8rem + 103px); */
-  padding-top: 17px;
+  padding-top: 18px;
   /* padding-top: 40vh; */
   padding-left: 8px;
   /* padding-left: 34px; */
@@ -116,10 +117,10 @@ export const WorkListContainer = styled.div`
 
 export const Indicator = styled.div`
     position: absolute;
-    margin-top: 10px;
+    margin-top: 9px;
     /* right: calc((((100vw - 16px) / 12) * 9) + 20px); */
     /* right: calc((((100vw - 16px) / 12) * 9 - 40px)); */
-    left: 14px;
+    left: 15px;
     user-select: none;
     width: 10px;
     height: 10px;
@@ -138,9 +139,9 @@ export const WorkItem = styled.div`
   width: fit-content;
   /* max-width: 100%; */
   margin-bottom: 2px;
-  margin-left: 30px;
+  margin-left: 28.5px;
   scroll-margin-top: calc(16px);
-  padding: 3px 4px 0px 4px;
+  padding: 2px 4px 2px 4px;
   pointer-events: ${({ filtered }) => (filtered ? 'auto' : 'none')};  
 
   /* opacity: ${({ filtered, selected }) => ((filtered || selected) ? '1' : '0.4')}; */
@@ -156,8 +157,8 @@ export const WorkItem = styled.div`
   /* margin-top:  ${({ outlined }) => ((outlined) ? '9px' : 'none')}; */
   /* margin-bottom:  ${({ outlined }) => ((outlined) ? '8px' : 'none')}; */
   /* text-decoration: ${({ outlined }) => ((outlined) ? 'underline' : 'none')}; */
-  border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? 'black' : 'white')};
-  border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? '${props => props.theme.primary}' : '${props => props.theme.bg}')};
+  /* border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? 'black' : 'white')}; */
+  /* border: 1px solid ${({ selected, filtered }) => ((selected && filtered) ? '${props => props.theme.primary}' : '${props => props.theme.bg}')}; */
   /* border: 1px solid ${({ outlined }) => (outlined ? 'green' : '${props => props.theme.bg}')}; */
   border: 1.5px solid ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)};
 
@@ -171,9 +172,9 @@ export const WorkItem = styled.div`
   /* color: ${props => ((props.outlined) ? props.theme.bg : props.theme.primary)}; */
   /* background: ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)}; */
 
-  font-size: 24px;
+  font-size: 21px;
   text-align: left;
-  line-height: 130%;
+  line-height: 128%;
 
   &:hover {
     /* opacity: 1; */
@@ -281,11 +282,11 @@ export const DetailsContainer = styled.div`
 export const WorkDate = styled.div`
   position: fixed;
   top: 18px;
-  left: calc(((100vw) / 12) * 3  + 60px);
+  left: calc(((100vw) / 12) * 3  + 54px);
 
   color: ${props => props.theme.primary};
   font-style: italic;
-  font-size: 16px;
+  font-size: 15px;
 
   /* border: 1px solid blue; */
 
@@ -303,9 +304,9 @@ export const WorkImageContainer = styled.div`
   position: fixed;
   /* top: calc(13.1vh); */
   top: 0;
-  left: calc(((100vw) / 12) * 6 + 60px);
+  left: calc(((100vw) / 12) * 6 + 14px);
 
-  padding-top: 13.1vh;
+  padding-top: 12.1vh;
   padding-bottom: calc(100px);
 
   text-align: left;
@@ -313,7 +314,7 @@ export const WorkImageContainer = styled.div`
   align-content: start;
 
   display: grid;
-  width: 23.5vw;
+  width: 30vw;
   /* height: calc(86.9vh - 70px); */
   height: 100vh;
 
@@ -344,7 +345,7 @@ export const WorkImageContainer = styled.div`
 
 export const WorkImage = styled.div`
   z-index: 999;
-  width: 23.5vw;
+  width: 30vw;
   /* height: 39vh; */
   /* height: calc(66vh - 80px); */
   text-align: left;
@@ -359,7 +360,7 @@ export const WorkImage = styled.div`
         /* width: 100%;
         max-height: calc(49vh - 80px); */
 
-        max-width: 23.5vw;
+        max-width: 30vw;
         max-height: 100%;
 
         /* background-image: #201D17; */
@@ -388,15 +389,42 @@ export const WorkImage = styled.div`
   }
 `
 
+export const CaptionText1 = styled.div`
+  z-index: 999;
+  width: 30vw;
+  text-align: left;
+  align-items: start;
+  align-content: start;
+
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+`
+
+export const CaptionText2 = styled.div`
+  z-index: 999;
+  width: 30vw;
+  text-align: left;
+  align-items: start;
+  align-content: start;
+
+  font-size: 10px;
+  font-style: italic;
+  margin-top: 4px;
+  margin-bottom: 10px;
+`
+
 export const WorkPreview = styled.div`
   z-index: 999;
 
   position: fixed;
   /* height: fit-content; */
-  width: calc((((100vw) / 12) * 3) - 44px);
-  left: calc(((100vw) / 12) * 3 + 60px);
+  width: calc((((100vw) / 12) * 2));
+  left: calc(((100vw) / 12) * 3 + 54px);
 
-  top: 13vh;
+  /* border: 1px solid green; */
+
+  top: 12vh;
   text-align: left;
 
   @media screen and (max-width: 767px) {
@@ -407,9 +435,9 @@ export const WorkPreview = styled.div`
 
 export const Desc = styled.div`
   color: ${props => props.theme.primary};
-  line-height: 153%;
+  line-height: 140%;
   /* opacity: 0.85; */
-  font-size: 16px;
+  font-size: 15px;
   
   user-select: none;
   pointer-events: none;
@@ -420,20 +448,30 @@ export const Desc = styled.div`
   }
 `;
 
-export const Link = styled.a`
+export const Link = styled.div`
   z-index: 1000;
   /* opacity: ${({ filtered }) => ((filtered) ? '1' : '0.25')}; */
 
   line-height: 153%;
-  font-size: 13px;
+  font-size: 10px;
 
   /* position: fixed; */
   /* height: fit-content; */
-  width: calc((((100vw - 16px) / 12) * 3) - 100px);
+  max-width: calc((((100vw - 16px) / 12) * 3) - 90px);
+  /* border: 1px solid green; */
+  /* width: calc((((100vw) / 12) * 3) - 80px); */
+  /* width: 100%; */
+
+  overflow: hidden;
+  /* white-space: nowrap; */
+  text-overflow: ellipsis ["..."];
+
   /* top: 50vh; */
-  padding-right: 18px;
+  /* padding-right: 18px; */
   /* top: 10vh; */
-  top: calc(13vh - 30px);
+  /* top: calc(13vh - 30px); */
+
+  text-decoration: none;
 
   left: calc(((100vw - 16px) / 12) * 3);
 
@@ -444,6 +482,7 @@ export const Link = styled.a`
   &:hover {
     text-decoration: underline;
   }
+
 
   @media screen and (max-width: 767px) {
     display: none;
@@ -496,9 +535,9 @@ export const MobileLink = styled.div`
 export const FiltersContainer = styled.div`
     position: fixed;
     /* top: 0; */
-    left: calc(((100vw) / 12) * 3 + 60px);
+    left: calc(((100vw) / 12) * 3 + 54px);
     /* left: 24vw; */
-    bottom: 14px;
+    bottom: 15px;
     /* bottom: 12vw; */
     /* left: 50vw; */
     display: grid;
@@ -520,14 +559,14 @@ export const FiltersContainer = styled.div`
 `
 
 export const Filter = styled.div`
-    margin-top: 4px;
+    margin-top: 3px;
     /* width: 100%; */
     width: fit-content;
     /* height: 30px; */
     /* padding-top: */
     color: ${props => props.theme.primary};
     text-decoration: none;
-    font-size: 40px;
+    font-size: 38px;
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -572,7 +611,7 @@ export const ClearFilters = styled.div`
     text-decoration: none;
     font-size: 15px;
 
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -604,7 +643,7 @@ export const NavDOMLinkAbout = styled.div`
     z-index: 1000;
 
     /* left: calc(((100vw) / 12) * 3 + 20px); */
-    right: 20px;
+    right: 16px;
     top: calc(50vh - 60px);
     /* left: calc(((100vw) / 12) * 6 + 60px);
     top: 16px; */
@@ -614,7 +653,7 @@ export const NavDOMLinkAbout = styled.div`
 
     text-decoration: none;
     
-    font-size: 26px;
+    font-size: 21px;
     /* opacity: 0.3; */
     color: ${props => props.theme.primary};
     background: ${props => props.theme.bg};
@@ -624,7 +663,7 @@ export const NavDOMLinkAbout = styled.div`
     padding-bottom: 1px;
     padding-left: 6px;
     padding-right: 6px;
-    padding: 5px 8px 3px 8px;
+    padding: 5px 8px 4px 8px;
 
 
     -webkit-user-select: none; /* Safari */
@@ -638,6 +677,11 @@ export const NavDOMLinkAbout = styled.div`
         background: ${props => props.theme.primary};
     }
 
+
+    @media screen and (max-width: 875px) {
+      top: 7.5vh;
+    }
+    
     @media screen and (max-width: 767px) {
       z-index: 1000;
       opacity: 0.9;

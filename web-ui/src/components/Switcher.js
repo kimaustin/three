@@ -23,7 +23,7 @@ const Container = styled.div`
     top: 15px;
     color: ${props => props.theme.primary};
 
-    left: calc(((100vw) / 12) * 6 + 60px);
+    left: calc(((100vw) / 12) * 6 + 14px);
 
     opacity: 0.5; 
 
@@ -65,7 +65,7 @@ const Label = styled.div`
     /* float: right; */
     /* left: 0; */
     /* top: 0; */
-    font-size: 38px;
+    font-size: 32px;
     /* opacity: 1; */
     /* color: ${props => props.theme.primary}; */
     /* padding: 4px 7px 2px 7px; */

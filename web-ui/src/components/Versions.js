@@ -17,8 +17,8 @@ const Versions = ({ drawerToggle, toggle }) => {
     return (
         <Container
         as={motion.div} 
-                initial={{ x: 0, y: 'calc(100% - 3.25rem)'}} 
-                animate={versionDrawer ? {  x: 0, y: 0 } : { x: 0, y: 'calc(100% - 3.25rem)' }}
+                initial={{ x: 0, y: 'calc(100% - 3.1rem)'}} 
+                animate={versionDrawer ? {  x: 0, y: 0 } : { x: 0, y: 'calc(100% - 3.1rem)' }}
                 transition={{
                 type: "tween",
                 ease: [0.28, 1.35, 1.5, .91],
@@ -58,8 +58,8 @@ const Container = styled.div`
 const Label = styled.div`
     /* position: absolute; */
     background: white;
-    width: 200px;
-    height: 3.25rem;
+    width: 150px;
+    height: 3rem;
     /* width: 3rem; */
     font-size: 17px;
     padding-top: 12px;
@@ -94,7 +94,7 @@ const Drawer = styled.div`
     width: 200px;
     background: white;
 
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
     /* height: fit-content; */
     
     overflow: hidden;
@@ -116,7 +116,7 @@ const Item = styled.div`
     /* height: 30px; */
     color: black;
     padding-top: 11px;
-    padding-bottom: 13px;
+    padding-bottom: 11px;
     /* padding-left: 8px; */
     /* padding: 9px 12px 5px 12px; */
     /* margin-top: -1px; */
@@ -124,7 +124,7 @@ const Item = styled.div`
     text-align: center;
     /* border-top: unset; */
     background: white;
-    font-size: '14px';
+    font-size: 13px;
     font-family: 'Verdana';
 
     user-select: ${({ selected }) => ((selected) ? 'none' : 'none')};
