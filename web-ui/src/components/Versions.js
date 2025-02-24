@@ -17,8 +17,8 @@ const Versions = ({ drawerToggle, toggle }) => {
     return (
         <Container
         as={motion.div} 
-                initial={{ x: 0, y: 'calc(100% - 3.1rem)'}} 
-                animate={versionDrawer ? {  x: 0, y: 0 } : { x: 0, y: 'calc(100% - 3.1rem)' }}
+                initial={{ x: 0, y: 'calc(100% - 2.8rem)'}} 
+                animate={versionDrawer ? {  x: 0, y: 0 } : { x: 0, y: 'calc(100% - 2.8rem)' }}
                 transition={{
                 type: "tween",
                 ease: [0.28, 1.35, 1.5, .91],
@@ -44,6 +44,8 @@ const Container = styled.div`
     bottom: 0;
     height: fit-content;
     left: calc(((100vw) / 12) * 6 + 60px);
+    left: calc(((100vw) / 12) * 4.5 + 74px);
+
     /* right: calc(50vw - 100px); */
     /* writing-mode: vertical-lr; */
     /* transform: rotate(180deg); */
@@ -58,11 +60,11 @@ const Container = styled.div`
 const Label = styled.div`
     /* position: absolute; */
     background: white;
-    width: 150px;
+    width: 140px;
     height: 3rem;
     /* width: 3rem; */
     font-size: 17px;
-    padding-top: 12px;
+    padding-top: 9px;
     /* padding-right: 12px; */
     text-align: center;
     border: 1px solid black;

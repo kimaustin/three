@@ -19,8 +19,9 @@ export const Overlay = styled.div`
     // border: 5px solid green;
 
     /* background: ${props => props.theme.bgBlur}; */
-    // background: blue;
-    /* opacity: 0.4; */
+    /* background: blue; */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* opacity: 0; */
     /* backdrop-filter: blur(13px); */
 `
 

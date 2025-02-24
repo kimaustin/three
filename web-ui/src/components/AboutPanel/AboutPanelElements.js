@@ -13,7 +13,7 @@ export const Container = styled.div`
     overflow: hidden;
 
     /* opacity: 0.7;  */
-    /* background: #403939; */
+    background: #403939;
     background: ${props => props.theme.bg};
 
     /* opacity: 0.5; */

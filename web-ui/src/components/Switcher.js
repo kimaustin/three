@@ -24,6 +24,8 @@ const Container = styled.div`
     color: ${props => props.theme.primary};
 
     left: calc(((100vw) / 12) * 6 + 14px);
+    left: calc(((100vw) / 12) * 3.2 + 74px);
+
 
     opacity: 0.5; 
 

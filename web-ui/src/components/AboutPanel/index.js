@@ -30,16 +30,17 @@ const About = ({ toggle, aboutToggle }) => {
           {/* <Styled1>Northeastern University '2021<br />Computer Science and Design</Styled1> */}
           <Styled1>Bachelors of Computer Science and Design @ Northeastern University</Styled1>
           {/* <Styled2>Northeastern University '2021<br /> Bachelors of Computer Science and Design</Styled2> */}
-          <Styled2>Multi-disciplinary designer, developer, composer, artist with a passion for building meaningful experiences. Passionate about new technologies, patterns, systems, and sounds.</Styled2>
-          <Styled2>Currently into : FSOL, puerh, strawberry-player, buggy g. riphead, go, plexus.earth</Styled2>
+          <Styled2>Passion for building meaningful experiences. Passionate about new technologies, patterns, systems, and sounds.</Styled2>
+          <Styled2>Currently into : FSOL, puerh, strawberry-player, buggy g. riphead, Go</Styled2>
           {/* <Styled1 style={{ paddingBottom: 0, paddingTop: '12px' }}>Last Updated: May 4, 2023</Styled1>
           <Styled1>Built by me in React (framer, styled-components) + Elixir.</Styled1> */}
           {/* <Styled1 style={{ color: '#6C9EFF', paddingTop: '10px' }}>Open for work and collaboration</Styled1> */}
-          <Styled3>Last Updated: Aug 4, 2024 <br />Built in React + Elixir.</Styled3>
+          <Styled3>Last Updated: Jan 29, 2025 <br />Built in React + Elixir.</Styled3>
         </Content>
         <Bottom>
-          <Social onClick={() => window.open("/akim_cv.pdf")} target="_blank">CV</Social>
-          <Social href="mailto:hoyeun@realitycomposer.space" target="_blank">EMAIL</Social>
+          <Social onClick={() => window.open("/AustinK_CV_2025.pdf")} target="_blank">CV</Social>
+          <Social href="mailto:austinkim.work@gmail.com" target="_blank">EMAIL</Social>
+          <Social href="https://realityblog.blot.im" target="_blank">BLOG</Social>
           <Social href="https://www.are.na/reality-composer" target="_blank">ARE.NA</Social>
           <Social href="https://www.instagram.com/reality.composer/" target="_blank">INSTAGRAM</Social>
         </Bottom>

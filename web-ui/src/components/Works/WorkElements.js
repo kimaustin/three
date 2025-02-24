@@ -141,7 +141,7 @@ export const WorkItem = styled.div`
   margin-bottom: 2px;
   margin-left: 28.5px;
   scroll-margin-top: calc(16px);
-  padding: 2px 4px 2px 4px;
+  padding: 2px 4px 3px 4px;
   pointer-events: ${({ filtered }) => (filtered ? 'auto' : 'none')};  
 
   /* opacity: ${({ filtered, selected }) => ((filtered || selected) ? '1' : '0.4')}; */
@@ -172,9 +172,9 @@ export const WorkItem = styled.div`
   /* color: ${props => ((props.outlined) ? props.theme.bg : props.theme.primary)}; */
   /* background: ${props => ((props.outlined) ? props.theme.primary : props.theme.bg)}; */
 
-  font-size: 21px;
+  font-size: 30px;
   text-align: left;
-  line-height: 128%;
+  line-height: 113%;
 
   &:hover {
     /* opacity: 1; */
@@ -189,9 +189,7 @@ export const WorkItem = styled.div`
     ${Indicator} {
       background-color: ${props => props.theme.primary};
     }
-
   }
-  
 
   @media screen and (max-width: 767px) {
     margin-bottom: 8px;
@@ -254,6 +252,8 @@ export const DetailsContainer = styled.div`
   opacity: ${({ filtered }) => ((filtered) ? '1' : '0.25')};
   /* z-index: -1; */
   z-index: -1;
+  /* border: 1px solid blue; */
+
 
   @media screen and (max-width: 767px) {
     position: fixed;
@@ -265,7 +265,6 @@ export const DetailsContainer = styled.div`
     left: calc(42vw + 8px);
     /* left: 33.3vw; */
 
-    /* border: 1px solid blue; */
     
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -279,34 +278,14 @@ export const DetailsContainer = styled.div`
   }
 `
 
-export const WorkDate = styled.div`
-  position: fixed;
-  top: 18px;
-  left: calc(((100vw) / 12) * 3  + 54px);
-
-  color: ${props => props.theme.primary};
-  font-style: italic;
-  font-size: 15px;
-
-  /* border: 1px solid blue; */
-
-  @media screen and (max-width: 767px) {
-    opacity: 0.75;
-    position: unset;
-    font-size: 11px;
-    margin-bottom: 2vh;
-    margin-top: 8px;
-    /* margin-bottom: 34px; */
-  }
-`
-
 export const WorkImageContainer = styled.div`
   position: fixed;
   /* top: calc(13.1vh); */
   top: 0;
   left: calc(((100vw) / 12) * 6 + 14px);
+  left: calc(((100vw) / 12) * 3.2 + 74px);
 
-  padding-top: 12.1vh;
+  padding-top: 10.5vh;
   padding-bottom: calc(100px);
 
   text-align: left;
@@ -314,7 +293,7 @@ export const WorkImageContainer = styled.div`
   align-content: start;
 
   display: grid;
-  width: 30vw;
+  width: calc(30vw - 14px);
   /* height: calc(86.9vh - 70px); */
   height: 100vh;
 
@@ -345,7 +324,7 @@ export const WorkImageContainer = styled.div`
 
 export const WorkImage = styled.div`
   z-index: 999;
-  width: 30vw;
+  width: calc(30vw - 14px);
   /* height: 39vh; */
   /* height: calc(66vh - 80px); */
   text-align: left;
@@ -360,7 +339,7 @@ export const WorkImage = styled.div`
         /* width: 100%;
         max-height: calc(49vh - 80px); */
 
-        max-width: 30vw;
+        max-width: calc(30vw - 14px);
         max-height: 100%;
 
         /* background-image: #201D17; */
@@ -389,29 +368,27 @@ export const WorkImage = styled.div`
   }
 `
 
-export const CaptionText1 = styled.div`
-  z-index: 999;
-  width: 30vw;
-  text-align: left;
-  align-items: start;
-  align-content: start;
+export const WorkDate = styled.div`
+  position: fixed;
+  top: 18px;
+  left: calc(((100vw) / 12) * 3  + 54px);
+  left: calc(((100vw) / 12) * 7.3 + 14px);
 
-  font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-`
 
-export const CaptionText2 = styled.div`
-  z-index: 999;
-  width: 30vw;
-  text-align: left;
-  align-items: start;
-  align-content: start;
-
-  font-size: 10px;
+  color: ${props => props.theme.primary};
   font-style: italic;
-  margin-top: 4px;
-  margin-bottom: 10px;
+  font-size: 15px;
+
+  /* border: 1px solid blue; */
+
+  @media screen and (max-width: 767px) {
+    opacity: 0.75;
+    position: unset;
+    font-size: 11px;
+    margin-bottom: 2vh;
+    margin-top: 8px;
+    /* margin-bottom: 34px; */
+  }
 `
 
 export const WorkPreview = styled.div`
@@ -421,10 +398,11 @@ export const WorkPreview = styled.div`
   /* height: fit-content; */
   width: calc((((100vw) / 12) * 2));
   left: calc(((100vw) / 12) * 3 + 54px);
+  left: calc(((100vw) / 12) * 7.3 + 14px);
 
   /* border: 1px solid green; */
 
-  top: 12vh;
+  top: calc(10.5vh - 3.5px);
   text-align: left;
 
   @media screen and (max-width: 767px) {
@@ -439,6 +417,8 @@ export const Desc = styled.div`
   /* opacity: 0.85; */
   font-size: 15px;
   
+  /* border: 1px solid green; */
+
   user-select: none;
   pointer-events: none;
 
@@ -523,6 +503,34 @@ export const MobileLink = styled.div`
 `;
 
 
+export const CaptionText1 = styled.div`
+  z-index: 999;
+  width: 30vw;
+  text-align: left;
+  align-items: start;
+  align-content: start;
+
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+`
+
+export const CaptionText2 = styled.div`
+  z-index: 999;
+  width: 30vw;
+  text-align: left;
+  align-items: start;
+  align-content: start;
+
+  font-size: 10px;
+  font-style: italic;
+  margin-top: 4px;
+  margin-bottom: 10px;
+`
+
+
+
+
 
 
 
@@ -536,8 +544,10 @@ export const FiltersContainer = styled.div`
     position: fixed;
     /* top: 0; */
     left: calc(((100vw) / 12) * 3 + 54px);
+  left: calc(((100vw) / 12) * 7.3 + 14px);
+
     /* left: 24vw; */
-    bottom: 15px;
+    bottom: 17px;
     /* bottom: 12vw; */
     /* left: 50vw; */
     display: grid;
@@ -559,14 +569,14 @@ export const FiltersContainer = styled.div`
 `
 
 export const Filter = styled.div`
-    margin-top: 3px;
+    margin-top: 1px;
     /* width: 100%; */
     width: fit-content;
     /* height: 30px; */
     /* padding-top: */
     color: ${props => props.theme.primary};
     text-decoration: none;
-    font-size: 38px;
+    font-size: 40px;
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */

@@ -34,9 +34,9 @@ const CloseOverlay = ({isOpen, aboutToggle, toggleAbout, mobileToggle}) => {
                 }}
                 onClick={toggleAbout}
             >
-                <Fun>
+                {/* <Fun>
                     <img src="star.png"/>
-                </Fun>
+                </Fun> */}
             </Overlay>
         </Container>
     );
